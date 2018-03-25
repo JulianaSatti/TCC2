@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tcc.tcc.DoacoesActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="74dp"
+        android:layout_marginTop="74dp"
+        android:text="@string/escolha_o_tipo_de_doa_o"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="244dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="@string/contribui_o_financeira"
+        app:layout_constraintBottom_toTopOf="@+id/btn_doaobj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/btn_doaobj"
+        android:layout_width="244dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:layout_weight="1"
+        android:allowUndo="true"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:text="@string/objetos_materiais"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:targetApi="m" />
+
+
+</android.support.constraint.ConstraintLayout>

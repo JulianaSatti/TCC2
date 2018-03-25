@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">De Mãos Dadas</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="entrar_com_facebook">Entrar com Facebook</string>
+    <string name="entrar_com_google">Entrar com Google</string>
+    <string name="entrar_com_email">Entrar com Email</string>
+    <string name="todo"></string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="entrar_login">Entrar Login</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="entre_com_seu_email">Entre com seu email</string>
+    <string name="enviar">Enviar</string>
+    <string name="voltar_para_o_login">Voltar para o Login</string>
+    <string name="pesquisar_por">Pesquisar por:</string>
+    <string name="recuperar_senha">Recuperar senha</string>
+    <string name="title_activity_cadastro">CadastroActivity</string>
+    <string name="salvar">Salvar</string>
+    <string name="cadastrosenha">Senha</string>
+    <string name="e_mail">E-mail</string>
+    <string name="digite_novamente_a_senha">Digite novamente a senha</string>
+    <string name="nome">Nome</string>
+    <string name="bem_vindo">Bem Vindo !</string>
+    <string name="ongs">ONGS</string>
+    <string name="doa_es">Doações</string>
+    <string name="seja_volunt_rio">Seja Voluntário</string>
+    <string name="escolha_o_tipo_de_doa_o">Escolha o tipo de doação</string>
+    <string name="contribui_o_financeira">Contribuição Financeira</string>
+    <string name="objetos_materiais">Objetos/Materiais</string>
+    <string name="buscar">Buscar</string>
+    //colocar os itens no spinner
+    <string name="opcao">Escolha</string>
+    <string-array name="opcoes">
+        <item>Todas</item>
+        <item>Categoria</item>
+        <item>Palavra-Chave</item>
+    </string-array>
+
+    //facebook
+    <string name="facebook_app_id">340797683102070</string>
+    <string name="facebook_login_protocol_scheme">fb340797683102070</string>
+
+    <string name="o_que_deseja_doar">O que deseja doar?</string>
+    <string name="categoria">Categoria</string>
+    <string name="adicionar_foto">Adicionar foto</string>
+    <string name="descri_o">Descrição</string>
+    <string name="levarei_pessoalmente">Levarei Pessoalmente</string>
+    <string name="vir_retirar">Vir retirar</string>
+    <string name="nome_obj">Nome</string>
+    <string name="enviar_obj">Enviar</string>
+    <string name="tod">todo</string>
+    //dados para doações de materias
+    <string name="doacoes">Escolha</string>
+    <string-array name="doacoes">
+        <item>Acessórios</item>
+        <item>Alimentos</item>
+        <item>Brinquedos</item>
+        <item>Calçados</item>
+        <item>Eletrodomésticos</item>
+        <item>Eletroeletrônicos</item>
+        <item>Livros</item>
+        <item>Moveis</item>
+        <item>Obejtos de Decoração</item>
+        <item>Roupas</item>
+        <item>Utilidades domésticas</item>
+
+
+    </string-array>
+    <string name="title_activity_perfil">PerfilActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+</resources>
