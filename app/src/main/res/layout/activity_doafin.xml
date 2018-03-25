@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.tcc.tcc.DoaFinActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:autoText="true"
+        android:text="Contribuição Financeira"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="49dp"
+        tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>
