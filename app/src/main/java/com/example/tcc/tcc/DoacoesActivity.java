@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Created by Juliana on 25/02/2018.
+ */
+
 public class DoacoesActivity extends AppCompatActivity {
     private Button financeiro;
     private Button objemat;
@@ -19,7 +23,7 @@ public class DoacoesActivity extends AppCompatActivity {
         financeiro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DoacoesActivity.this, doacontrifinanActivity.class));
+                startActivity(new Intent(DoacoesActivity.this, DoaFinActivity.class));
             }
         });
 
@@ -28,7 +32,7 @@ public class DoacoesActivity extends AppCompatActivity {
         objemat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DoacoesActivity.this, doaobjmatActivity.class));
+                startActivity(new Intent(DoacoesActivity.this, DoaMatActivity.class));
             }
         });
 

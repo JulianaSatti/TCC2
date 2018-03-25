@@ -33,7 +33,7 @@
         <activity
             android:name=".TelaInicialActivity"
             android:label="Inicio" />
-        <activity android:name=".ResertActivity" />
+        <activity android:name=".ResetActivity" />
         <activity
             android:name=".CadastroActivity"
             android:label="Cadastro" />
@@ -41,10 +41,10 @@
             android:name=".DoacoesActivity"
             android:label="Doações" />
         <activity
-            android:name=".doaobjmatActivity"
+            android:name=".DoaMatActivity"
             android:label="Doações" />
         <activity
-            android:name=".doacontrifinanActivity"
+            android:name=".DoaFinActivity"
             android:label="Doações" />
         <activity
             android:name=".PerfilActivity"
