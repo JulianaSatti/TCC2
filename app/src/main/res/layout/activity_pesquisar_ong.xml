@@ -12,35 +12,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="26dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="65dp"
         android:text="@string/pesquisar_por"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/spinner_ong"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_ong"
+        app:layout_constraintStart_toStartOf="@+id/spinner_ong"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_ong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="254dp"
+        android:layout_marginBottom="51dp"
         android:addStatesFromChildren="false"
         android:autofillHints="Opcoes"
         android:entries="@array/opcoes"
         android:prompt="@string/opcao"
-        app:layout_constraintBottom_toTopOf="@+id/buscar_ogn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/categoria"
+        app:layout_constraintEnd_toEndOf="@+id/nome_ong"
+        app:layout_constraintStart_toStartOf="@+id/nome_ong"
         app:layout_constraintTop_toBottomOf="@+id/pesquisaONG"
         tools:targetApi="o" />
 
     <Button
         android:id="@+id/buscar_ogn"
         android:layout_width="137dp"
-        android:layout_height="58dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="46dp"
+        android:layout_marginBottom="35dp"
         android:layout_weight="1"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@android:color/holo_green_light"
@@ -48,22 +48,44 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoria"
+        app:layout_constraintTop_toBottomOf="@+id/localizacao"
         tools:targetApi="lollipop" />
 
     <Spinner
         android:id="@+id/categoria"
-        android:layout_width="0dp"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="183dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginBottom="51dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/localizacao"
+        app:layout_constraintEnd_toEndOf="@+id/localizacao"
+        app:layout_constraintStart_toStartOf="@+id/localizacao"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_ong" />
+    //////////////////////////////////////////////////////////////////////////////
+
+    <EditText
+        android:id="@+id/nome_ong"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/nome_ong"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/categoria"
+        app:layout_constraintEnd_toEndOf="@+id/categoria"
+        app:layout_constraintStart_toStartOf="@+id/categoria"
+        app:layout_constraintTop_toTopOf="@+id/categoria" />
+
+    <TextView
+        android:id="@+id/localizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="113dp"
+        android:text="@string/localiza_o"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/buscar_ogn"
-        app:layout_constraintEnd_toEndOf="@+id/spinner_ong"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner_ong"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/buscar_ogn"
+        app:layout_constraintStart_toStartOf="@+id/buscar_ogn"
+        app:layout_constraintTop_toBottomOf="@+id/categoria" />
 
 </android.support.constraint.ConstraintLayout>
