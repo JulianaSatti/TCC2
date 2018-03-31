@@ -33,7 +33,7 @@
     <string-array name="opcoes">
         <item>Todas</item>
         <item>Categoria</item>
-        <item>Palavra-Chave</item>
+        <item>Nome da ONG</item>
     </string-array>
 
     //facebook
@@ -73,6 +73,14 @@
 
     <string name="action_settings">Settings</string>
     <string name="localiza_o">Localização</string>
+    <string name="distancia">Escolha</string>
+    <string-array name="distancia">
+        <item>10 km</item>
+        <item>20 km</item>
+        <item>30 km</item>
+        <item>Todas</item>
+
+    </string-array>
     <string name="nome_ong">Nome_ONG</string>
 
 </resources>

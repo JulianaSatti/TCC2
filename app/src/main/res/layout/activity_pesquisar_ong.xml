@@ -17,6 +17,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/spinner_ong"
         app:layout_constraintEnd_toEndOf="@+id/spinner_ong"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/spinner_ong"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +37,7 @@
         tools:targetApi="o" />
 
     <Button
-        android:id="@+id/buscar_ogn"
+        android:id="@+id/buscar_ong"
         android:layout_width="137dp"
         android:layout_height="0dp"
         android:layout_gravity="center"
@@ -83,9 +84,19 @@
         android:layout_marginBottom="113dp"
         android:text="@string/localiza_o"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/buscar_ogn"
-        app:layout_constraintEnd_toEndOf="@+id/buscar_ogn"
-        app:layout_constraintStart_toStartOf="@+id/buscar_ogn"
+        app:layout_constraintBottom_toTopOf="@+id/buscar_ong"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_loc"
+        app:layout_constraintStart_toStartOf="@+id/spinner_loc"
         app:layout_constraintTop_toBottomOf="@+id/categoria" />
+
+    <Spinner
+        android:id="@+id/spinner_loc"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/buscar_ong"
+        app:layout_constraintEnd_toEndOf="@+id/buscar_ong"
+        app:layout_constraintStart_toStartOf="@+id/buscar_ong"
+        app:layout_constraintTop_toBottomOf="@+id/localizacao" />
 
 </android.support.constraint.ConstraintLayout>

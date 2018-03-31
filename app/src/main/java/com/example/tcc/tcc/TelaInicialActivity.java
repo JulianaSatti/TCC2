@@ -28,7 +28,6 @@ public class TelaInicialActivity extends AppCompatActivity{
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) { //sobreescrevendo - cria a tela
         super.onCreate(savedInstanceState);
@@ -44,8 +43,6 @@ public class TelaInicialActivity extends AppCompatActivity{
                     HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
                     InputStream input = conexao.getInputStream();
                     imgInicial = BitmapFactory.decodeStream(input);
-
-
 
                 }catch (IOException e){
 
@@ -64,11 +61,6 @@ public class TelaInicialActivity extends AppCompatActivity{
 
             }
         }.start();
-
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -89,5 +81,16 @@ public class TelaInicialActivity extends AppCompatActivity{
             }
         });
 
+    }
+    //irá permanecer logado em segundo plano.
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
+        // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
     }
 }
