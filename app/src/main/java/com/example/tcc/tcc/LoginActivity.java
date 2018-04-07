@@ -56,7 +56,7 @@ public class LoginActivity extends Activity {
                        Toast.makeText(getApplicationContext(),"Nenhum campo pode estar vazio", Toast.LENGTH_LONG).show();
                    }else{
                        //ira fazer a comunicação com o arquivo logar.php que está dentro do servidor (bd).
-                       url = "https://bd-linny.000webhostapp.com/logar.php";
+                       url = "https://demaosdadas.000webhostapp.com/logar.php";
 
                        parametros = "email=" + email + "&senha=" + senha;
                        enderFoto = loginEmail.getText().toString();

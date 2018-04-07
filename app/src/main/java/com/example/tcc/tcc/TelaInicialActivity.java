@@ -39,7 +39,7 @@ public class TelaInicialActivity extends AppCompatActivity{
 
                 try {
 
-                    URL url = new URL("https://bd-linny.000webhostapp.com/imagens/" + enderFoto + ".jpg");
+                    URL url = new URL("https://demaosdadas.000webhostapp.com/imagens/" + enderFoto + ".jpg");
                     HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
                     InputStream input = conexao.getInputStream();
                     imgInicial = BitmapFactory.decodeStream(input);

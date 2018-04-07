@@ -50,7 +50,7 @@ public class CadastroActivity extends AppCompatActivity  {
     Button envFoto;
     ImageView foto;
     String url = "";
-    String urlUpload = "https://bd-linny.000webhostapp.com/upload.php";
+    String urlUpload = "https://demaosdadas.000webhostapp.com/upload.php";
     String parametros = "";
     Bitmap imagemInicial;
     public static final int IMAGEM_INTERNA = 12;
@@ -156,7 +156,7 @@ public class CadastroActivity extends AppCompatActivity  {
                         if(tex_senha.equals(outra_senha)){
 
                             ////Realiza de fato a tentativa de envio do formulario///////////////////////
-                            url = "https://bd-linny.000webhostapp.com/registrar.php";
+                            url = "https://demaosdadas.000webhostapp.com/registrar.php";
                             parametros = "nome=" + tex_nome + "&email=" + tex_email + "&senha=" + tex_senha;
                             new SolicitaDados().execute(url);
                             /////////////////////////////////////////////////////////////////////////////
