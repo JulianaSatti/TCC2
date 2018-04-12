@@ -65,4 +65,13 @@
         android:text="@string/seja_volunt_rio"
         tools:targetApi="lollipop" />
 
+    <Button
+        style="@style/Widget.AppCompat.Button.Small"
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_gravity="right"
+        android:text="LogOut"
+        android:textColor="@color/cardview_dark_background" />
+
 </LinearLayout>

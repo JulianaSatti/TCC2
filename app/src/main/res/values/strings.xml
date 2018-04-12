@@ -82,5 +82,7 @@
 
     </string-array>
     <string name="nome_ong">Nome_ONG</string>
+    <string name="logout">logout</string>
+    <string name="google">google</string>
 
 </resources>

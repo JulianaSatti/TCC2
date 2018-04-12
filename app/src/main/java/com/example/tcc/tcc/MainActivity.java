@@ -36,6 +36,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import org.json.JSONException;
@@ -51,7 +52,7 @@ import static android.app.PendingIntent.getActivity;
 public class MainActivity extends Activity implements GoogleApiClient.OnConnectionFailedListener {
     private Button c_email;
     private GoogleApiClient googleApiClient;
-    private Button c_google;
+    private SignInButton c_google;
     public static final int SIGN_IN_CODE=777;
     private Button dados, c_facebook;
 
@@ -82,7 +83,10 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
                 .addApi(Auth.GOOGLE_SIGN_IN_API)
                 .build();
         //c_google irá chamar a tela bem vindo que será logado com a conta do google
-        c_google = (Button) findViewById(R.id.entrar_google);
+        c_google = (SignInButton) findViewById(R.id.entrar_google);
+        c_google.setSize(SignInButton.SIZE_WIDE);
+        c_google.setColorScheme(SignInButton.COLOR_LIGHT);
+
         c_google.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +107,7 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
 
 
 
-        }
+    }
 
 
 
@@ -130,7 +134,7 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
     }
 
     private void goMainScreen() {
-        Intent intent = new Intent(this, TelaInicialActivity.class);
+        Intent intent = new Intent(this, GoogleActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

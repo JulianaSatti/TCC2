@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -52,22 +53,22 @@ public class LoginActivity extends Activity {
                     String senha = loginSenha.getText().toString();
 
                     //irá verificar se os campos estão vazios e se tiver tudo certo loga.
-                   if (email.isEmpty() || senha.isEmpty()){
-                       Toast.makeText(getApplicationContext(),"Nenhum campo pode estar vazio", Toast.LENGTH_LONG).show();
-                   }else{
-                       //ira fazer a comunicação com o arquivo logar.php que está dentro do servidor (bd).
-                       url = "https://demaosdadas.000webhostapp.com/logar.php";
+                    if (email.isEmpty() || senha.isEmpty()){
+                        Toast.makeText(getApplicationContext(),"Nenhum campo pode estar vazio", Toast.LENGTH_LONG).show();
+                    }else{
+                        //ira fazer a comunicação com o arquivo logar.php que está dentro do servidor (bd).
+                        url = "https://demaosdadas.000webhostapp.com/logar.php";
 
-                       parametros = "email=" + email + "&senha=" + senha;
-                       enderFoto = loginEmail.getText().toString();
+                        parametros = "email=" + email + "&senha=" + senha;
+                        enderFoto = loginEmail.getText().toString();
 
 
-                       new SolicitaDados().execute(url);
-                   }
+                        new SolicitaDados().execute(url);
+                    }
                 }
-                    else {
+                else {
                     Toast.makeText(getApplicationContext(),"Nenhuma conexão foi detectada", Toast.LENGTH_LONG).show();
-                     }
+                }
             }
         });
 
@@ -75,7 +76,7 @@ public class LoginActivity extends Activity {
 
     }
 
-//ira verificar os dados informadors
+    //ira verificar os dados informadors
     private class SolicitaDados extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls){
@@ -83,7 +84,7 @@ public class LoginActivity extends Activity {
             return Conexao.postDados(urls[0], parametros);
 
         }
-//se o usuário exister irá entrar, caso contrario ira mostrar uma mensagem de erro.
+        //se o usuário exister irá entrar, caso contrario ira mostrar uma mensagem de erro.
         @Override
         protected void onPostExecute(String resultado) {
             //loginEmail.setText(resultado);

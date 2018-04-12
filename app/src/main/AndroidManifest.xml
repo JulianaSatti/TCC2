@@ -19,7 +19,8 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,40 +28,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PesquisarOngActivity"
-            android:screenOrientation="portrait"
-            android:label="ONG" />
+            android:label="ONG"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TelaInicialActivity"
-            android:screenOrientation="portrait"
-            android:label="Inicio" />
+            android:label="Inicio"
+            android:screenOrientation="portrait" />
         <activity android:name=".ResetActivity" />
         <activity
             android:name=".CadastroActivity"
-            android:screenOrientation="portrait"
-            android:label="Cadastro" />
+            android:label="Cadastro"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoacoesActivity"
-            android:screenOrientation="portrait"
-            android:label="Doações" />
+            android:label="Doações"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoaMatActivity"
-            android:screenOrientation="portrait"
-            android:label="Doações" />
+            android:label="Doações"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoaFinActivity"
-            android:screenOrientation="portrait"
-            android:label="Doações" />
+            android:label="Doações"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PerfilActivity"
             android:label="Perfil"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".BuscaVagasActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".BuscaVagasActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".GoogleActivity"
+            android:label="Inicio"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
