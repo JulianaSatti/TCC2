@@ -11,13 +11,16 @@
     tools:context="com.example.tcc.tcc.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <Button
+    <com.facebook.login.widget.LoginButton
         android:id="@+id/entrar_facebook"
-        android:layout_width="236dp"
+        style="@style/MessengerButton"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:background="?attr/actionModeSplitBackground"
-        android:text="@string/entrar_com_facebook"
         android:layout_marginBottom="17dp"
+        android:background="?attr/actionModeSplitBackground"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        android:text="@string/entrar_com_facebook"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/entrar_google"
@@ -25,12 +28,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/entrar_google"
         android:layout_width="236dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:background="?attr/colorError"
         android:text="@string/entrar_com_google"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
@@ -41,12 +43,12 @@
 
     <Button
         android:id="@+id/conta_email"
-        android:layout_width="236dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorButtonNormal"
+        style="@style/com_facebook_button"
+        android:layout_width="230dp"
+        android:layout_height="39dp"
         android:layout_marginBottom="33dp"
+        android:background="@android:color/holo_red_dark"
         android:text="@string/entrar_com_email"
-        android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/cadastro"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,12 +57,14 @@
 
     <Button
         android:id="@+id/cadastro"
+        style="@style/com_facebook_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
         android:background="?attr/colorBackgroundFloating"
         android:text="@string/cadastre_se"
-        android:textColor="@android:color/background_dark"
+        android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
