@@ -21,8 +21,9 @@ import static com.example.tcc.tcc.LoginActivity.enderFoto;
 
 public class TelaInicialActivity extends AppCompatActivity{
     private Button ong;
-   private Button doacoes;
-   ImageView foto2;
+    private Button doacoes;
+    private Button atividade;
+    ImageView foto2;
     Bitmap imgInicial;
     private Handler handler = new Handler();
 
@@ -78,6 +79,14 @@ public class TelaInicialActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TelaInicialActivity.this, PesquisarOngActivity.class));
+            }
+        });
+
+        atividade = (Button) findViewById(R.id.btn_atividades);
+        atividade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TelaInicialActivity.this, BuscaAtividadesActivity.class));
             }
         });
 

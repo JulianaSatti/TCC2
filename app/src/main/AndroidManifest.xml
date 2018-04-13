@@ -59,7 +59,7 @@
             android:label="Perfil"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".BuscaVagasActivity"
+        <activity android:name=".BuscaAtividadesActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

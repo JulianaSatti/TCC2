@@ -54,7 +54,7 @@
         tools:targetApi="lollipop" />
 
     <Button
-        android:id="@+id/btn_volunt"
+        android:id="@+id/btn_atividades"
         android:layout_width="160dp"
         android:layout_height="10dp"
         android:layout_gravity="center"
@@ -62,7 +62,7 @@
         android:layout_weight="1"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@android:color/holo_orange_light"
-        android:text="@string/seja_volunt_rio"
+        android:text="Atividades"
         tools:targetApi="lollipop" />
 
 </LinearLayout>
