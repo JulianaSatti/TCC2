@@ -21,11 +21,11 @@ import static com.example.tcc.tcc.LoginActivity.enderFoto;
 
 public class TelaInicialActivity extends AppCompatActivity{
     private Button ong;
-    private Button doacoes, vaga,logout;
+    private Button doacoes;
+    private Button atividade;
     ImageView foto2;
     Bitmap imgInicial;
     private Handler handler = new Handler();
-
 
 
 
@@ -45,8 +45,6 @@ public class TelaInicialActivity extends AppCompatActivity{
                     InputStream input = conexao.getInputStream();
                     imgInicial = BitmapFactory.decodeStream(input);
 
-
-
                 }catch (IOException e){
 
                 }
@@ -64,19 +62,7 @@ public class TelaInicialActivity extends AppCompatActivity{
 
             }
         }.start();
-
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////
-        logout = (Button) findViewById(R.id.logout);//irá voltar para tela de login
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(TelaInicialActivity.this, MainActivity.class));
-            }
-        });
 
 
         doacoes = (Button) findViewById(R.id.btn_doacoes);//aqui que faz transicao de tela ao clique no btn Doações
@@ -96,27 +82,23 @@ public class TelaInicialActivity extends AppCompatActivity{
             }
         });
 
-        //ira acessar a tela pesquisar VAGA
-        vaga = (Button) findViewById(R.id.btn_volunt);
-        vaga.setOnClickListener(new View.OnClickListener() {
+        atividade = (Button) findViewById(R.id.btn_atividades);
+        atividade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TelaInicialActivity.this, BuscaVagasActivity.class));
+                startActivity(new Intent(TelaInicialActivity.this, BuscaAtividadesActivity.class));
             }
         });
 
     }
-
+    //irá permanecer logado em segundo plano.
     @Override
     public void onBackPressed() {
-
-
 
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-
 
         // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
     }

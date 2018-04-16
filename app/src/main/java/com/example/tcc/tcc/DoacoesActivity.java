@@ -18,7 +18,8 @@ public class DoacoesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doacoes);
-//ira acessar a tela de fazer doação financeira
+
+        //ira acessar a tela de fazer doação financeira
         financeiro = (Button) findViewById(R.id.button);
         financeiro.setOnClickListener(new View.OnClickListener() {
             @Override
