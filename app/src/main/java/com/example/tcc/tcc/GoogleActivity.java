@@ -27,7 +27,7 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
     private ImageView photoImageView;
     private TextView nameTextView;
     private TextView emailTextView;
-    private Button g_ong, g_doacao, g_vaga;
+    private Button g_ong, g_doacao, g_atividade;
 
 
     private GoogleApiClient googleApiClient;
@@ -69,11 +69,11 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
         });
 
         //ira acessar a tela pesquisar VAGA
-        g_vaga = (Button) findViewById(R.id.g_volunt);
-        g_vaga.setOnClickListener(new View.OnClickListener() {
+        g_atividade = (Button) findViewById(R.id.g_atividade);
+        g_atividade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GoogleActivity.this, BuscaVagasActivity.class));
+                startActivity(new Intent(GoogleActivity.this, BuscaAtividadesActivity.class));
             }
         });
 

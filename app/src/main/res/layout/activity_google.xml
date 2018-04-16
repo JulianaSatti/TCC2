@@ -43,10 +43,9 @@
         <Button
             android:id="@+id/g_ong"
             android:layout_width="160dp"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="@android:dimen/app_icon_size"
-            android:layout_weight="1"
             android:background="@android:drawable/alert_dark_frame"
             android:backgroundTint="@android:color/holo_green_light"
             android:baselineAligned="false"
@@ -56,25 +55,23 @@
         <Button
             android:id="@+id/g_doacoes"
             android:layout_width="160dp"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="@android:dimen/app_icon_size"
-            android:layout_weight="1"
             android:background="@android:drawable/alert_dark_frame"
             android:backgroundTint="@android:color/holo_blue_dark"
             android:text="@string/doa_es"
             tools:targetApi="lollipop" />
 
         <Button
-            android:id="@+id/g_volunt"
+            android:id="@+id/g_atividade"
             android:layout_width="160dp"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:layout_weight="1"
             android:background="@android:drawable/alert_dark_frame"
             android:backgroundTint="@android:color/holo_orange_light"
-            android:text="@string/seja_volunt_rio"
+            android:text="@string/atividades"
             tools:targetApi="lollipop" />
 
 
@@ -82,11 +79,11 @@
 
 
     <Button
-        style="@style/Widget.AppCompat.Button.Small"
         android:id="@+id/logout"
+        style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:text="@string/logout"
         android:textColor="@color/cardview_dark_background" />
 
