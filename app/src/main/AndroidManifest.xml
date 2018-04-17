@@ -59,8 +59,13 @@
             android:label="Perfil"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".BuscaAtividadesActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".BuscaAtividadesActivity"
+            android:label="Buscar Atividades"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AtividadesEncontradasActivity"
+            android:label="Atividades Encontradas"  />
     </application>
 
 </manifest>
