@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "470001827597",
-    "firebase_url": "https://de-maosdadas.firebaseio.com",
-    "project_id": "de-maosdadas",
-    "storage_bucket": "de-maosdadas.appspot.com"
+    "project_number": "579756656291",
+    "firebase_url": "https://demaosdadas0.firebaseio.com",
+    "project_id": "demaosdadas0",
+    "storage_bucket": "demaosdadas0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:470001827597:android:d658d23e78bc4748",
+        "mobilesdk_app_id": "1:579756656291:android:d658d23e78bc4748",
         "android_client_info": {
           "package_name": "com.example.tcc.tcc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "470001827597-t1hri7undvss95h8signufgoq52vtbdl.apps.googleusercontent.com",
+          "client_id": "579756656291-n1utmtp63kph9vfgl8fbd9pvm2jibf1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tcc.tcc",
+            "certificate_hash": "55c71aa148831b0b1f40d96b3cc2732037aae12e"
+          }
+        },
+        {
+          "client_id": "579756656291-64gv8v9ieo040ni3lrq9lb3lg7ohg6hk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDEotGMSNtc2kAJSHhrdft4yXfoG2jtpos"
+          "current_key": "AIzaSyB33fjuCEhWqH2iSpq9Pc6r1qebvHO0yNc"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579756656291-64gv8v9ieo040ni3lrq9lb3lg7ohg6hk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

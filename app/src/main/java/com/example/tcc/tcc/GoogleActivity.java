@@ -78,7 +78,6 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
         });
 
 
-
     }
 
     @Override
@@ -141,6 +140,7 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
 
     }
 
+
     @Override
     public void onBackPressed() {
 
@@ -154,7 +154,6 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
 
         // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
     }
-
 
 
 

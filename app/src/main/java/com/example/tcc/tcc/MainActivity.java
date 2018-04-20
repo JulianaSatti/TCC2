@@ -106,10 +106,7 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
         });
 
 
-
     }
-
-
 
 
     @Override
