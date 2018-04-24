@@ -139,4 +139,22 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
     public Object getActivity() {
         return 0 ;
     }
+
+
+    @Override
+    public void onBackPressed() {
+
+
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
+
+        // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
+    }
+
+
+
 }

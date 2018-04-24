@@ -78,6 +78,7 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
         });
 
 
+
     }
 
     @Override
