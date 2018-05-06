@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "579756656291-n1utmtp63kph9vfgl8fbd9pvm2jibf1s.apps.googleusercontent.com",
+          "client_id": "579756656291-ic6s4lnbv10f7dlqufd7ctge7t4bvugd.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.tcc.tcc",
-            "certificate_hash": "55c71aa148831b0b1f40d96b3cc2732037aae12e"
+            "certificate_hash": "b254e289087839a3aa33b1521b7abd05321300f1"
           }
         },
         {

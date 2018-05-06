@@ -81,9 +81,10 @@
         <item>Todas</item>
 
     </string-array>
-    <string name="nome_ong">Nome_ONG</string>
     <string name="google">google</string>
     <string name="logout">LogOut</string>
     <string name="atividades">Atividades</string>
+    <string name="nome_da_ong">Nome da ONG</string>
+    <string name="localizacao">Localizacao:</string>
 
 </resources>

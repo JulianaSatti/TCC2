@@ -11,37 +11,34 @@
         android:id="@+id/pesquisaONG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginTop="32dp"
         android:text="@string/pesquisar_por"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/spinner_ong"
-        app:layout_constraintEnd_toEndOf="@+id/spinner_ong"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/spinner_ong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinner_ong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="51dp"
+        android:layout_marginBottom="20dp"
         android:addStatesFromChildren="false"
-        android:autofillHints="Opcoes"
-        android:entries="@array/opcoes"
-        android:prompt="@string/opcao"
+        android:hint="@string/op_es"
         app:layout_constraintBottom_toTopOf="@+id/categoria"
-        app:layout_constraintEnd_toEndOf="@+id/nome_ong"
-        app:layout_constraintStart_toStartOf="@+id/nome_ong"
+        app:layout_constraintEnd_toEndOf="@+id/categoria"
+        app:layout_constraintStart_toStartOf="@+id/categoria"
         app:layout_constraintTop_toBottomOf="@+id/pesquisaONG"
         tools:targetApi="o" />
 
     <Button
         android:id="@+id/buscar_ong"
-        android:layout_width="137dp"
-        android:layout_height="0dp"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="16dp"
         android:layout_weight="1"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@android:color/holo_green_light"
@@ -49,54 +46,59 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/localizacao"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_loc"
         tools:targetApi="lollipop" />
 
     <Spinner
         android:id="@+id/categoria"
-        android:layout_width="116dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="51dp"
+        android:layout_marginBottom="209dp"
+        android:layout_marginStart="64dp"
+        android:addStatesFromChildren="false"
+        android:hint="@string/op_es"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/localizacao"
-        app:layout_constraintEnd_toEndOf="@+id/localizacao"
-        app:layout_constraintStart_toStartOf="@+id/localizacao"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_ong" />
-    //////////////////////////////////////////////////////////////////////////////
+        app:layout_constraintStart_toStartOf="@+id/nome_ong"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_ong"
+        tools:targetApi="o" />
+
 
     <EditText
         android:id="@+id/nome_ong"
-        android:layout_width="260dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="62dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="9dp"
         android:ems="10"
-        android:hint="@string/nome_ong"
+        android:hint="@string/nome_da_ong"
         android:inputType="text"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/categoria"
-        app:layout_constraintEnd_toEndOf="@+id/categoria"
-        app:layout_constraintStart_toStartOf="@+id/categoria"
-        app:layout_constraintTop_toTopOf="@+id/categoria" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_ong" />
 
     <TextView
         android:id="@+id/localizacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="113dp"
-        android:text="@string/localiza_o"
+        android:gravity="center_vertical"
+        android:text="@string/localizacao"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/buscar_ong"
-        app:layout_constraintEnd_toEndOf="@+id/spinner_loc"
-        app:layout_constraintStart_toStartOf="@+id/spinner_loc"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_loc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/categoria" />
 
     <Spinner
         android:id="@+id/spinner_loc"
-        android:layout_width="120dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="75dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintBottom_toTopOf="@+id/buscar_ong"
-        app:layout_constraintEnd_toEndOf="@+id/buscar_ong"
-        app:layout_constraintStart_toStartOf="@+id/buscar_ong"
+        app:layout_constraintStart_toStartOf="@+id/localizacao"
         app:layout_constraintTop_toBottomOf="@+id/localizacao" />
 
 </android.support.constraint.ConstraintLayout>

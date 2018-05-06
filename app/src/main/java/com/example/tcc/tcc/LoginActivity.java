@@ -97,4 +97,13 @@ public class LoginActivity extends Activity {
             }
         }
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+
+        // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
+    }
 }
