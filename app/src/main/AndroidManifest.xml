@@ -23,8 +23,6 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-
-
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -61,6 +59,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
         </activity>
         <activity
             android:name=".BuscaAtividadesActivity"
@@ -69,6 +68,7 @@
         <activity
             android:name=".AtividadesEncontradasActivity"
             android:label="Atividades Encontradas" >
+
         </activity>
 
         <activity android:name=".VisualizarPerfil">

@@ -26,7 +26,7 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//botão recuperar senha irá a tela para recuperar a senha
+        //botão recuperar senha irá a tela para recuperar a senha
         r_senha = (Button) findViewById(R.id.recuperar_senha);
         r_senha.setOnClickListener(new OnClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class LoginActivity extends Activity {
                 ConnectivityManager connMgr = (ConnectivityManager)
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-//verifica o status da rede
+                //verifica o status da rede
                 if (networkInfo != null && networkInfo.isConnected()){
 
                     String email = loginEmail.getText().toString();
@@ -57,7 +57,7 @@ public class LoginActivity extends Activity {
                         Toast.makeText(getApplicationContext(),"Nenhum campo pode estar vazio", Toast.LENGTH_LONG).show();
                     }else{
                         //ira fazer a comunicação com o arquivo logar.php que está dentro do servidor (bd).
-                        url = "https://demaosdadas.000webhostapp.com/logar.php";
+                        url = "http://35.199.87.88/api/logar.php";
 
                         parametros = "email=" + email + "&senha=" + senha;
                         enderFoto = loginEmail.getText().toString();
