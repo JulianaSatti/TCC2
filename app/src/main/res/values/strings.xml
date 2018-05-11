@@ -28,6 +28,7 @@
     <string name="contribui_o_financeira">Contribuição Financeira</string>
     <string name="objetos_materiais">Objetos/Materiais</string>
     <string name="buscar">Buscar</string>
+
     //colocar os itens no spinner
     <string name="opcao">Escolha</string>
     <string-array name="opcoes">
@@ -49,6 +50,7 @@
     <string name="nome_obj">Nome</string>
     <string name="enviar_obj">Enviar</string>
     <string name="tod">todo</string>
+
     //dados para doações de materias
     <string name="doacoes">Escolha</string>
     <string-array name="doacoes">
@@ -60,31 +62,37 @@
         <item>Eletroeletrônicos</item>
         <item>Livros</item>
         <item>Moveis</item>
-        <item>Obejtos de Decoração</item>
+        <item>Objetos de Decoração</item>
         <item>Roupas</item>
         <item>Utilidades domésticas</item>
-
-
     </string-array>
+
     <string name="title_activity_perfil">PerfilActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Sair</string>
     <string name="localiza_o">Localização</string>
     <string name="distancia">Escolha</string>
+
     <string-array name="distancia">
         <item>10 km</item>
         <item>20 km</item>
         <item>30 km</item>
         <item>Todas</item>
-
     </string-array>
+
     <string name="google">google</string>
     <string name="logout">LogOut</string>
     <string name="atividades">Atividades</string>
     <string name="nome_da_ong">Nome da ONG</string>
     <string name="localizacao">Localizacao:</string>
+
+    <string-array name="cat_atividades">
+        <item>Selecione</item>
+        <item>Esportes</item>
+        <item>Livros</item>
+    </string-array>
 
 </resources>

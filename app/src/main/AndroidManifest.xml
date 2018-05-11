@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tcc.tcc">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     //permissão para acessar a internet
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     //verificar o status da rede
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -19,53 +20,60 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
-        <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".PesquisarOngActivity"
-            android:screenOrientation="portrait"
-            android:label="ONG" />
-        <activity
-            android:name=".TelaInicialActivity"
-            android:screenOrientation="portrait"
-            android:label="Inicio" />
+            android:label="ONG"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".ResetActivity" />
         <activity
             android:name=".CadastroActivity"
-            android:screenOrientation="portrait"
-            android:label="Cadastro" />
+            android:label="Cadastro"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoacoesActivity"
-            android:screenOrientation="portrait"
-            android:label="Doações" />
+            android:label="Doações"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoaMatActivity"
-            android:screenOrientation="portrait"
-            android:label="Doações" />
+            android:label="Doações"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoaFinActivity"
-            android:screenOrientation="portrait"
-            android:label="Doações" />
+            android:label="Doações"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".PerfilActivity"
-            android:label="Perfil"
+            android:name=".TelaInicialActivity"
+            android:label="Início"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".BuscaAtividadesActivity"
             android:label="Buscar Atividades"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AtividadesEncontradasActivity"
-            android:label="Atividades Encontradas"  />
+            android:label="Atividades Encontradas" >
+        </activity>
+
+        <activity android:name=".VisualizarPerfil">
+
+        </activity>
     </application>
 
 </manifest>

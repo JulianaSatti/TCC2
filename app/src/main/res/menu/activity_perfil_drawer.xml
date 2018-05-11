@@ -9,9 +9,5 @@
             android:icon="@drawable/ic_person_black_24dp"
             android:title="Perfil" />
 
-        <item
-            android:id="@+id/close"
-            android:icon="@drawable/ic_close_black_24dp"
-            android:title="Sair" />
     </group>
 </menu>

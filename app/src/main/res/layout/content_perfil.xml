@@ -5,7 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.tcc.tcc.PerfilActivity"
+    tools:context="com.example.tcc.tcc.TelaInicialActivity"
+    tools:layout_editor_absoluteY="137dp"
     tools:showIn="@layout/app_bar_perfil">
+
+    <ImageView
+        android:id="@+id/inicio_foto"
+        android:layout_width="110dp"
+        android:layout_height="147dp"
+        android:layout_gravity="center"
+
+
+        android:layout_marginBottom="14dp"
+        android:layout_marginTop="5dp"
+        android:background="#e4eff4"
+        android:contentDescription="@string/tod"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="13dp"
+        android:layout_marginStart="14dp"
+        android:text="@string/bem_vindo"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ongs"
+        app:layout_constraintStart_toStartOf="@+id/btn_ongs"
+        app:layout_constraintTop_toBottomOf="@+id/inicio_foto" />
+
+    <Button
+        android:id="@+id/btn_ongs"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="18dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:baselineAligned="false"
+        android:text="@string/ongs"
+        app:layout_constraintBottom_toTopOf="@+id/btn_doacoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/btn_doacoes"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="14dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/doa_es"
+        app:layout_constraintBottom_toTopOf="@+id/btn_atividades"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ongs"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/btn_atividades"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:text="Atividades"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_doacoes"
+        tools:targetApi="lollipop" />
 
 </android.support.constraint.ConstraintLayout>
