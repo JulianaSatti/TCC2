@@ -53,7 +53,7 @@ public class CadastroActivity extends AppCompatActivity  {
     Button envFoto;
     ImageView foto;
     String url = "";
-    String urlUpload = "https://demaosdadas.000webhostapp.com/upload.php";
+    String urlUpload = "http://35.199.87.88/api/upload.php";
     String parametros = "";
     Bitmap imagemInicial;
     public static final int IMAGEM_INTERNA = 12;
@@ -184,8 +184,7 @@ public class CadastroActivity extends AppCompatActivity  {
         switch (item.getItemId()){
             case R.id.cadastro_ok:
 
-
-                ConnectivityManager connMgr =                (ConnectivityManager)
+                ConnectivityManager connMgr = (ConnectivityManager)
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
@@ -197,7 +196,6 @@ public class CadastroActivity extends AppCompatActivity  {
 
                 boolean result = validaCampos();
 
-
                boolean passwordIsOk = tex_senha.equals(outra_senha);
 
                if (!passwordIsOk) {
@@ -207,7 +205,7 @@ public class CadastroActivity extends AppCompatActivity  {
                         if(result && passwordIsOk){
 
                             ////Realiza de fato a tentativa de envio do formulario///////////////////////
-                            url = "https://demaosdadas.000webhostapp.com/registrar.php";
+                            url = "http://35.199.87.88/api/registrar.php";
                             parametros = "nome=" + tex_nome + "&email=" + tex_email + "&senha=" + tex_senha;
                             new SolicitaDados().execute(url);
                             /////////////////////////////////////////////////////////////////////////////
@@ -218,7 +216,7 @@ public class CadastroActivity extends AppCompatActivity  {
     }
 
     //ira verificar os dados no bd.
-    private class SolicitaDados extends AsyncTask<String, Void, String> {
+    class SolicitaDados extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls){
 

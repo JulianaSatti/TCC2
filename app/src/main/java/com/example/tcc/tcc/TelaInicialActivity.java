@@ -57,7 +57,7 @@ public class TelaInicialActivity extends AppCompatActivity implements Navigation
 
                 try {
 
-                    URL url = new URL("https://demaosdadas.000webhostapp.com/imagens/" + enderFoto + ".jpg");
+                    URL url = new URL("http://35.199.87.88/api/imagens/" + enderFoto + ".jpg");
                     HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
                     InputStream input = conexao.getInputStream();
                     imgInicial = BitmapFactory.decodeStream(input);
