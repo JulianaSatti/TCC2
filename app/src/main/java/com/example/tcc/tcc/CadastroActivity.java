@@ -13,14 +13,14 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Patterns;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -44,12 +44,11 @@ import java.io.FileDescriptor;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CadastroActivity extends AppCompatActivity  {
-    EditText nome;
-    EditText email;
-    EditText senha;
-    EditText outra_sen;
+    EditText nome, email, senha, outra_sen;
     Button envFoto;
     ImageView foto;
     String url = "";
@@ -58,13 +57,14 @@ public class CadastroActivity extends AppCompatActivity  {
     Bitmap imagemInicial;
     public static final int IMAGEM_INTERNA = 12;
     private final int PERMISSAO_REQUEST = 2;
+    public String emailValido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { //sobreescrevendo - cria a tela
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        //Tranferir dados do layout para variaveis locais
+//Tranferir dados do layout para variaveis locais
         nome = (EditText) findViewById(R.id.cadastro_nome);
         email = (EditText) findViewById(R.id.cadastro_email);
         senha = (EditText) findViewById(R.id.cadastro_senha);
@@ -72,7 +72,11 @@ public class CadastroActivity extends AppCompatActivity  {
         envFoto = (Button) findViewById(R.id.Cadastro_btn_foto);
         foto = (ImageView) findViewById(R.id.cadastro_foto);
 
-        //Pede permissao em tempo real (API 23...)//
+
+
+
+///////////////////////////////////////////////////Pede permissao em tempo real (API 23...)/////////////////////////////////////////////////
+
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
             if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
@@ -81,7 +85,7 @@ public class CadastroActivity extends AppCompatActivity  {
             }
         }
 
-         //seleciona a foto//
+/////////////////////////////////seleciona a foto/////////////////////////
         envFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,61 +95,9 @@ public class CadastroActivity extends AppCompatActivity  {
 
             }
         });
-    }
-
-    private boolean validaCampos(){
-
-        boolean res = true;
-
-        String val_nome = nome.getText().toString();
-        String val_email = email.getText().toString();
-        String val_senha = senha.getText().toString();
-        String val_outra_senha = outra_sen.getText().toString();
-
-
-        if (isCampoVazio(val_nome)){
-            nome.requestFocus();
-            res = false;
-        }
-        else
-            if( !isEmailValido(val_email)) {
-                email.requestFocus();
-                res = false;
-            }
-            else
-                if(isCampoVazio(val_senha)) {
-                    senha.requestFocus();
-                    res = false;
-                }
-                else
-                    if (isCampoVazio(val_outra_senha)) {
-                        outra_sen.requestFocus();
-                        res = false;
-                    }
-
-        if(!res){
-            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-            dlg.setTitle("Atenção");
-            dlg.setMessage("Há campos vazios ou dados incorretos");
-            dlg.setNeutralButton("OK", null);
-            dlg.show();
-        }
-
-        return res;
-    }
-
-    private boolean isCampoVazio(String valor){
-        boolean resultado = (TextUtils.isEmpty(valor) || valor.trim().isEmpty());
-        return resultado;
 
     }
-
-    private boolean isEmailValido (String val_email){
-        boolean resultado = (!isCampoVazio(val_email) && Patterns.EMAIL_ADDRESS.matcher(val_email).matches());
-        return resultado;
-    }
-
-       /////////////////////////////////////Exibe a foto na tela//////////////////////////////////
+    /////////////////////////////////////Exibe a foto na tela//////////////////////////////////
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {super.onActivityResult(requestCode, resultCode, data);
         if (resultCode== RESULT_OK && requestCode== 1) {Uri selectedImage= data.getData();
@@ -159,16 +111,16 @@ public class CadastroActivity extends AppCompatActivity  {
             foto.setImageBitmap(imagemInicial);
         }}
 
-         //////////////////////// caso aceite a permissao em tempo real, libera para acessar sua foto API 23...//////////
-        @Override
-        public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
-            if(requestCode== PERMISSAO_REQUEST) {
-                if(grantResults.length> 0&& grantResults[0] == PackageManager.PERMISSION_GRANTED){// A permissão foi concedida. Pode continuar
+    //////////////////////// caso aceite a permissao em tempo real, libera para acessar sua foto API 23...//////////
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        if(requestCode== PERMISSAO_REQUEST) {
+            if(grantResults.length> 0&& grantResults[0] == PackageManager.PERMISSION_GRANTED){// A permissão foi concedida. Pode continuar
 
-                } else{
-                    // A permissão foi negada. Precisa ver o que deve ser desabilitado
-                }return;
-            }
+            } else{
+                // A permissão foi negada. Precisa ver o que deve ser desabilitado
+            }return;
+        }
     }
 
     @Override
@@ -188,35 +140,60 @@ public class CadastroActivity extends AppCompatActivity  {
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
+                if (networkInfo != null && networkInfo.isConnected()) {
 
-                 String tex_nome = nome.getText().toString();
-                 String tex_email = email.getText().toString();
-                String tex_senha = senha.getText().toString();
-                String outra_senha = outra_sen.getText().toString();
+                    String tex_nome = nome.getText().toString();
+                    String tex_email = email.getText().toString();
+                    String tex_senha = senha.getText().toString();
+                    String outra_senha = outra_sen.getText().toString();
 
-                boolean result = validaCampos();
+                    if (tex_nome.isEmpty() || tex_email.isEmpty() || tex_senha.isEmpty()) {
 
-               boolean passwordIsOk = tex_senha.equals(outra_senha);
+//irá mostrar um alerta na tela
 
-               if (!passwordIsOk) {
-                   Toast.makeText(CadastroActivity.this, "Senhas não Conferem", Toast.LENGTH_SHORT).show();
-               }
+                        AlertDialog.Builder dlg = new AlertDialog.Builder(this);
+                        dlg.setTitle("Aviso");
+                        dlg.setIcon(R.mipmap.ic_aviso);
+                        dlg.setMessage("Nenhum campo pode estar vazio.");
+                        dlg.setNeutralButton("ok",null);
+                        dlg.show();
 
-                        if(result && passwordIsOk){
+                    } else {
+                        validarEmail();
 
-                            ////Realiza de fato a tentativa de envio do formulario///////////////////////
-                            url = "http://35.199.87.88/api/registrar.php";
-                            parametros = "nome=" + tex_nome + "&email=" + tex_email + "&senha=" + tex_senha;
-                            new SolicitaDados().execute(url);
-                            /////////////////////////////////////////////////////////////////////////////
+                        if (emailValido.contains("true")) {
+
+                            //ira verificar o tamanho da senha, caso for menor de 6 ele mostrarar de mensagem
+                            if (tex_senha.length()>=6) {
+
+                                //ira comparar as senhas, se tiver iguais salva se não mostra erro de senhas não conferem
+                                if (tex_senha.equals(outra_senha))
+                                {
+                                    ////Realiza de fato a tentativa de envio do formulario///////////////////////
+                                    url =  "http://35.199.87.88/api/registrar.php";
+                                    parametros = "nome=" + tex_nome + "&email=" + tex_email + "&senha=" + tex_senha;
+                                    new SolicitaDados().execute(url);
+                                    /////////////////////////////////////////////////////////////////////////////
+                                } else {
+                                    Toast.makeText(CadastroActivity.this, "Senhas não Conferem", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }else{
+                                Toast.makeText(CadastroActivity.this, "Senha deve ter no mínimo 6 caracteres", Toast.LENGTH_SHORT).show();
+                            }
                         }
-        }
+                    }
 
+                }else {
+                    Toast.makeText(getApplicationContext(),"Nenhuma conexão foi detectada", Toast.LENGTH_LONG).show();
+                }
+                break;
+        }
         return super.onOptionsItemSelected(item);
     }
 
     //ira verificar os dados no bd.
-    class SolicitaDados extends AsyncTask<String, Void, String> {
+    private class SolicitaDados extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls){
 
@@ -232,16 +209,11 @@ public class CadastroActivity extends AppCompatActivity  {
 ///////////////////////Envia a imagem para a pasta no servidor///////////////////////////////////////////
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, urlUpload, new com.android.volley.Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response) {
-                        //Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
-                    }
+                    public void onResponse(String response) {}
 
                 }, new com.android.volley.Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //Toast.makeText(getApplicationContext(), "error: " + error.toString(), Toast.LENGTH_LONG).show();
-
-                    }
+                    public void onErrorResponse(VolleyError error) { }
                 }){
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
@@ -257,14 +229,14 @@ public class CadastroActivity extends AppCompatActivity  {
                 RequestQueue requestQueue = Volley.newRequestQueue(CadastroActivity.this);
                 requestQueue.add(stringRequest);
 
-                        //////////////////////////termina aqui o envio de imagem para o servidor///////////////////////////////////////////
+                //////////////////////////termina aqui o envio de imagem para o servidor///////////////////////////////////////////
+
                 Toast.makeText(getApplicationContext(),"Registro efetuado com sucesso!", Toast.LENGTH_LONG).show();
                 Intent abreInicio = new Intent(CadastroActivity.this, LoginActivity.class);
                 startActivity(abreInicio);
             }else {
                 Toast.makeText(getApplicationContext(),"Ocorreu um erro! Usuário existente!", Toast.LENGTH_LONG).show();
             }
-
         }
     }
 
@@ -275,6 +247,36 @@ public class CadastroActivity extends AppCompatActivity  {
 
         String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
+    }
+
+
+    //validação de email, irá veerificar se tem @  no email
+    private void validarEmail () {
+        String validemail = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+
+                "\\@" +
+
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+
+                "(" +
+
+                "\\." +
+
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+
+                ")+";
+
+        String tex_email = email.getText().toString();
+//matcher corresponde uma sequencia de caracteres interpretando pelo o Pattern que é uma expressão regular
+        Matcher matcher = Pattern.compile(validemail).matcher(tex_email);
+
+        if (matcher.matches()) {
+            emailValido = "true";
+        } else {
+            emailValido = "false";
+            Toast.makeText(getApplicationContext(), "Email Inválido", Toast.LENGTH_LONG).show();
+        }
+
     }
 }
 
