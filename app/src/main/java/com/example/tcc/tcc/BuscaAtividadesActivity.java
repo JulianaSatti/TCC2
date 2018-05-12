@@ -38,6 +38,5 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
              }
          });
 
-
     }
 }

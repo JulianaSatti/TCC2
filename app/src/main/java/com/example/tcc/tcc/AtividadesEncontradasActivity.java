@@ -105,10 +105,8 @@ public class AtividadesEncontradasActivity extends AppCompatActivity {
                             ae.setId(obj.get("Id").getAsInt());
                             ae.setNomeOng(obj.get("NomeONG ").getAsString());
                             ae.setNomeAtividade(obj.get("NomeAtividade").getAsString());
-
-                            //lista.add(ae);
                         }
-                      //atividadesEncontradasAdapter.notifyDataSetChanged();
+
                     }
 
 

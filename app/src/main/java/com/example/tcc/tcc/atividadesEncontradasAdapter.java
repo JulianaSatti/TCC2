@@ -24,16 +24,19 @@ public class atividadesEncontradasAdapter extends BaseAdapter {
 
     @Override
     public int getCount() { //saber o tamanho da lista
+
         return lista.size();
     }
 
     @Override
     public atividadesEncontradas getItem(int position) {// sabe capturar cada item da lista, cmo se fosse um loop
+
         return lista.get(position);
     }
 
     @Override
     public long getItemId(int position) {
+
         return 0;
     }
 

@@ -4,9 +4,9 @@
 
     //permissão para acessar a internet
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     //verificar o status da rede
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -29,18 +29,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity
             android:name=".PesquisarOngActivity"
             android:label="ONG"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity android:name=".ResetActivity" />
+
         <activity
             android:name=".CadastroActivity"
             android:label="Cadastro"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".DoacoesActivity"
             android:label="Doações"
@@ -49,32 +56,31 @@
             android:name=".DoaMatActivity"
             android:label="Doações"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".DoaFinActivity"
             android:label="Doações"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".TelaInicialActivity"
             android:label="Início"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
-
-
-
         </activity>
+
         <activity
             android:name=".BuscaAtividadesActivity"
             android:label="Buscar Atividades"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".AtividadesEncontradasActivity"
             android:label="Atividades Encontradas" >
-
         </activity>
 
-        <activity android:name=".VisualizarPerfil">
-
+        <activity
+            android:name=".VisualizarPerfil">
         </activity>
     </application>
 

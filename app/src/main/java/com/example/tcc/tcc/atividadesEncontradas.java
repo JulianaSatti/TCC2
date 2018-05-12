@@ -21,22 +21,27 @@ public class atividadesEncontradas {
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
     public String getNomeOng() {
+
         return nomeOng;
     }
 
     public void setNomeOng(String nomeOng) {
+
         this.nomeOng = nomeOng;
     }
 
     public String getNomeAtividade() {
+
         return nomeAtividade;
     }
 
     public void setNomeAtividade(String nomeAtividade) {
+
         this.nomeAtividade = nomeAtividade;
     }
 }

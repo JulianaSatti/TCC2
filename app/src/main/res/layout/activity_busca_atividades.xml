@@ -33,7 +33,7 @@
 
     <Button
         android:id="@+id/buscar_atividades"
-        android:layout_width="113dp"
+        android:layout_width="112dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="140dp"
         android:background="@android:drawable/alert_dark_frame"
