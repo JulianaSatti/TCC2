@@ -258,9 +258,7 @@ public class CadastroActivity extends AppCompatActivity  {
                 requestQueue.add(stringRequest);
 
                         //////////////////////////termina aqui o envio de imagem para o servidor///////////////////////////////////////////
-
-
-                        Toast.makeText(getApplicationContext(),"Registro efetuado com sucesso!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Registro efetuado com sucesso!", Toast.LENGTH_LONG).show();
                 Intent abreInicio = new Intent(CadastroActivity.this, LoginActivity.class);
                 startActivity(abreInicio);
             }else {

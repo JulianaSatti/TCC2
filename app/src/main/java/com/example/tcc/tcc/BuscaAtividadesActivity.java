@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -32,18 +31,13 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
              @Override
              public void onClick(View v) {
                  String item = spinner_categoria.getSelectedItem().toString();
+                 getIntent().putExtra("categoria",item);
+                 startActivity(new Intent(BuscaAtividadesActivity.this, AtividadesEncontradasActivity.class));
                  //Só pra fazer teste se mostra a opção certinho
                  Toast.makeText(getApplicationContext(), "Item escolhido:"+item, Toast.LENGTH_SHORT).show();
              }
          });
 
-        //ira acessar a tela Atividades Encontradas
-        buscar = (Button) findViewById(R.id.buscar_atividades);
-        buscar.setOnClickListener(new View.OnClickListener() {
-            @Override
-           public void onClick(View v) {
-         startActivity(new Intent(BuscaAtividadesActivity.this, AtividadesEncontradasActivity.class));
-          }
-        });
+
     }
 }
