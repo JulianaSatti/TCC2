@@ -47,7 +47,7 @@ public class AtividadesEncontradasActivity extends AppCompatActivity {
 
         //pega o item que esta na activity anterior
 
-        Intent busca = getIntent();
+        //Intent busca = getIntent();
 
         listEncontradas = (ListView) findViewById(R.id.lv_atividades_encontradas);
 

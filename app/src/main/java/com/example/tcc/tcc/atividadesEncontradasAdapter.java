@@ -17,7 +17,7 @@ public class atividadesEncontradasAdapter extends BaseAdapter {
     private Context ctx;
     private List<atividadesEncontradas> lista;
 
-    public atividadesEncontradasAdapter(Context ctx2, List<atividadesEncontradas> lista2){
+    public atividadesEncontradasAdapter(Context ctx2, List<atividadesEncontradas> lista2){//recebe os dados do contexto e da lista, quando for instancia passa esse contrutor
         ctx = ctx2;
         lista = lista2;
     }
