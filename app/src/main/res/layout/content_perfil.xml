@@ -48,7 +48,8 @@
         android:layout_marginBottom="28dp"
         android:layout_weight="1"
 
-        android:background="@color/colorVerde"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
         android:baselineAligned="false"
 
         android:text="@string/ongs"
@@ -66,7 +67,8 @@
         android:layout_marginBottom="28dp"
         android:layout_weight="1"
 
-        android:background="#99ffcc"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/doa_es"
         app:layout_constraintBottom_toTopOf="@+id/btn_atividades"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +83,8 @@
         android:layout_gravity="center"
         android:layout_marginBottom="28dp"
         android:layout_weight="1"
-        android:background="#99ffcc"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:text="Atividades"
         android:textColorLink="@android:color/background_dark"
         app:layout_constraintBottom_toBottomOf="parent"

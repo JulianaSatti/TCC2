@@ -42,6 +42,8 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
         emailTextView = (TextView) findViewById(R.id.emailTextView);
 
 
+
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -77,8 +79,6 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
             }
         });
 
-
-
     }
 
     @Override
@@ -100,6 +100,9 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
     }
 
     private void handleSignInResult(GoogleSignInResult result) {
+
+        Log.d("Resultado Google",result.toString());
+
         if (result.isSuccess()) {
 
             GoogleSignInAccount account = result.getSignInAccount();
