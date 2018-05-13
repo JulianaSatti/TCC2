@@ -67,6 +67,7 @@
             android:label="Início"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
 
         <activity
@@ -81,6 +82,11 @@
 
         <activity
             android:name=".VisualizarPerfil">
+        </activity>
+
+        <activity
+            android:name=".DoacoesRealizadasActivity"
+            android:label="Doações Realizadas">
         </activity>
     </application>
 

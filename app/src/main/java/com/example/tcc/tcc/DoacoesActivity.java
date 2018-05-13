@@ -11,7 +11,7 @@ import android.widget.Button;
  */
 
 public class DoacoesActivity extends AppCompatActivity {
-    private Button financeiro;
+    private Button doarealizadas;
     private Button objemat;
 
     @Override
@@ -20,11 +20,11 @@ public class DoacoesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doacoes);
 
         //ira acessar a tela de fazer doação financeira
-        financeiro = (Button) findViewById(R.id.button);
-        financeiro.setOnClickListener(new View.OnClickListener() {
+        doarealizadas = (Button) findViewById(R.id.btn_doa_realizadas);
+        doarealizadas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DoacoesActivity.this, DoaFinActivity.class));
+                startActivity(new Intent(DoacoesActivity.this, DoacoesRealizadasActivity.class));
             }
         });
 

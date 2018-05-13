@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tcc.tcc.DoaMatActivity"
-    tools:layout_editor_absoluteY="73dp">
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/textView2"
@@ -35,7 +35,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="26dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/nom_obj"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -45,11 +45,15 @@
         android:id="@+id/adicionar_foto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="7dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
+        android:background="@color/colorVerde"
         android:text="@string/adicionar_foto"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/foto"
+        app:layout_constraintEnd_toStartOf="@+id/foto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_obj"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -68,10 +72,10 @@
         android:id="@+id/radioOP"
         android:layout_width="576dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="68dp"
+        android:layout_marginStart="16dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/enviar_obj"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
 
@@ -125,7 +129,7 @@
         android:id="@+id/nom_obj"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="23dp"
         android:layout_marginTop="129dp"
         android:ems="10"
         android:inputType="textMultiLine"
@@ -137,10 +141,24 @@
         android:id="@+id/enviar_obj"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginEnd="148dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorVerde"
         android:text="@string/enviar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioOP" />
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_width="0dp"
+        android:layout_height="113dp"
+        android:layout_marginBottom="55dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="54dp"
+        app:layout_constraintBottom_toTopOf="@+id/enviar_obj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/adicionar_foto"
+        app:layout_constraintTop_toTopOf="@+id/descricao_obj"
+        app:srcCompat="@color/cardview_light_background" />
 
 </android.support.constraint.ConstraintLayout>
