@@ -22,5 +22,4 @@
 
     <include layout="@layout/content_perfil" />
 
-
 </android.support.design.widget.CoordinatorLayout>
