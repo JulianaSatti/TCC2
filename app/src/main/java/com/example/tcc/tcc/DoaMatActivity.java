@@ -79,25 +79,52 @@ public class DoaMatActivity extends AppCompatActivity {
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.doacoes, android.R.layout.simple_spinner_dropdown_item);
         spinner_obj.setAdapter(adapter);
 
-        enviar_obj.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text_spinner_categoria = spinner_obj.getSelectedItem().toString();
-            }
-        });
 
 
         enviar_obj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                // recebe o botão de opção selecionado do radioGroup
-                int selectedId = radioGroup.getCheckedRadioButtonId();
-                // encontra o radiobutton pelo ID retornado
-                radioEntrega = (RadioButton) findViewById(selectedId);
-                //Toast.makeText(DoaMatActivity.this, DoaMatActivity.this.radioEntrega.getText(), Toast.LENGTH_SHORT).show();
+                ConnectivityManager connMgr = (ConnectivityManager)
+                        getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+                if (networkInfo != null && networkInfo.isConnected()) {
+
+
+                    String text_spinner_categoria = spinner_obj.getSelectedItem().toString();
+                    String text_nome = nome.getText().toString();
+                    String text_descricao = descricao.getText().toString();
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    // encontra o radiobutton pelo ID retornado
+                    radioEntrega = (RadioButton) findViewById(selectedId);
+                    String rd_retirada = radioEntrega.getText().toString();
+
+
+                    if (text_nome.isEmpty() || text_descricao.isEmpty()) {
+
+                        //irá mostrar um alerta na tela
+                        AlertDialog.Builder dlg = new AlertDialog.Builder(DoaMatActivity.this);
+                        dlg.setTitle("Atenção");
+                        dlg.setMessage("Nenhum campo pode estar vazio.");
+                        dlg.setNeutralButton("ok", null);
+                        dlg.show();
+
+                    } else {
+                        ////Realiza de fato a tentativa de envio do formulario///////////////////////
+                        url = "http://35.199.87.88/api/cadastro_doacoes.php";
+                        parametros = "categoria=" + text_spinner_categoria + "&nome=" + text_nome + "&descricao=" + text_descricao + "&retirada=" +rd_retirada;
+                        new SolicitaDados().execute(url);
+                    }
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(), "Nenhuma conexão foi detectada", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
+
 
         ///////////////////////////////////////////////////Pede permissao em tempo real (API 23...)/////////////////////////////////////////////////
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -124,78 +151,33 @@ public class DoaMatActivity extends AppCompatActivity {
     /////////////////////////////////////Exibe a foto na tela//////////////////////////////////
     @Override
     protected void onActivityResult ( int requestCode, int resultCode, Intent data){
-            super.onActivityResult(requestCode, resultCode, data);
-            if (resultCode == RESULT_OK && requestCode == 1) {
-                Uri selectedImage = data.getData();
-                String[] filePath = {MediaStore.Images.Media.DATA};
-                Cursor c = getContentResolver().query(selectedImage, filePath, null, null, null);
-                c.moveToFirst();
-                int columnIndex = c.getColumnIndex(filePath[0]);
-                String picturePath = c.getString(columnIndex);
-                c.close();
-                imagemDoacao = (BitmapFactory.decodeFile(picturePath));
-                foto.setImageBitmap(imagemDoacao);
-            }
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 1) {
+            Uri selectedImage = data.getData();
+            String[] filePath = {MediaStore.Images.Media.DATA};
+            Cursor c = getContentResolver().query(selectedImage, filePath, null, null, null);
+            c.moveToFirst();
+            int columnIndex = c.getColumnIndex(filePath[0]);
+            String picturePath = c.getString(columnIndex);
+            c.close();
+            imagemDoacao = (BitmapFactory.decodeFile(picturePath));
+            foto.setImageBitmap(imagemDoacao);
+        }
     }
 
 
     //////////////////////// caso aceite a permissao em tempo real, libera para acessar sua foto API 23...//////////
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-            if (requestCode == PERMISSAO_REQUEST) {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {// A permissão foi concedida. Pode continuar
+        if (requestCode == PERMISSAO_REQUEST) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {// A permissão foi concedida. Pode continuar
 
-                } else {
-                    // A permissão foi negada. Precisa ver o que deve ser desabilitado
-                }
-                return;
+            } else {
+                // A permissão foi negada. Precisa ver o que deve ser desabilitado
             }
-
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.enviar_obj:
-
-                ConnectivityManager connMgr = (ConnectivityManager)
-                        getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-                if (networkInfo != null && networkInfo.isConnected()) {
-
-
-                    String text_spinner_categoria = spinner_obj.getSelectedItem().toString();
-                    String text_nome = nome.getText().toString();
-                    String text_descricao = descricao.getText().toString();
-                    String rd_retirada = radioEntrega.getText().toString().trim().toLowerCase();
-
-
-                    if (text_nome.isEmpty() || text_descricao.isEmpty()) {
-
-                        //irá mostrar um alerta na tela
-                        AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-                        dlg.setTitle("Atenção");
-                        dlg.setMessage("Nenhum campo pode estar vazio.");
-                        dlg.setNeutralButton("ok", null);
-                        dlg.show();
-
-                    } else {
-                        ////Realiza de fato a tentativa de envio do formulario///////////////////////
-                        url = "http://35.199.87.88/api/cadastro_doacoes.php";
-                        parametros = "categoria=" + text_spinner_categoria + "&nome=" + text_nome + "&descricao=" + text_descricao + "$retirada=" +rd_retirada;
-                        new SolicitaDados().execute(url);
-                    }
-
-                } else {
-
-                    Toast.makeText(getApplicationContext(), "Nenhuma conexão foi detectada", Toast.LENGTH_LONG).show();
-                }
-                break;
+            return;
         }
 
-        return super.onOptionsItemSelected(item);
     }
 
     //ira verificar os dados no bd.
