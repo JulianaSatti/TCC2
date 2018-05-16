@@ -4,45 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tcc.tcc.BuscaAtividadesActivity"
+    tools:context="com.example.tcc.tcc.PesquisarOngActivity"
     tools:layout_editor_absoluteY="81dp">
 
-
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/pesquisaAtividades"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginTop="82dp"
-        android:text="Pesquisar por:"
+        android:layout_marginTop="34dp"
+        android:text="@string/pesquisar_por"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_cat_atividades"
-        app:layout_constraintEnd_toEndOf="@+id/spinner_cat_atividades"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner_cat_atividades"
-        android:layout_width="220dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="160dp"
-        app:layout_constraintBottom_toTopOf="@+id/buscar_atividades"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        android:id="@+id/spinner_atividades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:addStatesFromChildren="false"
+        app:layout_constraintBottom_toTopOf="@+id/descricao_atividade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="o" />
 
     <Button
         android:id="@+id/buscar_atividades"
-        android:layout_width="112dp"
+        android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="17dp"
+        android:layout_weight="1"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@android:color/holo_green_light"
-        android:text="Buscar"
+        android:text="@string/buscar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_cat_atividades" />
+        tools:targetApi="lollipop" />
 
+    <Spinner
+        android:id="@+id/spinner_categoria_atividade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:addStatesFromChildren="false"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/descricao_atividade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="o" />
+
+
+    <EditText
+        android:id="@+id/descricao_atividade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="@string/descricao_atividade"
+        android:inputType="text"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pesquisaAtividades" />
+
+    <TextView
+        android:id="@+id/localizacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:gravity="center_vertical"
+        android:text="@string/localizacao"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_loc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/buscar_ong"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

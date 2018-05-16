@@ -88,6 +88,7 @@
     <string name="atividades">Atividades</string>
     <string name="nome_da_ong">Nome da ONG</string>
     <string name="localizacao">Localizacao:</string>
+    <string name="descricao_atividade">Descrição da Atividade</string>
 
     <string-array name="cat_atividades">
         <item>Selecione</item>

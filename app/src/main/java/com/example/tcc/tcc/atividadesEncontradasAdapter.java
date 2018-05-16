@@ -16,10 +16,12 @@ public class atividadesEncontradasAdapter extends BaseAdapter {
 
     private Context ctx;
     private List<atividadesEncontradas> lista;
+    private LayoutInflater mInflater;
 
     public atividadesEncontradasAdapter(Context ctx2, List<atividadesEncontradas> lista2){//recebe os dados do contexto e da lista, quando for instancia passa esse contrutor
         ctx = ctx2;
         lista = lista2;
+        mInflater = LayoutInflater.from(ctx2);
     }
 
     @Override
@@ -42,24 +44,19 @@ public class atividadesEncontradasAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View v = null;
-
-        if(convertView == null){
-            LayoutInflater inflater = ((Activity)ctx).getLayoutInflater();
-            v = inflater.inflate(R.layout.linha_ativ_encontrada, null);
-        }else{
-            v = convertView;
-        }
+        convertView = mInflater.inflate(R.layout.linha_ativ_encontrada, null);
 
         atividadesEncontradas atividade = getItem(position);
 
-        TextView itemNomeONG = (TextView) v.findViewById(R.id.lh_nome_ong);
-        TextView itemNomeAtividade = (TextView )  v.findViewById(R.id.lh_nome_atividade);
+        TextView itemNomeAtividade = (TextView) convertView.findViewById(R.id.lh_nome_atividade);
+        TextView itemDescricaoAtividade = (TextView )  convertView.findViewById(R.id.lh_descricao);
+        TextView itemAreaInteresse = (TextView )  convertView.findViewById(R.id.lh_area_interesse);
 
-        itemNomeONG.setText(atividade.getNomeOng());
         itemNomeAtividade.setText(atividade.getNomeAtividade());
+        itemDescricaoAtividade.setText(atividade.getDescricao());
+        itemAreaInteresse.setText(atividade.getArea_interesse());
 
-        return v;
+        return convertView;
     }
 }
 

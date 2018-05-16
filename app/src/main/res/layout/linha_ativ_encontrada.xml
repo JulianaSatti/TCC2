@@ -6,18 +6,25 @@
     android:layout_gravity="right">
 
         <TextView
+            android:id="@+id/lh_nome_atividade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome da  ONG"
-            android:id="@+id/lh_nome_ong"
             android:layout_marginTop="10dp"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title"/>
+            android:text="Nome da  Atividade"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title" />
 
         <TextView
+    android:id="@+id/lh_descricao"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Descricao"
+    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+        <TextView
+            android:id="@+id/lh_area_interesse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:text="Nome da Atividade"
-            android:id="@+id/lh_nome_atividade"/>
+            android:text="Area Interesse"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
 </LinearLayout>
