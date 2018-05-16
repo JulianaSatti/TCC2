@@ -29,6 +29,7 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInApi;
@@ -56,8 +57,8 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
     public static final int SIGN_IN_CODE=777;
     private Button dados, c_facebook;
 
-    CallbackManager callbackManager;
-    ProgressDialog mDialog;
+    private CallbackManager callbackManager;
+    private LoginButton loginButton;
 
 
     @Override
@@ -105,6 +106,31 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
             }
         });
 
+        ///facebook///
+        callbackManager = CallbackManager.Factory.create();
+
+        loginButton = (LoginButton) findViewById(R.id.entrar_facebook);
+        // loginButton.setReadPermissions(Arrays.asList("email", "public_profile"));
+        loginButton.setReadPermissions("email", "public_profile");
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                // handleFacebookAccessToken(loginResult.getAccessToken());
+                //Toast.makeText(getApplicationContext(), R.string.login_in, Toast.LENGTH_SHORT ).show();
+                goMainScreenFacebook();
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getApplicationContext(), R.string.cancel_login, Toast.LENGTH_SHORT ).show();
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Toast.makeText(getApplicationContext(), R.string.error_login, Toast.LENGTH_SHORT ).show();
+            }
+        });
+
 
     }
 
@@ -116,6 +142,7 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SIGN_IN_CODE){
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult (result);
@@ -128,6 +155,13 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
         }else {
             Toast.makeText(this, "Não pode iniciar sessão", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void goMainScreenFacebook(){
+        Intent intent = new Intent(this, FacebookActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
     }
 
     private void goMainScreen() {
