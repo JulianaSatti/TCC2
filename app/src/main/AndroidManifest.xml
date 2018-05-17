@@ -27,22 +27,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
+
         <activity
             android:name=".PesquisarOngActivity"
             android:label="ONG"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ResetActivity" />
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity android:name=".ResetActivity"
+            android:label="Reset de Senha">
+        </activity>
+
         <activity
             android:name=".CadastroActivity"
             android:label="Cadastro"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
+
         <activity
             android:name=".DoacoesActivity"
             android:label="Doações"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
+
         <activity
             android:name=".DoaMatActivity"
             android:label="Doações"
@@ -50,28 +62,44 @@
         <activity
             android:name=".DoaFinActivity"
             android:label="Doações"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
+
         <activity
             android:name=".TelaInicialActivity"
             android:label="Início"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <activity
             android:name=".BuscaAtividadesActivity"
             android:label="Buscar Atividades"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
+
         <activity
             android:name=".AtividadesEncontradasActivity"
-            android:label="Atividades Encontradas" />
-        <activity android:name=".VisualizarPerfil" />
+            android:label="Dados da Atividade" >
+        </activity>
+
+        <activity android:name=".VisualizarPerfil" >
+        </activity>
+
         <activity
             android:name=".DoacoesRealizadasActivity"
-            android:label="Doações Realizadas" />
+            android:label="Doações Realizadas" >
+        </activity>
+
         <activity
             android:name=".ResultadoONGActivity"
             android:label="Resultado ONG"
-            android:screenOrientation="portrait" />
-        <activity android:name=".VisualizarAtividades"></activity>
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity android:name=".VisualizarAtividades"
+            android:label="Dados da Atividade">
+        </activity>
     </application>
 
 </manifest>
