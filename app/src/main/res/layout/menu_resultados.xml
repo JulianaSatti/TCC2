@@ -28,7 +28,8 @@
                 android:paddingLeft="20dp"
                 android:textSize="24dp"
                 android:textColor="#000"
-                tools:ignore="RtlCompat" />
+                tools:ignore="RtlCompat"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
 
             <TextView
@@ -37,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:paddingLeft="20dp"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
 
         </LinearLayout>
