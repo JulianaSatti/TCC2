@@ -96,6 +96,8 @@
     <string name="descricao_atividade">Descrição da Atividade</string>
     <string name="cancel_login">Cancelar Login</string>
     <string name="error_login">Erro Login</string>
+    <string name="possibilidade_de_levar_o_objeto_no_local">Possibilidade de levar o objeto no local?</string>
+    <string name="sim">Sim</string>
 
     <string-array name="cat_atividades">
         <item>Selecione</item>

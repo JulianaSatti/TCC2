@@ -41,6 +41,11 @@ public class ResultadoONGActivity extends AppCompatActivity {
     ArrayList endereco = new ArrayList();
     ArrayList email = new ArrayList();
     ArrayList telefone = new ArrayList();
+    ArrayList num = new ArrayList();
+    ArrayList cidade = new ArrayList();
+   // ArrayList horario = new ArrayList();
+   // ArrayList site = new ArrayList();
+
     //variaveis globais
     public static String lerListViewCat;
     public static String lerListViewRazao;
@@ -48,6 +53,10 @@ public class ResultadoONGActivity extends AppCompatActivity {
     public static String lerListViewEmail;
     public static String lerListViewTel;
     public static String lerListViewFoto;
+    public static String lerListViewNum;
+    public static String lerListViewCidade;
+   // public static String lerListViewHorario;
+   // public static String lerListViewSite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +76,11 @@ public class ResultadoONGActivity extends AppCompatActivity {
                 lerListViewEmail = email.get(position).toString();
                 lerListViewTel = telefone.get(position).toString();
                 lerListViewFoto = foto.get(position).toString();
+                lerListViewCidade = cidade.get(position).toString();
+                // depois ira abrir a tela Detalhes com as informaçoes a cima solicitadas///////
+                Intent intent = new Intent(ResultadoONGActivity.this,
+                        /* activity a ser chamada */ detalhesOngActivity.class);
+                startActivity(intent);
 
 
             }
@@ -80,6 +94,8 @@ public class ResultadoONGActivity extends AppCompatActivity {
         endereco.clear();
         email.clear();
         telefone.clear();
+        num.clear();
+        cidade.clear();
 
         final ProgressDialog progressDialog = new ProgressDialog(ResultadoONGActivity.this);
         progressDialog.setMessage("Carregando dados...");
@@ -99,8 +115,10 @@ public class ResultadoONGActivity extends AppCompatActivity {
 
                         foto.add( jArray.getJSONObject(i).getString("numero") );
                         endereco.add( jArray.getJSONObject(i).getString("rua") );
+                       // num.add( jArray.getJSONObject(i).getString(" ") );
                         email.add( jArray.getJSONObject(i).getString("email") );
                         telefone.add( jArray.getJSONObject(i).getString("telefone") );
+                        cidade.add( jArray.getJSONObject(i).getString("cidade") );
 
                     }
                     listView.setAdapter(new ImagemAdapter(getApplicationContext()));

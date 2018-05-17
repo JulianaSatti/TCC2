@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_marginBottom="17dp"
-        android:text="Possibilidade de levar o objeto no local?"
+        android:text="@string/possibilidade_de_levar_o_objeto_no_local"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/radioOP"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginStart="20dp"
-            android:text="Sim" />
+            android:text="@string/sim" />
 
         <RadioButton
             android:id="@+id/radio_nao"
