@@ -2,6 +2,7 @@ package com.example.tcc.tcc;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -130,6 +131,19 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
                 Toast.makeText(getApplicationContext(), R.string.error_login, Toast.LENGTH_SHORT ).show();
             }
         });
+
+        //Manter logado
+        SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
+        boolean jaLogou = prefs.getBoolean("estaLogado", false);
+
+        if(jaLogou) {
+            // chama a tela inicial
+            startActivity(new Intent(MainActivity.this, TelaInicialActivity.class));
+        }
+        //else {
+            // chama a tela de login
+            //startActivity(new Intent(MainActivity.this,LoginActivity.class));
+        //}
 
 
     }

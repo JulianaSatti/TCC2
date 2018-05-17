@@ -2,6 +2,7 @@ package com.example.tcc.tcc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -72,8 +73,6 @@ public class LoginActivity extends Activity {
             }
         });
 
-
-
     }
 
     //ira verificar os dados informadors
@@ -89,6 +88,12 @@ public class LoginActivity extends Activity {
         protected void onPostExecute(String resultado) {
             //loginEmail.setText(resultado);
             if (resultado.contains("login_ok")){
+                //grava a a informacao do usuario logado
+                SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("estaLogado", true);
+
+                editor.commit();
 
                 Intent abreInicio = new Intent(LoginActivity.this, TelaInicialActivity.class);
                 startActivity(abreInicio);
