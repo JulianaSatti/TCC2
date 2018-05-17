@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -46,30 +47,36 @@ public class AtividadesEncontradasActivity extends AppCompatActivity implements 
     ListView listEncontradas;
     Spinner categoria;
     public static atividadesEncontradas atividadeStatica;
+    TextView textAtividadeNaoEncontrada;
 
     atividadesEncontradasAdapter atividadesEncontradasAdapter;
-    List<atividadesEncontradas> lista;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividades_encontradas);
 
-        //pega o item que esta na activity anterior
+        textAtividadeNaoEncontrada = (TextView) findViewById(R.id.textViewAtividadesNaoEncontradas);
 
-        //Intent busca = getIntent();
+        textAtividadeNaoEncontrada.setVisibility(View.INVISIBLE);
 
         listEncontradas = (ListView) findViewById(R.id.lv_atividades_encontradas);
         listEncontradas.setOnItemClickListener(this);
-        BuscarAtividades();
+        Boolean TemDado = BuscarAtividades();
+
+        if (TemDado == false) {
+            textAtividadeNaoEncontrada.setVisibility(View.VISIBLE);
+            Toast.makeText(this, "Nenhuma Atividade Encontrada", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
-    public void BuscarAtividades() {
-        Gson gson = new Gson();
+    public Boolean BuscarAtividades() {
+
         ArrayList<atividadesEncontradas> fim = new ArrayList<atividadesEncontradas>();
+        Boolean TemDado = false;
         try {
-            //Toast.makeText(this,"Pesquisando por:" + categAtualAtividade,Toast.LENGTH_LONG).show();
+
             String retorno = new HTTPService("buscarAtividades", "categoria="+categAtualAtividade).execute().get();
 
             JSONArray json = new JSONArray(retorno);
@@ -90,7 +97,7 @@ public class AtividadesEncontradasActivity extends AppCompatActivity implements 
                 atividadesEncontradas.setVoluntario(json.getJSONObject(i).getString("voluntario"));
                 atividadesEncontradas.setQtd_voluntario(json.getJSONObject(i).getString("qtd_voluntario"));
 
-
+                TemDado = true;
                 fim.add(atividadesEncontradas);
             }
 
@@ -102,6 +109,7 @@ public class AtividadesEncontradasActivity extends AppCompatActivity implements 
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        return TemDado;
     }
 
     public void carregaResultadoLista(ArrayList<atividadesEncontradas> lista){
@@ -115,58 +123,4 @@ public class AtividadesEncontradasActivity extends AppCompatActivity implements 
         Intent novaTela = new Intent(getApplicationContext(),VisualizarAtividades.class);
         startActivity(novaTela);
     }
-    /*
-    @Override
-    protected void onStart() {
-
-        super.onStart();
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-
-
-        String text_spinner_categoria = categoria.getSelectedItem().toString();
-
-        url = "http://35.199.87.88/api/buscarAtividades.php";
-        parametros = "categoria=" + text_spinner_categoria ;
-        AsyncTask<String, Void, String> json = new SolicitaDados().execute(url);
-
-
-    }
-
-    /*
-    class SolicitaDados extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected String doInBackground(String... urls){
-
-            return Conexao.postDados(urls[0], parametros);
-        }
-
-    }
-
-
-    private void listaAtividadesEncontradas(){
-
-        Ion.with(getBaseContext())
-                .load(url)
-                .asJsonArray()
-                .setCallback(new FutureCallback<JsonArray>() {
-                    @Override
-                    public void onCompleted(Exception e, JsonArray result) {
-                        for (int i = 0; i <result.size(); i++){
-                            JsonObject obj = result.get(i).getAsJsonObject();
-
-                            atividadesEncontradas ae = new atividadesEncontradas();
-
-                            ae.setId(obj.get("Id").getAsInt());
-                            ae.setNomeOng(obj.get("NomeONG ").getAsString());
-                            ae.setNomeAtividade(obj.get("NomeAtividade").getAsString());
-                        }
-
-                    }
-
-
-                });
-    }*/
 }

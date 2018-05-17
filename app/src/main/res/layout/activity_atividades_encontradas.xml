@@ -6,12 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.example.tcc.tcc.AtividadesEncontradasActivity">
 
+    <TextView
+        android:id="@+id/textViewAtividadesNaoEncontradas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Não foram encontradas atividades para esta busca"
+        android:visibility="invisible" />
+
     <ListView
         android:id="@+id/lv_atividades_encontradas"
         android:layout_width="368dp"
         android:layout_height="495dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="9dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="8dp">
+
+    </ListView>
 
 </RelativeLayout>

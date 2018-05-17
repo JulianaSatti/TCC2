@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -30,6 +31,7 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
     public static String categAtualAtividade;
     private AsyncHttpClient clienteAtividade;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,7 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
         spinner_atividades = (Spinner) findViewById(R.id.spinner_atividades);
         descricaoAtividade = (EditText) findViewById(R.id.descricao_atividade);
         categorias = (Spinner) findViewById(R.id.spinner_categoria_atividade);
+
 
         this.clienteAtividade = new AsyncHttpClient();
 
@@ -53,7 +56,7 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
              @Override
              public void onClick(View v) {
 
-                 if (spinner_atividades.getSelectedItem().toString().equals("Nome da ONG")) {
+                 if (spinner_atividades.getSelectedItem().toString().equals("Descrição da Atividade")) {
                      categAtualAtividade = descricaoAtividade.getText().toString();
                  }
                  else {
@@ -64,6 +67,7 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
                          categAtualAtividade = categorias.getSelectedItem().toString();
                      }
                  }
+
                  //Toast.makeText(getApplicationContext(),categAtualAtividade,Toast.LENGTH_LONG).show();
                  startActivity(new Intent(BuscaAtividadesActivity.this, AtividadesEncontradasActivity.class));
              }
