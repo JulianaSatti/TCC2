@@ -43,8 +43,9 @@
     </string-array>
 
     //facebook
-    <string name="facebook_app_id">340797683102070</string>
-    <string name="facebook_login_protocol_scheme">fb340797683102070</string>
+
+    <string name="facebook_app_id">2070694703216247</string>
+    <string name="fb_login_protocol_scheme">fb2070694703216247</string>
 
     <string name="o_que_deseja_doar">O que deseja doar?</string>
     <string name="categoria">Categoria</string>

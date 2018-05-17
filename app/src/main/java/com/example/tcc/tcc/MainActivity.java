@@ -132,6 +132,7 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
             }
         });
 
+
         //Manter logado
         SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
         boolean jaLogou = prefs.getBoolean("estaLogado", false);
