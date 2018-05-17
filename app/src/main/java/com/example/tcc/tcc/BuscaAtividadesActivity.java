@@ -44,7 +44,7 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
         chamarSpinner();
 
         //Pega o array que esta la no string.xml
-         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.opcoes, android.R.layout.simple_spinner_item);
+         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.opcoesAtividade, android.R.layout.simple_spinner_item);
         spinner_atividades.setAdapter(adapter);
 
          //Pega qual item do spinner foi selecionado
@@ -52,17 +52,19 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
          buscar.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 if (categorias.getSelectedItem().toString()=="Nome da ONG"){
+
+                 if (spinner_atividades.getSelectedItem().toString().equals("Nome da ONG")) {
                      categAtualAtividade = descricaoAtividade.getText().toString();
                  }
                  else {
 
-                     if (categorias.getSelectedItem().toString() == "Todas") {
-                         categAtualAtividade = "";
+                 if (spinner_atividades.getSelectedItem().toString().equals("Todas")){
+                     categAtualAtividade = "";
                      } else {
                          categAtualAtividade = categorias.getSelectedItem().toString();
                      }
                  }
+                 //Toast.makeText(getApplicationContext(),categAtualAtividade,Toast.LENGTH_LONG).show();
                  startActivity(new Intent(BuscaAtividadesActivity.this, AtividadesEncontradasActivity.class));
              }
          });

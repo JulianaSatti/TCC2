@@ -31,12 +31,20 @@
 
     //colocar os itens no spinner
     <string name="opcao">Escolha</string>
+    <string-array name="opcoesAtividade">
+        <item>Todas</item>
+        <item>Categoria</item>
+        <item>Descrição da Atividade</item>
+    </string-array>
     <string-array name="opcoes">
         <item>Todas</item>
         <item>Categoria</item>
         <item>Nome da ONG</item>
     </string-array>
 
+    //facebook
+    <string name="facebook_app_id">340797683102070</string>
+    <string name="facebook_login_protocol_scheme">fb340797683102070</string>
 
     <string name="o_que_deseja_doar">O que deseja doar?</string>
     <string name="categoria">Categoria</string>
@@ -92,13 +100,5 @@
         <item>Esportes</item>
         <item>Livros</item>
     </string-array>
-
-    <string name="facebook_app_id">2070694703216247</string>
-    <string name="fb_login_protocol_scheme">fb2070694703216247</string>
-
-    <string name="login_in">login_in</string>
-
-    <string name="cancel_login">cancel_login</string>
-    <string name="error_login">error_login</string>
 
 </resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VisualizarAtividades">
+
+    <LinearLayout
+        android:id="@+id/idLinearLayoutVisualizaAtividades"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textViewNomeOng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome da Ong" />
+
+        <TextView
+            android:id="@+id/textViewNomeAtividade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome Atividade" />
+
+        <TextView
+            android:id="@+id/textViewDescricaoAtividade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descrição Atividade" />
+
+        <TextView
+            android:id="@+id/textViewAreaInteresse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Area de Interesse" />
+
+        <TextView
+            android:id="@+id/textViewData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data" />
+
+        <TextView
+            android:id="@+id/textViewLocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Local" />
+
+        <TextView
+            android:id="@+id/textViewPossuiVoluntario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Está atividade precisa de voluntário?" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewVoluntarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Voluntarios" />
+
+            <TextView
+                android:id="@+id/textViewQtdVoluntarios"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Quantid. Voluntarios" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

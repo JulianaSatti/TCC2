@@ -7,6 +7,8 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -37,12 +39,13 @@ import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 import static com.example.tcc.tcc.BuscaAtividadesActivity.categAtualAtividade;
 
 
-public class AtividadesEncontradasActivity extends AppCompatActivity {
+public class AtividadesEncontradasActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     String parametros = "";
     String url = "";
     ListView listEncontradas;
     Spinner categoria;
+    public static atividadesEncontradas atividadeStatica;
 
     atividadesEncontradasAdapter atividadesEncontradasAdapter;
     List<atividadesEncontradas> lista;
@@ -58,7 +61,7 @@ public class AtividadesEncontradasActivity extends AppCompatActivity {
         //Intent busca = getIntent();
 
         listEncontradas = (ListView) findViewById(R.id.lv_atividades_encontradas);
-
+        listEncontradas.setOnItemClickListener(this);
         BuscarAtividades();
     }
 
@@ -66,10 +69,11 @@ public class AtividadesEncontradasActivity extends AppCompatActivity {
         Gson gson = new Gson();
         ArrayList<atividadesEncontradas> fim = new ArrayList<atividadesEncontradas>();
         try {
+            //Toast.makeText(this,"Pesquisando por:" + categAtualAtividade,Toast.LENGTH_LONG).show();
             String retorno = new HTTPService("buscarAtividades", "categoria="+categAtualAtividade).execute().get();
 
             JSONArray json = new JSONArray(retorno);
-            Toast.makeText(this,fim.toString(),Toast.LENGTH_LONG).show();
+
             for(int i = 0; i< json.length();i++){
                 atividadesEncontradas atividadesEncontradas = new atividadesEncontradas();
 
@@ -79,6 +83,13 @@ public class AtividadesEncontradasActivity extends AppCompatActivity {
                 atividadesEncontradas.setNomeAtividade(json.getJSONObject(i).getString("atividade"));
                 atividadesEncontradas.setDescricao(json .getJSONObject(i).getString("descricao"));
                 atividadesEncontradas.setArea_interesse(json.getJSONObject(i).getString("area_interesse"));
+                atividadesEncontradas.setData(json.getJSONObject(i).getString("data"));
+                atividadesEncontradas.setHora_inicio(json.getJSONObject(i).getString("hora_inicio"));
+                atividadesEncontradas.setHora_termino(json.getJSONObject(i).getString("hora_termino"));
+                atividadesEncontradas.setLocal(json.getJSONObject(i).getString("local"));
+                atividadesEncontradas.setVoluntario(json.getJSONObject(i).getString("voluntario"));
+                atividadesEncontradas.setQtd_voluntario(json.getJSONObject(i).getString("qtd_voluntario"));
+
 
                 fim.add(atividadesEncontradas);
             }
@@ -94,9 +105,15 @@ public class AtividadesEncontradasActivity extends AppCompatActivity {
     }
 
     public void carregaResultadoLista(ArrayList<atividadesEncontradas> lista){
-
         atividadesEncontradasAdapter = new atividadesEncontradasAdapter(AtividadesEncontradasActivity.this, lista);
         listEncontradas.setAdapter(atividadesEncontradasAdapter);//preenchido dinamicamente
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        atividadeStatica = atividadesEncontradasAdapter.getItem(i);
+        Intent novaTela = new Intent(getApplicationContext(),VisualizarAtividades.class);
+        startActivity(novaTela);
     }
     /*
     @Override

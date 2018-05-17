@@ -71,10 +71,7 @@
             android:name=".ResultadoONGActivity"
             android:label="Resultado ONG"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".FacebookActivity"
-            android:label="Inicio"
-            android:screenOrientation="portrait" />
+        <activity android:name=".VisualizarAtividades"></activity>
     </application>
 
 </manifest>
