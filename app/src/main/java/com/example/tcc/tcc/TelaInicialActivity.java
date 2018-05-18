@@ -55,7 +55,7 @@ public class TelaInicialActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-                        foto2 = (ImageView) findViewById(R.id.inicio_foto);
+                        foto2 = findViewById(R.id.inicio_foto);
                         foto2.setImageBitmap(imgInicial);
 
                     }
@@ -64,7 +64,7 @@ public class TelaInicialActivity extends AppCompatActivity {
             }
         }.start();
 
-        doacoes = (Button) findViewById(R.id.btn_doacoes);//aqui que faz transicao de tela ao clique no btn Doações
+        doacoes = findViewById(R.id.btn_doacoes);//aqui que faz transicao de tela ao clique no btn Doações
         doacoes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +73,7 @@ public class TelaInicialActivity extends AppCompatActivity {
         });
 
         //ira acessar a tela pesquisar ONG
-        ong = (Button) findViewById(R.id.btn_ongs);
+        ong = findViewById(R.id.btn_ongs);
         ong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +81,7 @@ public class TelaInicialActivity extends AppCompatActivity {
             }
         });
 
-        atividade = (Button) findViewById(R.id.btn_atividades);
+        atividade = findViewById(R.id.btn_atividades);
         atividade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
