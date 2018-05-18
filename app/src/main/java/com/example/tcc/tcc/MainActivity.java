@@ -130,7 +130,7 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
 
 
         //Manter logado
-        SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
+        /*SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
         boolean jaLogou = prefs.getBoolean("estaLogado", false);
 
         if(jaLogou) {
@@ -140,7 +140,7 @@ public class MainActivity extends Activity implements GoogleApiClient.OnConnecti
         //else {
             // chama a tela de login
             //startActivity(new Intent(MainActivity.this,LoginActivity.class));
-        //}
+        //}*/
 
 
     }

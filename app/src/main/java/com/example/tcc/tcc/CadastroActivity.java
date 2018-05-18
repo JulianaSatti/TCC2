@@ -48,7 +48,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CadastroActivity extends AppCompatActivity  {
-    EditText nome, email, senha, outra_sen;
+    EditText nome, email, senha, outra_sen, telefone;
     Button envFoto;
     ImageView foto;
     String url = "";
@@ -67,6 +67,7 @@ public class CadastroActivity extends AppCompatActivity  {
 //Tranferir dados do layout para variaveis locais
         nome = (EditText) findViewById(R.id.cadastro_nome);
         email = (EditText) findViewById(R.id.cadastro_email);
+        telefone = (EditText) findViewById(R.id.cadastro_telefone);
         senha = (EditText) findViewById(R.id.cadastro_senha);
         outra_sen = (EditText) findViewById(R.id.cadastro_repetirsenha);
         envFoto = (Button) findViewById(R.id.Cadastro_btn_foto);
@@ -144,13 +145,13 @@ public class CadastroActivity extends AppCompatActivity  {
 
                     String tex_nome = nome.getText().toString();
                     String tex_email = email.getText().toString();
+                    String tex_telefone = telefone.getText().toString();
                     String tex_senha = senha.getText().toString();
                     String outra_senha = outra_sen.getText().toString();
 
-                    if (tex_nome.isEmpty() || tex_email.isEmpty() || tex_senha.isEmpty()) {
+                    if (tex_nome.isEmpty() || tex_email.isEmpty() || tex_senha.isEmpty() || tex_telefone.isEmpty()) {
 
-//irá mostrar um alerta na tela
-
+                        //irá mostrar um alerta na tela
                         AlertDialog.Builder dlg = new AlertDialog.Builder(this);
                         dlg.setTitle("Aviso");
                         dlg.setIcon(R.mipmap.ic_aviso);
@@ -171,7 +172,7 @@ public class CadastroActivity extends AppCompatActivity  {
                                 {
                                     ////Realiza de fato a tentativa de envio do formulario///////////////////////
                                     url =  "http://35.199.87.88/api/registrar.php";
-                                    parametros = "nome=" + tex_nome + "&email=" + tex_email + "&senha=" + tex_senha;
+                                    parametros = "nome=" + tex_nome + "&email=" + tex_email + "&senha=" + tex_senha + "&telefone=" + tex_telefone;
                                     new SolicitaDados().execute(url);
                                     /////////////////////////////////////////////////////////////////////////////
                                 } else {
