@@ -16,13 +16,14 @@ public class FacebookActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_facebook);
+        setContentView(R.layout.activity_tela_inicial);
 
         if (AccessToken.getCurrentAccessToken() == null){
             goLoginScreen();
         }
 
-        f_doacao = (Button) findViewById(R.id.f_doacoes);//aqui que faz transicao de tela ao clique no btn Doações
+        //ira acessar a tela Doações
+        f_doacao = (Button) findViewById(R.id.f_doacoes);
         f_doacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

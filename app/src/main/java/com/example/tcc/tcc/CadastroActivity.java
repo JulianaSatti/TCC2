@@ -73,9 +73,6 @@ public class CadastroActivity extends AppCompatActivity  {
         envFoto = (Button) findViewById(R.id.Cadastro_btn_foto);
         foto = (ImageView) findViewById(R.id.cadastro_foto);
 
-
-
-
 ///////////////////////////////////////////////////Pede permissao em tempo real (API 23...)/////////////////////////////////////////////////
 
         if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
@@ -138,7 +135,7 @@ public class CadastroActivity extends AppCompatActivity  {
             case R.id.cadastro_ok:
 
                 ConnectivityManager connMgr = (ConnectivityManager)
-                        getSystemService(Context.CONNECTIVITY_SERVICE);
+                                getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
                 if (networkInfo != null && networkInfo.isConnected()) {

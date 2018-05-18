@@ -1,28 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:context="com.example.tcc.tcc.TelaInicialActivity"
+    tools:layout_editor_absoluteY="81dp">
 
-    <include
-        layout="@layout/app_bar_perfil"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/inicio_foto"
+        android:layout_width="110dp"
+        android:layout_height="148dp"
+        android:layout_gravity="center"
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
+
+        android:layout_marginBottom="14dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:contentDescription="@string/tod"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_perfil"
-        app:menu="@menu/activity_perfil_drawer" />
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="28dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:text="@string/bem_vindo"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ongs"
+        app:layout_constraintStart_toStartOf="@+id/btn_ongs"
+        app:layout_constraintTop_toBottomOf="@+id/inicio_foto" />
 
+    <Button
+        android:id="@+id/btn_ongs"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="28dp"
+        android:layout_weight="1"
 
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:baselineAligned="false"
 
-</android.support.v4.widget.DrawerLayout>
+        android:text="@string/ongs"
+        app:layout_constraintBottom_toTopOf="@+id/btn_doacoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:targetApi="lollipop" />
 
+    <Button
+        android:id="@+id/btn_doacoes"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="28dp"
+        android:layout_weight="1"
+
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/doa_es"
+        app:layout_constraintBottom_toTopOf="@+id/btn_atividades"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ongs"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/btn_atividades"
+        android:layout_width="160dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="28dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_orange_light"
+        android:text="Atividades"
+        android:textColorLink="@android:color/background_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_doacoes"
+        tools:targetApi="lollipop" />
+
+</android.support.constraint.ConstraintLayout>

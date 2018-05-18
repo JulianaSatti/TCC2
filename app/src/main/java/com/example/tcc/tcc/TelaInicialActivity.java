@@ -5,13 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +20,7 @@ import java.net.URL;
 
 import static com.example.tcc.tcc.LoginActivity.enderFoto;
 
-public class TelaInicialActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class TelaInicialActivity extends AppCompatActivity {
 
     private Button ong;
     private Button doacoes;
@@ -39,21 +35,9 @@ public class TelaInicialActivity extends AppCompatActivity implements Navigation
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
         ////////////////////////////imagem inicial//////////////////////////////////
-        new Thread(){
-            public void run(){
+        new Thread() {
+            public void run() {
 
                 try {
 
@@ -62,11 +46,11 @@ public class TelaInicialActivity extends AppCompatActivity implements Navigation
                     InputStream input = conexao.getInputStream();
                     imgInicial = BitmapFactory.decodeStream(input);
 
-                }catch (IOException e){
+                } catch (IOException e) {
 
                 }
 
-                handler.post(new Runnable(){
+                handler.post(new Runnable() {
 
                     @Override
                     public void run() {
@@ -107,20 +91,11 @@ public class TelaInicialActivity extends AppCompatActivity implements Navigation
     }
 
     @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+    public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_tela_inicial, menu);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.perfil, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -137,19 +112,5 @@ public class TelaInicialActivity extends AppCompatActivity implements Navigation
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) { //seta o que quer fazer em cada um dos elementos
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.perfil_btn) {
-            // Handle the camera action
-            Intent intent = new Intent(this, VisualizarPerfil.class);
-            startActivity(intent);
-        }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 }
+

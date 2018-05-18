@@ -47,7 +47,7 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
         chamarSpinner();
 
         //Pega o array que esta la no string.xml
-         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.opcoesAtividade, android.R.layout.simple_spinner_item);
+         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.opcoesAtividade, android.R.layout.simple_spinner_dropdown_item);
         spinner_atividades.setAdapter(adapter);
 
          //Pega qual item do spinner foi selecionado
