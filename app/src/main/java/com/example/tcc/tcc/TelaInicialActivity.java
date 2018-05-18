@@ -108,7 +108,9 @@ public class TelaInicialActivity extends AppCompatActivity {
             finish();
             return true;
         }if (id ==R.id.action_perfil){
-            startActivity(new Intent(TelaInicialActivity.this,VisualizarPerfil.class));
+            startActivity(new Intent(TelaInicialActivity.this,VisualizarPerfilActivity.class));
+        }if (id==R.id.action_alterar_senha){
+            startActivity(new Intent(TelaInicialActivity.this,AlterarSenhaActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

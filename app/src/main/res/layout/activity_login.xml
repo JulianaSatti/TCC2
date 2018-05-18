@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/add_senha"
-        android:layout_width="0dp"
+        android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/senha"
@@ -21,7 +21,7 @@
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="0dp"
+        android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="28dp"
@@ -45,16 +45,19 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/entrar"
         app:layout_constraintEnd_toEndOf="@+id/add_senha"
-        app:layout_constraintTop_toBottomOf="@+id/add_senha" />
+        app:layout_constraintTop_toBottomOf="@+id/add_senha"
+        android:gravity="end" />
 
     <Button
         android:id="@+id/entrar"
-        android:layout_width="137dp"
-        android:layout_height="wrap_content"
+        android:layout_width="139dp"
+        android:layout_height="64dp"
         android:layout_marginBottom="27dp"
-        android:background="@color/colorPrimary"
+
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_blue_light"
         android:text="@string/entrar_login"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

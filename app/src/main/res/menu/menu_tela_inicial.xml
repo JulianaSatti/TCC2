@@ -14,6 +14,12 @@
         android:id="@+id/action_perfil"
         android:title="Perfil"
         app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/action_alterar_senha"
+        android:title="Alterar Senha"
+        app:showAsAction="never">
 
     </item>
 
