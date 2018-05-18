@@ -107,6 +107,8 @@ public class TelaInicialActivity extends AppCompatActivity {
 
             finish();
             return true;
+        }if (id ==R.id.action_perfil){
+            startActivity(new Intent(TelaInicialActivity.this,VisualizarPerfil.class));
         }
 
         return super.onOptionsItemSelected(item);
