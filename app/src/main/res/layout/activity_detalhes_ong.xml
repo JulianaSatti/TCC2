@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -13,75 +14,195 @@
             android:id="@+id/foto2"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_gravity="center"/>
-
-
+            android:layout_gravity="center" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/detRazao"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingLeft="20dp"
-            android:textAlignment="textEnd"
-            android:textColor="#000"
-            android:textSize="20sp"
-            tools:ignore="RtlCompat" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/detCat"
-            android:layout_marginTop="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:paddingLeft="20dp"
-            android:textColor="#000" />
+            <TextView
+                android:id="@+id/detRazao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                tools:ignore="RtlCompat" />
 
-        <TextView
-            android:id="@+id/detEmail"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:paddingLeft="20dp"
-            android:textColor="#000" />
+            <TextView
+                android:id="@+id/detCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-17dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detCidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detUF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-17dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detHorario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detSite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/detAtiv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:text="Visualizar Atividades"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorLink="?android:attr/colorEdgeEffect"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:targetApi="lollipop" />
+
+            <TextView
+                android:id="@+id/detDadoBancarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="13dp"
+                android:text="Dados Bancários"
+                android:textAlignment="textEnd"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/detCNPJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:text="CNPJ"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="18sp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/ContasNaoEncontradas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Esta ONG não possui dados bancários"
+                android:visibility="invisible" />
+
+            <ListView
+                android:id="@+id/lv_contas"
+                android:layout_width="wrap_content"
+                android:layout_height="210dp"
+                android:layout_marginTop="-18dp"
+                android:touchscreenBlocksFocus="false"
+                tools:layout_editor_absoluteX="9dp"
+                tools:layout_editor_absoluteY="8dp">
+
+            </ListView>
 
 
-        <TextView
-            android:id="@+id/detTel"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:paddingLeft="20dp"
-            android:textColor="#000" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/detEnd"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:paddingLeft="20dp"
-            android:textColor="#000" />
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/detCidade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="20dp"
-            android:textColor="#000" />
 
-    </LinearLayout>
+
 
 
 
