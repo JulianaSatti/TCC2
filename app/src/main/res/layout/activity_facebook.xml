@@ -57,15 +57,7 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/logout"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:layout_gravity="end"
-        android:text="@string/logout"
-        android:textColor="@color/cardview_dark_background"
-        android:onClick="logout"/>
+
 
 
 
