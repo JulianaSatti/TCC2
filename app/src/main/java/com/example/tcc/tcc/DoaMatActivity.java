@@ -1,10 +1,10 @@
 package com.example.tcc.tcc;
 
-import android.*;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -19,7 +19,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -38,13 +37,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import static android.R.layout.simple_spinner_item;
 
 public class DoaMatActivity extends AppCompatActivity {
     EditText nome, descricao;
@@ -69,7 +63,7 @@ public class DoaMatActivity extends AppCompatActivity {
         //Tranferir dados do layout para variaveis locais
         spinner_obj = (Spinner) findViewById(R.id.spinner_obj);
         nome = (EditText) findViewById(R.id.nom_obj);
-        descricao = (EditText) findViewById(R.id.desc_obj);
+        descricao = (EditText) findViewById(R.id.desc_obj_visualiza);
         add_foto = (Button) findViewById(R.id.adicionar_foto);
         radioGroup = (RadioGroup) findViewById(R.id.radioOP);
         enviar_obj = (Button) findViewById(R.id.enviar_obj);
@@ -112,8 +106,10 @@ public class DoaMatActivity extends AppCompatActivity {
 
                     } else {
                         ////Realiza de fato a tentativa de envio do formulario///////////////////////
+                        SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
+                        String id_user = prefs.getString("id",null);
                         url = "http://35.199.87.88/api/cadastro_doacoes.php";
-                        parametros = "categoria=" + text_spinner_categoria + "&nome=" + text_nome + "&descricao=" + text_descricao + "&retirada=" +rd_retirada;
+                        parametros = "user_id=" + id_user + "&categoria=" + text_spinner_categoria + "&nome=" + text_nome + "&descricao=" + text_descricao + "&retirada=" +rd_retirada;
                         new SolicitaDados().execute(url);
                     }
 

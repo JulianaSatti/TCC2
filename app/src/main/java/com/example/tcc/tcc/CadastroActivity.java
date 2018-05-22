@@ -13,14 +13,12 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -36,12 +34,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.common.api.Response;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileDescriptor;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -64,10 +58,10 @@ public class CadastroActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-//Tranferir dados do layout para variaveis locais
+        //Tranferir dados do layout para variaveis locais
         nome = (EditText) findViewById(R.id.cadastro_nome);
         email = (EditText) findViewById(R.id.cadastro_email);
-        telefone = (EditText) findViewById(R.id.cadastro_telefone);
+        telefone = (EditText) findViewById(R.id.alterar_telefone);
         senha = (EditText) findViewById(R.id.cadastro_senha);
         outra_sen = (EditText) findViewById(R.id.cadastro_repetirsenha);
         envFoto = (Button) findViewById(R.id.Cadastro_btn_foto);

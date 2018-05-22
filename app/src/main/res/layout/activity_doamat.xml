@@ -66,7 +66,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/foto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_obj"
+        app:layout_constraintTop_toBottomOf="@+id/desc_obj_visualiza"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -115,7 +115,7 @@
 
 
     <EditText
-        android:id="@+id/desc_obj"
+        android:id="@+id/desc_obj_visualiza"
         android:layout_width="0dp"
         android:layout_height="39dp"
         android:layout_marginBottom="51dp"
@@ -145,7 +145,7 @@
         android:ems="10"
         android:hint="Nome"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/desc_obj"
+        app:layout_constraintBottom_toTopOf="@+id/desc_obj_visualiza"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -173,7 +173,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/adicionar_foto"
-        app:layout_constraintTop_toBottomOf="@+id/desc_obj"
+        app:layout_constraintTop_toBottomOf="@+id/desc_obj_visualiza"
         app:layout_constraintVertical_bias="0.459"
         app:srcCompat="@color/cardview_light_background" />
 

@@ -29,61 +29,64 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".PesquisarOngActivity"
             android:label="ONG"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResetActivity"
-            android:label="Esqueci Minha Senha"></activity>
+            android:label="Esqueci Minha Senha" />
         <activity
             android:name=".CadastroActivity"
             android:label="Cadastro"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoacoesActivity"
             android:label="Doações"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoaMatActivity"
             android:label="Doações"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoaFinActivity"
             android:label="Doações"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".BuscaAtividadesActivity"
             android:label="Buscar Atividades"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AtividadesEncontradasActivity"
-            android:label="Dados da Atividade"></activity>
+            android:label="Dados da Atividade" />
         <activity
-            android:name=".VisualizarPerfilActivity"
-            android:label="Perfil"></activity>
+            android:name=".EditarPerfilActivity"
+            android:label="Perfil" />
         <activity
             android:name=".DoacoesRealizadasActivity"
-            android:label="Doações Realizadas"></activity>
+            android:label="Doações Realizadas" />
         <activity
             android:name=".ResultadoONGActivity"
             android:label="Resultado ONG"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".VisualizarAtividades"
-            android:label="Dados da Atividade"></activity>
+            android:label="Dados da Atividade" />
         <activity
             android:name=".detalhesOngActivity"
             android:label="Informações da ONG"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TelaInicialActivity"
-            android:label="De Mãos Dadas"></activity>
-        <activity android:name=".FacebookActivity"></activity>
-
-        <activity android:name=".AlterarSenhaActivity"
-            android:label="Reset de Senha"></activity>
+            android:label="De Mãos Dadas" />
+        <activity android:name=".FacebookActivity" />
+        <activity
+            android:name=".AlterarSenhaActivity"
+            android:label="Reset de Senha" />
+        <activity android:name=".editarDoacoes" />
+        <activity android:name=".VisualizarDoacoes" />
+        <activity android:name=".InteresseVoluntarioAtividade"></activity>
     </application>
 
 </manifest>

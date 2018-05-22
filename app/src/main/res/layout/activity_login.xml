@@ -8,18 +8,6 @@
     tools:layout_editor_absoluteY="73dp">
 
     <EditText
-        android:id="@+id/add_senha"
-        android:layout_width="344dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/senha"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/recuperar_senha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
-
-    <EditText
         android:id="@+id/email"
         android:layout_width="344dp"
         android:layout_height="wrap_content"
@@ -32,6 +20,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/add_senha"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/senha"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/recuperar_senha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <Button
         android:id="@+id/recuperar_senha"

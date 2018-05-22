@@ -1,6 +1,7 @@
 package com.example.tcc.tcc;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -34,6 +35,10 @@ public class TelaInicialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial);
+
+        SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
+        String id_user = prefs.getString("id",null);
+
 
         ////////////////////////////imagem inicial//////////////////////////////////
         new Thread() {
@@ -108,7 +113,7 @@ public class TelaInicialActivity extends AppCompatActivity {
             finish();
             return true;
         }if (id ==R.id.action_perfil){
-            startActivity(new Intent(TelaInicialActivity.this,VisualizarPerfilActivity.class));
+            startActivity(new Intent(TelaInicialActivity.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(TelaInicialActivity.this,AlterarSenhaActivity.class));
         }

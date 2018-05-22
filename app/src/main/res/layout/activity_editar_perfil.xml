@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tcc.tcc.CadastroActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_width="169dp"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#e4eff4"
+        android:contentDescription="@string/tod"
+        android:src="@drawable/ic_person_black_24dp" />
+
+
+    <EditText
+        android:id="@+id/alterar_nome"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:hint="@string/nome"
+        android:inputType="textCapWords"
+        tools:layout_editor_absoluteX="20dp" />
+
+
+    <EditText
+        android:id="@+id/alterar_email"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="179dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="20dp" />
+
+
+    <EditText
+        android:id="@+id/alterar_telefone"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="125dp"
+        android:hint="Telefone"
+        tools:layout_editor_absoluteX="21dp" />
+
+    <Button
+        android:id="@+id/btin_alterar_foto"
+        android:layout_width="98dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="176dp"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="Alterar Foto"
+        android:textSize="8sp" />
+
+    <Button
+        android:id="@+id/btn_salvarEdicaoPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="Salvar" />
+
+
+</RelativeLayout>

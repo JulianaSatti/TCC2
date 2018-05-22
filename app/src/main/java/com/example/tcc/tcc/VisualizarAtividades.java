@@ -1,7 +1,10 @@
 package com.example.tcc.tcc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import static com.example.tcc.tcc.AtividadesEncontradasActivity.atividadeStatica;
@@ -24,6 +27,7 @@ public class VisualizarAtividades extends AppCompatActivity {
         TextView local = (TextView) findViewById(R.id.textViewLocal);
         TextView voluntarios = (TextView) findViewById(R.id.textViewVoluntarios);
         TextView qtd_voluntarios = (TextView) findViewById(R.id.textViewQtdVoluntarios);
+        Button interesseVoluntario = (Button) findViewById(R.id.buttonVoluntariado);
 
         nomeOng.setText(atividadeStatica.getNomeOng());
         nomeAtividade.setText(atividadeStatica.getNomeAtividade());
@@ -33,6 +37,13 @@ public class VisualizarAtividades extends AppCompatActivity {
         local.setText(atividadeStatica.getLocal());
         voluntarios.setText(atividadeStatica.getVoluntario());
         qtd_voluntarios.setText(atividadeStatica.getQtd_voluntario());
+
+        interesseVoluntario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(VisualizarAtividades.this,InteresseVoluntarioAtividade.class));
+            }
+        });
 
     }
 }

@@ -68,7 +68,7 @@
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/cadastro_telefone"
+        app:layout_constraintBottom_toTopOf="@+id/alterar_telefone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cadastro_nome" />
@@ -88,7 +88,7 @@
         app:layout_constraintBottom_toTopOf="@+id/cadastro_repetirsenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cadastro_telefone" />
+        app:layout_constraintTop_toBottomOf="@+id/alterar_telefone" />
 
     <EditText
         android:id="@+id/cadastro_repetirsenha"
@@ -108,7 +108,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Cadastro_btn_foto" />
 
     <EditText
-        android:id="@+id/cadastro_telefone"
+        android:id="@+id/alterar_telefone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="9dp"

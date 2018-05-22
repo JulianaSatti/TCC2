@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right">
+
+    <TextView
+        android:id="@+id/textViewNomeDoacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Nome Doacao"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title" />
+
+    <TextView
+        android:id="@+id/textViewCategoriaDoacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoria"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+    <TextView
+        android:id="@+id/textViewDescricaoDaocao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descricao"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+</LinearLayout>

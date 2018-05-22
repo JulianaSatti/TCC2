@@ -12,6 +12,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 public class LoginActivity extends Activity {
     Button r_senha, btnEntrar;
@@ -57,7 +59,7 @@ public class LoginActivity extends Activity {
                         Toast.makeText(getApplicationContext(),"Nenhum campo pode estar vazio", Toast.LENGTH_LONG).show();
                     }else{
                         //ira fazer a comunicação com o arquivo logar.php que está dentro do servidor (bd).
-                        url = "http://35.199.87.88/api/logar.php";
+                        url = "http://35.199.87.88/api/logar2.php";
 
                         parametros = "email=" + email + "&senha=" + senha;
                         enderFoto = loginEmail.getText().toString();
@@ -85,12 +87,32 @@ public class LoginActivity extends Activity {
         //se o usuário exister irá entrar, caso contrario ira mostrar uma mensagem de erro.
         @Override
         protected void onPostExecute(String resultado) {
+           // Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
+
             //loginEmail.setText(resultado);
             if (resultado.contains("login_ok")){
+
                 //grava a a informacao do usuario logado
                 SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("estaLogado", true);
+                //Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
+
+                try {
+                    JSONArray json = new JSONArray(resultado);
+
+                    for(int i=0; i<json.length();i++){
+                        //login login = new login();
+                       editor.putString("id",json.getJSONObject(i).getString("id"));
+                       editor.putString("nome",json.getJSONObject(i).getString("nome"));
+                       editor.putString("telefone",json.getJSONObject(i).getString("telefone"));
+                       editor.putString("email",json.getJSONObject(i).getString("email"));
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
 
                 editor.commit();
 
