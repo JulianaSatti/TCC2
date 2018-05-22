@@ -24,13 +24,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:textAlignment="textEnd"
                 android:paddingLeft="20dp"
-                android:textSize="24dp"
                 android:textColor="#000"
-                tools:ignore="RtlCompat"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
-
+                android:textSize="24dp"
+                tools:ignore="RtlCompat" />
 
             <TextView
                 android:id="@+id/cat"

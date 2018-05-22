@@ -57,15 +57,17 @@ public class PesquisarOngActivity extends AppCompatActivity {
         List<String> dist = new ArrayList<>(Arrays.asList("10 km","20 km","30 km","Todas"));
 
         dataAdapter = new ArrayAdapter<String>(this, simple_spinner_item, dist);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); //simple.. é um layout (spinner) padrão
         loc.setAdapter(dataAdapter);
 
-
+        //spinner com opções de categorias
         cliente = new AsyncHttpClient();
 
         categorias = (Spinner) findViewById(R.id.categoria);
         nomeOng = (EditText) findViewById(R.id.nome_ong);
         chamarSpinner();
+
+
 
         op.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -74,6 +76,7 @@ public class PesquisarOngActivity extends AppCompatActivity {
 
                 EditText nome = (EditText) findViewById(R.id.nome_ong);
 
+                //ao clicar na opção categoria ira mostrar outro spinner
                 categorias.setVisibility(id == 1 ? View.VISIBLE : View.INVISIBLE);
                 categorias.setEnabled(id == 1);
 
@@ -82,20 +85,21 @@ public class PesquisarOngActivity extends AppCompatActivity {
 
             }
 
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
 
-//busca ong
+//////////////////////////Ao finalizar as seleções, irá efetuar a ação de busca, de acordo com os dados/////////////
 
         buscarOng = (Button) findViewById(R.id.buscar_ong);
         buscarOng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (op.getSelectedItem().toString()=="Nome da ONG"){
-                    categAtual = nomeOng.getText().toString();
+                if (op.getSelectedItem().toString()=="Nome da ONG"){ //caso selecione Nome da Ong
+                    categAtual = nomeOng.getText().toString();// pega o nome da ong e joga na variavel categAtual
                 }
                 else {
 
@@ -105,6 +109,7 @@ public class PesquisarOngActivity extends AppCompatActivity {
                         categAtual = categorias.getSelectedItem().toString();
                     }
                 }
+
                 startActivity(new Intent(PesquisarOngActivity.this, ResultadoONGActivity.class));
             }
         });
@@ -113,8 +118,10 @@ public class PesquisarOngActivity extends AppCompatActivity {
 
     }
 
+    ////////////////////////////////////////////////criei aqui pra baixo e mais a classe categoria////////////////////////////////////////////////////////////////
     private void chamarSpinner()
     {
+        //String url = "http://bd-linny.000webhostapp.com/spinner.php";
         String url = "http://35.199.87.88/api/spinner_ong.php";
         cliente.post(url, new AsyncHttpResponseHandler() {
             @Override
@@ -134,10 +141,10 @@ public class PesquisarOngActivity extends AppCompatActivity {
     private void carregarSpinner(String resposta) {
         ArrayList<Categoria>lista = new ArrayList<Categoria>();
         try {
-            JSONArray jArray =new JSONArray(resposta);
+            JSONArray jArray =new JSONArray(resposta); //ira criar um novo jsonarray com os valores conforme o tamanho da tabela//
             for(int i=0;i<jArray.length();i++) {
                 Categoria p = new Categoria();
-                p.setCategoria(jArray.getJSONObject(i).getString("categoria"));
+                p.setCategoria(jArray.getJSONObject(i).getString("categoria")); //retorna um valor caso existir.//
                 lista.add(p);
             }
             ArrayAdapter<Categoria> a = new ArrayAdapter<Categoria>(this,android.R.layout.simple_dropdown_item_1line, lista);

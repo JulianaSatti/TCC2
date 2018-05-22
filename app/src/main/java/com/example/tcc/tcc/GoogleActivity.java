@@ -5,6 +5,9 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -124,17 +127,24 @@ public class GoogleActivity extends AppCompatActivity implements GoogleApiClient
         startActivity(intent);
     }
 
-    public void logOut(View view) {
-        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(new ResultCallback<Status>() {
-            @Override
-            public void onResult(@NonNull Status status) {
-                if (status.isSuccess()) {
-                    goLogInScreen();
-                } else {
-                    Toast.makeText(getApplicationContext(),"Não foi possivel fechar a sessão", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+    public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.sair_google_face, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_close) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
