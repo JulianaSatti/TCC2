@@ -61,11 +61,10 @@
             android:name=".AtividadesEncontradasActivity"
             android:label="Dados da Atividade" />
         <activity
-<<<<<<< HEAD
-            android:name=".EditarPerfilActivity"
-=======
+            android:name=".EditarPerfilActivity" />
+
+        <activity
             android:name=".VisualizarPerfilActivity"
->>>>>>> e1fe5a464d1de8fd0e8ffc26d75d99a446eb40d2
             android:label="Perfil" />
         <activity
             android:name=".DoacoesRealizadasActivity"
@@ -84,20 +83,22 @@
         <activity
             android:name=".TelaInicialActivity"
             android:label="De Mãos Dadas" />
+
         <activity android:name=".FacebookActivity" />
+
         <activity
             android:name=".AlterarSenhaActivity"
             android:label="Reset de Senha" />
-<<<<<<< HEAD
+
         <activity android:name=".editarDoacoes" />
         <activity android:name=".VisualizarDoacoes" />
-        <activity android:name=".InteresseVoluntarioAtividade"></activity>
-=======
+
+        <activity android:name=".InteresseVoluntarioAtividade" />
+
 
         <activity android:name=".CadastroDoacoesONG"
             android:label="Doações">
         </activity>
->>>>>>> e1fe5a464d1de8fd0e8ffc26d75d99a446eb40d2
     </application>
 
 </manifest>
