@@ -16,6 +16,8 @@
             android:layout_height="200dp"
             android:layout_gravity="center" />
 
+
+
     </LinearLayout>
 
     <ScrollView
@@ -143,12 +145,28 @@
                 android:gravity="left"
                 android:paddingLeft="20dp"
                 android:paddingStart="20dp"
-                android:text="Visualizar Atividades"
+                android:text="Atividades"
                 android:textColor="@color/colorPrimaryDark"
                 android:textColorLink="?android:attr/colorEdgeEffect"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:targetApi="lollipop" />
+
+            <TextView
+                android:id="@+id/btn_doar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="-25dp"
+                android:clickable="true"
+                android:gravity="left"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:text="Necessidades"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorLink="?android:attr/colorEdgeEffect"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/detDadoBancarios"

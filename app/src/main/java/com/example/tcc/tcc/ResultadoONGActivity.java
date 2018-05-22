@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONArray;
 
+import java.util.AbstractList;
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
@@ -35,6 +37,7 @@ public class ResultadoONGActivity extends AppCompatActivity {
 
     private ListView listView;
 
+    ArrayList id_ong = new ArrayList();
     ArrayList razao = new ArrayList();
     ArrayList categoria = new ArrayList();
     ArrayList foto = new ArrayList();
@@ -52,6 +55,7 @@ public class ResultadoONGActivity extends AppCompatActivity {
     ArrayList cnpj_conta = new ArrayList();
 
     ///Variaveis globais que podem ser lidas em qualquer activity do projeto///
+    public static String lerListViewId;
     public static String lerListViewCat;
     public static String lerListViewRazao;
     public static String lerListViewEnd;
@@ -75,11 +79,14 @@ public class ResultadoONGActivity extends AppCompatActivity {
         listView=(ListView)findViewById(R.id.listview);
         descarregarImagem();
 
+
+
 ////////quando clicar no item irá direcionar para a activity detalhes//////
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ///de acordo com o "position" irá ler as variaveis atuais abaixo: ///
+                lerListViewId =id_ong.get(position).toString();
                 lerListViewCat = categoria.get(position).toString();
                 lerListViewRazao = razao.get(position).toString();
                 lerListViewEnd = endereco.get(position).toString();
@@ -109,6 +116,7 @@ public class ResultadoONGActivity extends AppCompatActivity {
     }
 
     private void descarregarImagem() {
+        id_ong.clear();
         razao.clear();
         categoria.clear();
         foto.clear();
@@ -142,6 +150,8 @@ public class ResultadoONGActivity extends AppCompatActivity {
                         ////////onde carrega dado por dado do servidor/////
                         JSONArray jArray =new JSONArray(new String(responseBody));
                         for(int i=0;i<jArray.length();i++) {
+
+                            id_ong.add(jArray.getJSONObject(i).getString("ong_id"));
                             razao.add( jArray.getJSONObject(i).getString("razao_social") );
                             categoria.add( jArray.getJSONObject(i).getString("categoria") );
                             foto.add( jArray.getJSONObject(i).getString("numero") );

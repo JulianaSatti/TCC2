@@ -161,7 +161,6 @@ public class DoaMatActivity extends AppCompatActivity {
         }
     }
 
-
     //////////////////////// caso aceite a permissao em tempo real, libera para acessar sua foto API 23...//////////
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {

@@ -1,15 +1,16 @@
 package com.example.tcc.tcc;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.github.snowdream.android.widget.SmartImageView;
 
@@ -28,6 +29,7 @@ import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewConta;
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewEmail;
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewEnd;
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewFoto;
+import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewId;
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewNum;
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewHorario;
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewRazao;
@@ -40,6 +42,7 @@ import static com.example.tcc.tcc.AtividadesEncontradasActivity.atividadeStatica
 
 public class detalhesOngActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
+
     private TextView detalhesCategoria;
     private TextView detalhesRazao;
     private TextView detalhesEnd;
@@ -48,6 +51,7 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
     private TextView detalhesSite, detalhesHorario;
     private TextView detalhesConta, detalhesBanco;
     private TextView detalhesAtiv,detalhesCNPJ;
+    private TextView queroDoar;
     private SmartImageView smartImageView;
     private ListView lv_contas;
     TextView contaNaoEncontrada;
@@ -57,9 +61,22 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_ong);
+
+
         //////////////////////////////////////////////////////////////////////////////////////////
         detalhesCNPJ = (TextView) findViewById(R.id.detCNPJ);
         detalhesCNPJ.setText("CNPJ: "+lerListViewCnpj_Conta);
+
+
+        //mexi aqui
+        queroDoar =(TextView) findViewById(R.id.btn_doar);
+        queroDoar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                               //Toast.makeText(getApplicationContext(),categAtualAtividade,Toast.LENGTH_LONG).show();
+                startActivity(new Intent(detalhesOngActivity.this, CadastroDoacoesONG.class));
+            }
+        });
 
         contaNaoEncontrada = (TextView) findViewById(R.id.ContasNaoEncontradas);
 
@@ -129,13 +146,6 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
         smartImageView.setImageUrl(urlFinal, rect);// faz o retangulo de margem
 
     }
-
-
-
-
-
-
-
 
 
     public Boolean BuscarContas() {

@@ -26,6 +26,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -33,7 +36,9 @@
         <activity
             android:name=".PesquisarOngActivity"
             android:label="ONG"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+
+        </activity>
         <activity
             android:name=".ResetActivity"
             android:label="Esqueci Minha Senha" />
@@ -64,9 +69,6 @@
             android:name=".EditarPerfilActivity" />
 
         <activity
-            android:name=".VisualizarPerfilActivity"
-            android:label="Perfil" />
-        <activity
             android:name=".DoacoesRealizadasActivity"
             android:label="Doações Realizadas" />
         <activity
@@ -82,7 +84,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".TelaInicialActivity"
-            android:label="De Mãos Dadas" />
+            android:label="De Mãos Dadas" >
+
+        </activity>
+
 
         <activity android:name=".FacebookActivity" />
 
@@ -98,6 +103,8 @@
 
         <activity android:name=".CadastroDoacoesONG"
             android:label="Doações">
+
+
         </activity>
     </application>
 
