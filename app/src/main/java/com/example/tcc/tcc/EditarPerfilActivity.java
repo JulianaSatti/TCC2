@@ -83,6 +83,7 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     /////////////////////////////////////Exibe a foto na tela//////////////////////////////////

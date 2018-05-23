@@ -138,7 +138,6 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
         smartImageView=(SmartImageView)findViewById(R.id.foto2);
 
         String urlFinal="http://35.199.87.88/api/imagens/"+"ong.jpg";
-        // String urlFinal="http://bd-linny.000webhostapp.com/imagens/"+lerListViewFoto;
         Rect rect=new Rect(smartImageView.getLeft(),// faz o retangulo de margem lado esq
                 smartImageView.getTop(),// faz o retangulo de margem lado dir
                 smartImageView.getRight(),// faz o retangulo de margem lado sup
