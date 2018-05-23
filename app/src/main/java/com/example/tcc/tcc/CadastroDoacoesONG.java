@@ -35,10 +35,17 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.json.JSONArray;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import cz.msebera.android.httpclient.Header;
 
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewId;// aqui
 
@@ -57,6 +64,7 @@ public class CadastroDoacoesONG extends AppCompatActivity {
     Bitmap imagemDoacao;
     public static final int IMAGEM_INTERNA = 12;
     private final int PERMISSAO_REQUEST = 2;
+    private AsyncHttpClient ongNecessidade;//aqui
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +79,14 @@ public class CadastroDoacoesONG extends AppCompatActivity {
         enviar_doacao = (Button) findViewById(R.id.enviar_doacao);
         foto = (ImageView) findViewById(R.id.foto);
 
+        this.ongNecessidade = new AsyncHttpClient();
+
+        chamarSpinner();
+
+
         //mostra os itens do spinner que estao setados no string.xml
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.doacoes, android.R.layout.simple_spinner_dropdown_item);
-        spinner_necessidade.setAdapter(adapter);
+        //ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.doacoes, android.R.layout.simple_spinner_dropdown_item);
+        //spinner_necessidade.setAdapter(adapter);
 
 
 
@@ -88,7 +101,7 @@ public class CadastroDoacoesONG extends AppCompatActivity {
                 if (networkInfo != null && networkInfo.isConnected()) {
 
 
-                    String text_spinner_necessidade = spinner_necessidade.getSelectedItem().toString();
+                    String resposta = spinner_necessidade.getSelectedItem().toString();
                     String text_descricao = descricao.getText().toString();
                     int selectedId = radioGroup.getCheckedRadioButtonId();
                     // encontra o radiobutton pelo ID retornado
@@ -111,7 +124,7 @@ public class CadastroDoacoesONG extends AppCompatActivity {
                         String id_user = prefs.getString("id",null);
                         url = "http://35.199.87.88/api/cadastro_doacoes.php";
                         //ong
-                        parametros = "ong_id="+lerListViewId+"&user_id=" + id_user + "&categoria=" + text_spinner_necessidade  + "&descricao=" + text_descricao + "&retirada=" +rd_retirada + "&foto";
+                        parametros = "ong_id="+lerListViewId+"&user_id=" + id_user + "&nome=" + resposta  + "&descricao=" + text_descricao + "&retirada=" +rd_retirada + "&foto";
                         new SolicitaDados().execute(url);
                     }
 
@@ -235,6 +248,43 @@ public class CadastroDoacoesONG extends AppCompatActivity {
         byte[] imageBytes = outputStream.toByteArray();
         String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
+    }
+
+    private void chamarSpinner() {
+        String url = "http://35.199.87.88/api/spinner_necessidades.php?ong_id="+lerListViewId;
+        this.ongNecessidade.post(url, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                if(statusCode==200){
+                    carregarSpinner(new String(responseBody));
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
+    }
+
+    public String carregarSpinner(String resposta) {
+        ArrayList<Necessidade> lista = new ArrayList<Necessidade>();
+        try {
+            JSONArray jArray =new JSONArray(resposta);
+            for(int i=0;i<jArray.length();i++) {
+                Necessidade p = new Necessidade();
+                // nome do campo do BD que vai retornar na pesquisa
+                p.setNecessidade(jArray.getJSONObject(i).getString("objeto"));
+                lista.add(p);
+            }
+            ArrayAdapter<Necessidade> a = new ArrayAdapter<Necessidade>(this,android.R.layout.simple_dropdown_item_1line, lista);
+            spinner_necessidade.setAdapter(a);
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return resposta;
     }
 }
 

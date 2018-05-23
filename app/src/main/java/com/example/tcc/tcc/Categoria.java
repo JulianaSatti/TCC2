@@ -1,6 +1,5 @@
 package com.example.tcc.tcc;
 
-
 public class Categoria {
     private String categoria;
 
@@ -9,15 +8,19 @@ public class Categoria {
 
     }
 
-    public Categoria(String categoria){
+    public Categoria(String categoria)
+    {
+
         this.categoria = categoria;
     }
     public void setCategoria (String categoria){
+
         this.categoria = categoria;
     }
 
     @Override
     public String toString(){
+
         return categoria;
     }
 
