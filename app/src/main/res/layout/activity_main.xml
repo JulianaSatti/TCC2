@@ -11,49 +11,20 @@
     tools:context="com.example.tcc.tcc.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/entrar_facebook"
-        style="@style/MessengerButton"
-        android:layout_width="230dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
-        android:background="?attr/actionModeSplitBackground"
-        android:paddingBottom="12dp"
-        android:paddingTop="12dp"
-        android:text="@string/entrar_com_facebook"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/entrar_google"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/entrar_google"
-        android:layout_width="236dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/entrar_com_google"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/conta_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entrar_facebook" />
-
     <Button
         android:id="@+id/conta_email"
         style="@style/com_facebook_button"
         android:layout_width="230dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="115dp"
         android:background="@android:color/holo_red_dark"
         android:text="@string/entrar_com_email"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/cadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entrar_google" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
 
     <Button
         android:id="@+id/cadastro"
@@ -75,14 +46,14 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="67dp"
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="11dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/todo"
         android:src="@mipmap/maos"
-        app:layout_constraintBottom_toTopOf="@+id/entrar_facebook"
+        app:layout_constraintBottom_toTopOf="@+id/conta_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
