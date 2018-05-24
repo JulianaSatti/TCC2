@@ -46,10 +46,6 @@
             android:label="Doações"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DoaFinActivity"
-            android:label="Doações"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".BuscaAtividadesActivity"
             android:label="Buscar Atividades"
             android:screenOrientation="portrait" />
