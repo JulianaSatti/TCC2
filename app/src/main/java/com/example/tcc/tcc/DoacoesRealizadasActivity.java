@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -84,5 +87,33 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
         novaTelaDoacoes.putExtra("categoria",doacoesStatica.getCategoria());
         startActivity(novaTelaDoacoes);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_tela_inicial, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_close) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }if (id ==R.id.action_perfil){
+            startActivity(new Intent(this,EditarPerfilActivity.class));
+        }if (id==R.id.action_alterar_senha){
+            startActivity(new Intent(this,AlterarSenhaActivity.class));
+        }
+        if (id ==R.id.inicio){
+            startActivity(new Intent(this,TelaInicialActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

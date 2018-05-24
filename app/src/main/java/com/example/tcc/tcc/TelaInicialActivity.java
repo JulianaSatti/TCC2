@@ -109,15 +109,14 @@ public class TelaInicialActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
-
-            finish();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
             return true;
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(TelaInicialActivity.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(TelaInicialActivity.this,AlterarSenhaActivity.class));
         }
-
         return super.onOptionsItemSelected(item);
     }
 

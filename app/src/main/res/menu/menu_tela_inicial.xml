@@ -10,6 +10,12 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/inicio"
+        android:title="Inicio"
+        app:showAsAction="never">
+    </item>
     <item
         android:id="@+id/action_perfil"
         android:title="Perfil"

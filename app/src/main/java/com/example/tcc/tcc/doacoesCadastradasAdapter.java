@@ -55,4 +55,6 @@ public class doacoesCadastradasAdapter extends BaseAdapter {
 
 
     }
+
+
 }
