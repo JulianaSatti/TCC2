@@ -60,6 +60,7 @@ public class DoacoesActivity extends AppCompatActivity {
 
             finish();
             return true;
+
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(DoacoesActivity.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){

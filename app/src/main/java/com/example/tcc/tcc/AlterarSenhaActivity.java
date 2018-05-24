@@ -31,6 +31,7 @@ public class AlterarSenhaActivity extends AppCompatActivity {
         if (id == R.id.action_close) {
 
             finish();
+
             return true;
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(AlterarSenhaActivity.this,EditarPerfilActivity.class));

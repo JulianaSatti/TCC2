@@ -254,6 +254,7 @@ public class DoaMatActivity extends AppCompatActivity {
         if (id == R.id.action_close) {
             finish();
             return true;
+
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){

@@ -112,6 +112,7 @@ public class BuscaAtividadesActivity extends AppCompatActivity {
 
             finish();
             return true;
+
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){

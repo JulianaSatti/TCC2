@@ -135,13 +135,14 @@ public class PesquisarOngActivity extends AppCompatActivity {
         if (id == R.id.action_close) {
 
             finish();
+
             return true;
         }if (id ==R.id.action_perfil){
-            startActivity(new Intent(PesquisarOngActivity.this,EditarPerfilActivity.class));
+            startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
-            startActivity(new Intent(PesquisarOngActivity.this,AlterarSenhaActivity.class));
+            startActivity(new Intent(this,AlterarSenhaActivity.class));
         }if(id==R.id.action_notificacoes){
-            startActivity(new Intent(PesquisarOngActivity.this,Notificacao.class));
+            startActivity(new Intent(this,Notificacao.class));
         }
 
         return super.onOptionsItemSelected(item);

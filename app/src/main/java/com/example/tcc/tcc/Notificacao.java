@@ -32,6 +32,7 @@ public class Notificacao extends AppCompatActivity {
 
             finish();
             return true;
+
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(Notificacao.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
