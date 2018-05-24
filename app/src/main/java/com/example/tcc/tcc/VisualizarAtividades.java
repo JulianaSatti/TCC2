@@ -49,6 +49,7 @@ public class VisualizarAtividades extends AppCompatActivity {
         });
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
         MenuInflater inflater = getMenuInflater();
@@ -63,17 +64,19 @@ public class VisualizarAtividades extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+
+            finish();
             return true;
         }if (id ==R.id.action_perfil){
-            startActivity(new Intent(this,EditarPerfilActivity.class));
+            startActivity(new Intent(VisualizarAtividades.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
-            startActivity(new Intent(this,AlterarSenhaActivity.class));
+            startActivity(new Intent(VisualizarAtividades.this,AlterarSenhaActivity.class));
+        }if(id==R.id.action_notificacoes){
+            startActivity(new Intent(VisualizarAtividades.this,Notificacao.class));
         }
-        if (id ==R.id.inicio){
-            startActivity(new Intent(this,TelaInicialActivity.class));
-        }
+
         return super.onOptionsItemSelected(item);
     }
+
 }
+

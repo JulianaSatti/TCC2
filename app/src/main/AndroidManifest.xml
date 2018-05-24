@@ -79,7 +79,8 @@
         <activity
             android:name=".CadastroDoacoesONG"
             android:label="Doações"></activity>
-        <activity android:name=".Notificacao"></activity>
+        <activity android:name=".Notificacao"
+            android:label="Notificações"></activity>
     </application>
 
 </manifest>

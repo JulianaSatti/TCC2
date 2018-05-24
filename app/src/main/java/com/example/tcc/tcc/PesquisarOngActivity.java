@@ -117,8 +117,34 @@ public class PesquisarOngActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_tela_inicial, menu);
 
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_close) {
+
+            finish();
+            return true;
+        }if (id ==R.id.action_perfil){
+            startActivity(new Intent(PesquisarOngActivity.this,EditarPerfilActivity.class));
+        }if (id==R.id.action_alterar_senha){
+            startActivity(new Intent(PesquisarOngActivity.this,AlterarSenhaActivity.class));
+        }if(id==R.id.action_notificacoes){
+            startActivity(new Intent(PesquisarOngActivity.this,Notificacao.class));
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     ////////////////////////////////////////////////criei aqui pra baixo e mais a classe categoria////////////////////////////////////////////////////////////////
@@ -159,33 +185,7 @@ public class PesquisarOngActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_tela_inicial, menu);
 
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_close) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            return true;
-        }if (id ==R.id.action_perfil){
-            startActivity(new Intent(PesquisarOngActivity.this,EditarPerfilActivity.class));
-        }if (id==R.id.action_alterar_senha){
-            startActivity(new Intent(PesquisarOngActivity.this,AlterarSenhaActivity.class));
-        }
-        if (id ==R.id.inicio){
-            startActivity(new Intent(PesquisarOngActivity.this,TelaInicialActivity.class));
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 
 }

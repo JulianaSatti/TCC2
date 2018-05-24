@@ -7,6 +7,7 @@ package com.example.tcc.tcc;
 public class atividadesEncontradas {
 
     private String id;
+    private String ong_id;
     private String id_user;
     private String nomeOng;
     private String nomeAtividade;
@@ -130,5 +131,11 @@ public class atividadesEncontradas {
         this.qtd_voluntario = qtd_voluntario;
     }
 
+    public String getOng_id() {
+        return ong_id;
+    }
 
+    public void setOng_id(String ong_id) {
+        this.ong_id = ong_id;
+    }
 }

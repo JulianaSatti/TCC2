@@ -88,6 +88,7 @@ public class AtividadesEncontradasActivity extends AppCompatActivity implements 
                 atividadesEncontradas atividadesEncontradas = new atividadesEncontradas();
 
                 atividadesEncontradas.setId_user(json.getJSONObject(i).getString("id_user"));
+                atividadesEncontradas.setOng_id(json.getJSONObject(i).getString("ong_id"));
                 atividadesEncontradas.setId(json.getJSONObject(i).getString("id"));
                 atividadesEncontradas.setNomeOng(json.getJSONObject(i).getString("nome_fantasia"));
                 atividadesEncontradas.setNomeAtividade(json.getJSONObject(i).getString("atividade"));
@@ -141,17 +142,17 @@ public class AtividadesEncontradasActivity extends AppCompatActivity implements 
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            finish();
             return true;
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(this,AlterarSenhaActivity.class));
-        }
-        if (id ==R.id.inicio){
-            startActivity(new Intent(this,TelaInicialActivity.class));
+        }if(id==R.id.action_notificacoes){
+            startActivity (new Intent(this,Notificacao.class));
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

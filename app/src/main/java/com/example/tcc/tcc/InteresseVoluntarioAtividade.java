@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
 
+import static com.example.tcc.tcc.AtividadesEncontradasActivity.atividadeStatica;
+
 
 public class InteresseVoluntarioAtividade extends AppCompatActivity {
 
@@ -53,8 +55,10 @@ public class InteresseVoluntarioAtividade extends AppCompatActivity {
                         SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
                         String id_user = prefs.getString("id",null);
                         String telefone = prefs.getString("telefone", null);
+                        String id_atividade = atividadeStatica.getId();
+                        String ong_id = atividadeStatica.getOng_id();
 
-                        String parametros = "user_id=" + id_user + "&descricao=" + editTextDescricao + "&telefone=" + telefone;
+                        String parametros = "user_id=" + id_user +"&ong_id="+ ong_id + "&tipo_id="+ id_atividade + "&descricao=" + editTextDescricao + "&telefone=" + telefone;
                         String retorno = "";
                         try {
                             retorno = new HTTPService("cadastro_notificacao", parametros).execute().get();
@@ -95,17 +99,17 @@ public class InteresseVoluntarioAtividade extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+
+            finish();
             return true;
         }if (id ==R.id.action_perfil){
-            startActivity(new Intent(this,EditarPerfilActivity.class));
+            startActivity(new Intent(InteresseVoluntarioAtividade.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
-            startActivity(new Intent(this,AlterarSenhaActivity.class));
+            startActivity(new Intent(InteresseVoluntarioAtividade.this,AlterarSenhaActivity.class));
+        }if(id==R.id.action_notificacoes){
+            startActivity(new Intent(InteresseVoluntarioAtividade.this,Notificacao.class));
         }
-        if (id ==R.id.inicio){
-            startActivity(new Intent(this,TelaInicialActivity.class));
-        }
+
         return super.onOptionsItemSelected(item);
     }
 }
