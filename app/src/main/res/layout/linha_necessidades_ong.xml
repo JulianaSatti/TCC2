@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right">
+
+    <TextView
+        android:id="@+id/lh_obj_necessidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Necessidade"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title" />
+
+    <TextView
+        android:id="@+id/lh_descricao_necessidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descricao"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+
+</LinearLayout>

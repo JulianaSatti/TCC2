@@ -77,7 +77,7 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
             @Override
             public void onClick(View v) {
                                //Toast.makeText(getApplicationContext(),categAtualAtividade,Toast.LENGTH_LONG).show();
-                startActivity(new Intent(detalhesOngActivity.this, CadastroDoacoesONG.class));
+                startActivity(new Intent(detalhesOngActivity.this, NecessidadesONGActivity.class));
             }
         });
 

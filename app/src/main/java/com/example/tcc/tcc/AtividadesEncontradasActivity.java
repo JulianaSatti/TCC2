@@ -42,10 +42,8 @@ import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 
 import static com.example.tcc.tcc.BuscaAtividadesActivity.categAtualAtividade;
 
-
 public class AtividadesEncontradasActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
-    String parametros = "";
     String url = "";
     ListView listEncontradas;
     Spinner categoria;

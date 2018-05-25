@@ -14,11 +14,11 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.SearchResult.Title" />
 
         <TextView
-    android:id="@+id/lh_descricao"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Descricao"
-    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+            android:id="@+id/lh_descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descricao"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
         <TextView
             android:id="@+id/lh_area_interesse"

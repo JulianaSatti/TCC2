@@ -30,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -42,6 +43,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import org.json.JSONArray;
+import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -51,11 +53,12 @@ import java.util.Map;
 import cz.msebera.android.httpclient.Header;
 
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewId;// aqui
+import static com.example.tcc.tcc.NecessidadesONGActivity.necessidades;
 
 
 public class CadastroDoacoesONG extends AppCompatActivity {
     EditText descricao;
-    Spinner spinner_necessidade;
+    TextView objeto;
     RadioGroup radioGroup;
     Button enviar_doacao;
     Button add_foto;
@@ -75,17 +78,20 @@ public class CadastroDoacoesONG extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_doacoes_ong);
 
         //Tranferir dados do layout para variaveis locais
-        spinner_necessidade = (Spinner) findViewById(R.id.spinner_necessidades);
+
+        objeto = (TextView) findViewById (R.id.objeto);
         descricao = (EditText) findViewById(R.id.desc_obj);
         add_foto = (Button) findViewById(R.id.adicionar_foto);
         radioGroup = (RadioGroup) findViewById(R.id.radioOP);
         enviar_doacao = (Button) findViewById(R.id.enviar_doacao);
         foto = (ImageView) findViewById(R.id.foto);
 
+        objeto.setText(necessidades.getNecessidade());
+
         this.ongNecessidade = new AsyncHttpClient();
 
-        chamarSpinner();
-
+        SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
+        String objetodoacao = prefs.getString("objeto",null);
 
         //mostra os itens do spinner que estao setados no string.xml
         //ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.doacoes, android.R.layout.simple_spinner_dropdown_item);
@@ -104,7 +110,7 @@ public class CadastroDoacoesONG extends AppCompatActivity {
                 if (networkInfo != null && networkInfo.isConnected()) {
 
 
-                    String resposta = spinner_necessidade.getSelectedItem().toString();
+                    String text_objeto = necessidades.getNecessidade().toString();
                     String text_descricao = descricao.getText().toString();
                     int selectedId = radioGroup.getCheckedRadioButtonId();
                     // encontra o radiobutton pelo ID retornado
@@ -127,7 +133,7 @@ public class CadastroDoacoesONG extends AppCompatActivity {
                         String id_user = prefs.getString("id",null);
                         url = "http://35.199.87.88/api/cadastro_doacoes.php";
                         //ong
-                        parametros = "ong_id="+lerListViewId+"&user_id=" + id_user + "&nome=" + resposta  + "&descricao=" + text_descricao + "&retirada=" +rd_retirada + "&foto";
+                        parametros = "ong_id="+lerListViewId+"&user_id=" + id_user + "&nome=" + text_objeto  + "&descricao=" + text_descricao + "&retirada=" +rd_retirada + "&foto";
                         new SolicitaDados().execute(url);
                     }
 
@@ -253,42 +259,6 @@ public class CadastroDoacoesONG extends AppCompatActivity {
         return encodedImage;
     }
 
-    private void chamarSpinner() {
-        String url = "http://35.199.87.88/api/spinner_necessidades.php?ong_id="+lerListViewId;
-        this.ongNecessidade.post(url, new AsyncHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                if(statusCode==200){
-                    carregarSpinner(new String(responseBody));
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-
-            }
-        });
-    }
-
-    public String carregarSpinner(String resposta) {
-        ArrayList<Necessidade> lista = new ArrayList<Necessidade>();
-        try {
-            JSONArray jArray =new JSONArray(resposta);
-            for(int i=0;i<jArray.length();i++) {
-                Necessidade p = new Necessidade();
-                // nome do campo do BD que vai retornar na pesquisa
-                p.setNecessidade(jArray.getJSONObject(i).getString("objeto"));
-                lista.add(p);
-            }
-            ArrayAdapter<Necessidade> a = new ArrayAdapter<Necessidade>(this,android.R.layout.simple_dropdown_item_1line, lista);
-            spinner_necessidade.setAdapter(a);
-
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return resposta;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar

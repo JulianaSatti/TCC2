@@ -29,7 +29,7 @@
         <activity
             android:name=".PesquisarOngActivity"
             android:label="ONG"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ResetActivity"
             android:label="Esqueci Minha Senha" />
@@ -69,7 +69,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".TelaInicialActivity"
-            android:label="De Mãos Dadas"></activity>
+            android:label="De Mãos Dadas" />
         <activity
             android:name=".AlterarSenhaActivity"
             android:label="Reset de Senha" />
@@ -78,9 +78,11 @@
         <activity android:name=".InteresseVoluntarioAtividade" />
         <activity
             android:name=".CadastroDoacoesONG"
-            android:label="Doações"></activity>
-        <activity android:name=".Notificacao"
-            android:label="Notificações"></activity>
+            android:label="Doações" />
+        <activity
+            android:name=".Notificacao"
+            android:label="Notificações" />
+        <activity android:name=".NecessidadesONGActivity"></activity>
     </application>
 
 </manifest>
