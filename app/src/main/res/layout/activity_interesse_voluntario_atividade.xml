@@ -46,6 +46,8 @@
         android:layout_marginBottom="44dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:text="Enviar"

@@ -42,6 +42,8 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="17dp"
         android:layout_marginStart="30dp"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
         android:text="@string/adicionar_foto"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"

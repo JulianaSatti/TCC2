@@ -39,6 +39,8 @@ public class AlterarSenhaActivity extends AppCompatActivity {
             startActivity(new Intent(AlterarSenhaActivity.this,AlterarSenhaActivity.class));
         }if(id==R.id.action_notificacoes){
             startActivity(new Intent(AlterarSenhaActivity.this,Notificacao.class));
+        }if(id==R.id.logo_maos){
+            startActivity(new Intent(this, TelaInicialActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

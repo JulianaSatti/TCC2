@@ -65,6 +65,8 @@ public class VisualizarDoacoes extends AppCompatActivity {
             startActivity(new Intent(this,AlterarSenhaActivity.class));
         }if(id==R.id.action_notificacoes){
             startActivity(new Intent(this,Notificacao.class));
+        }if(id==R.id.logo_maos){
+            startActivity(new Intent(this, TelaInicialActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

@@ -39,6 +39,8 @@ public class Notificacao extends AppCompatActivity {
             startActivity(new Intent(Notificacao.this,AlterarSenhaActivity.class));
         }if(id==R.id.action_notificacoes){
             startActivity(new Intent(Notificacao.this,Notificacao.class));
+        }if(id==R.id.logo_maos){
+            startActivity(new Intent(this, TelaInicialActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

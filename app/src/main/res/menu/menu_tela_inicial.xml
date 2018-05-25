@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item
+        android:id="@+id/logo_maos"
+        android:icon="@drawable/ic_home_white_24dp"
+        android:title="logo"
+        app:showAsAction="always" />
+
 
     <item
         android:id="@+id/action_close"
@@ -24,6 +30,8 @@
         android:title="Notificações"
         app:showAsAction="never">
     </item>
+
+
 
 
 </menu>
