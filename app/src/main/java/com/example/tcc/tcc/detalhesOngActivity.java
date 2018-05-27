@@ -123,7 +123,7 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
         detalhesAtiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                categAtualAtividade = lerListViewRazao;
+                categAtualAtividade = lerListViewId;
 
                 //Toast.makeText(getApplicationContext(),categAtualAtividade,Toast.LENGTH_LONG).show();
                 startActivity(new Intent(detalhesOngActivity.this, AtividadesEncontradasActivity.class));
@@ -156,7 +156,7 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
         Boolean TemDado = false;
         try {
 
-            String retorno = new HTTPService("resultado_contas", "razao=" + lerListViewRazao).execute().get();
+            String retorno = new HTTPService("resultado_contas", "razao=" + lerListViewId).execute().get();
 
             JSONArray json = new JSONArray(retorno);
 
@@ -212,6 +212,8 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
+            //ao clicar em sair irá sair do aplicativo, apenas o finish irá sair apenas da tela atual e não do aplicativo.
+            startActivity(new Intent(this,MainActivity.class));
             finish();
             return true;
 

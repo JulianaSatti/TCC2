@@ -252,6 +252,8 @@ public class DoaMatActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
+            //ao clicar em sair irá sair do aplicativo, apenas o finish irá sair apenas da tela atual e não do aplicativo.
+            startActivity(new Intent(this,MainActivity.class));
             finish();
             return true;
 
