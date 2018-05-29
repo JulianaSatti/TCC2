@@ -10,8 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="749070aa-89c7-4198-b3de-ec7846e58f84" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_home_white_24dp.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_image2vector.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
@@ -20,37 +18,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AlterarSenhaActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AlterarSenhaActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AtividadesEncontradasActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AtividadesEncontradasActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/BuscaAtividadesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/BuscaAtividadesActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoaMatActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoaMatActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoacoesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoacoesActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoacoesRealizadasActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoacoesRealizadasActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/EditarPerfilActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/EditarPerfilActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/InteresseVoluntarioAtividade.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/InteresseVoluntarioAtividade.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/NecessidadesONGActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/NecessidadesONGActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/Notificacao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/Notificacao.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/PesquisarOngActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/PesquisarOngActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/ResultadoONGActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/ResultadoONGActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/TelaInicialActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/TelaInicialActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/VisualizarAtividades.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/VisualizarAtividades.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/VisualizarDoacoes.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/VisualizarDoacoes.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/detalhesOngActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/detalhesOngActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/editarDoacoes.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/editarDoacoes.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_share.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/side_nav_bar.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cadastro_doacoes_ong.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cadastro_doacoes_ong.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_doamat.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_doamat.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_editar_doacoes.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_editar_doacoes.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_interesse_voluntario_atividade.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_interesse_voluntario_atividade.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_visualizar_atividades.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_visualizar_atividades.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_visualizar_doacoes.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_visualizar_doacoes.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_cadastro.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_cadastro.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_tela_inicial.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_tela_inicial.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_tela_inicial.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_tela_inicial.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,7 +56,34 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="activity_editar_doacoes.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_editar_doacoes.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="178" column="44" lean-forward="false" selection-start-line="178" selection-start-column="44" selection-end-line="178" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="969">
+              <caret line="57" column="33" lean-forward="false" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -95,8 +96,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>categAtualAtividade</find>
-      <find>shared</find>
       <find>parametros</find>
+      <find>shared</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2146,7 +2147,6 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/Categoria.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/atividadesEncontradas.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/linha_ativ_encontrada.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/linha_necessidades_ong.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/NecessidadesEncontradasAdapter.java" />
@@ -2155,13 +2155,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_cadastro.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/TelaInicialActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/PesquisarOngActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_image2vector.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_tela_inicial.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AlterarSenhaActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AtividadesEncontradasActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/BuscaAtividadesActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/detalhesOngActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoacoesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoacoesRealizadasActivity.java" />
@@ -2176,10 +2174,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/VisualizarDoacoes.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_cadastro_doacoes_ong.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_doamat.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_editar_doacoes.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_interesse_voluntario_atividade.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_visualizar_atividades.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_visualizar_doacoes.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_tela_inicial.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/PesquisarOngActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_editar_doacoes.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -2205,14 +2208,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
               <item name="TCC3" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="TCC3" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="TCC3" type="1abcf292:AndroidViewProjectNode" />
@@ -2244,8 +2251,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2274,6 +2282,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/app.iml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AlterarSenhaActivity.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AtividadesEncontradasActivity.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/BuscaAtividadesActivity.java</PATH>
@@ -2283,15 +2292,15 @@
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/DoacoesRealizadasActivity.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/EditarPerfilActivity.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/InteresseVoluntarioAtividade.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/NecessidadesONGActivity.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/Notificacao.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/PesquisarOngActivity.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/ResultadoONGActivity.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/TelaInicialActivity.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/VisualizarAtividades.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/VisualizarDoacoes.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/atividadesEncontradas.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/detalhesOngActivity.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/doacoesCadastradasAdapter.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/res/menu/menu_tela_inicial.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/editarDoacoes.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -2306,7 +2315,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/app/src/main/res/menu/sair_google_face.xml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -2592,15 +2600,22 @@
       <option name="project" value="LOCAL" />
       <updated>1527206876135</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Inclusao do icone na toolbar para voltar para a home e ajustes em outras telas">
+      <created>1527217338760</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1527217338760</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -2614,7 +2629,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2934947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37254903" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2627,6 +2642,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2672,32 +2688,33 @@
     <MESSAGE value="Ajustes layout" />
     <MESSAGE value="Menu nas telas incluindo a opção notificações" />
     <MESSAGE value="Inclusão da tela que lista as necessidades e adaptacao da tela de cadastro direto pra ong" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inclusão da tela que lista as necessidades e adaptacao da tela de cadastro direto pra ong" />
+    <MESSAGE value="Inclusao do icone na toolbar para voltar para a home e ajustes em outras telas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inclusao do icone na toolbar para voltar para a home e ajustes em outras telas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java</url>
-          <line>113</line>
+          <line>110</line>
           <properties />
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java</url>
-          <line>114</line>
+          <line>111</line>
           <properties />
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java</url>
-          <line>116</line>
+          <line>113</line>
           <properties />
           <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java</url>
-          <line>117</line>
+          <line>114</line>
           <properties />
           <option name="timeStamp" value="154" />
         </line-breakpoint>
@@ -2775,25 +2792,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java</url>
-          <line>92</line>
-          <properties />
-          <option name="timeStamp" value="195" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="196" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java</url>
-          <line>135</line>
+          <line>132</line>
           <properties />
           <option name="timeStamp" value="197" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java</url>
-          <line>136</line>
+          <line>133</line>
           <properties />
           <option name="timeStamp" value="198" />
         </line-breakpoint>
@@ -2803,22 +2808,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_image2vector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71411">
-          <caret line="0" column="58" lean-forward="false" selection-start-line="0" selection-start-column="58" selection-end-line="0" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_camera.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_more_vert_black_24dp.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -2856,14 +2845,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/PesquisarOngActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="147" column="9" lean-forward="true" selection-start-line="145" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/AlterarSenhaActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -2888,26 +2869,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/BuscaAtividadesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3431">
           <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="287" column="9" lean-forward="false" selection-start-line="287" selection-start-column="9" selection-end-line="287" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -2980,7 +2945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2988,15 +2952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="282" column="9" lean-forward="false" selection-start-line="282" selection-start-column="9" selection-end-line="282" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/NecessidadesONGActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="120" column="9" lean-forward="false" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3012,7 +2967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="78" column="9" lean-forward="false" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3170,17 +3124,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tela_inicial.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_visualizar_atividades.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -3218,7 +3161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="69" column="9" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3237,17 +3179,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_editar_doacoes.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="160" column="64" lean-forward="false" selection-start-line="160" selection-start-column="64" selection-end-line="160" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -3282,6 +3213,79 @@
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tela_inicial.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/NecessidadesONGActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="47" column="81" lean-forward="false" selection-start-line="47" selection-start-column="81" selection-end-line="47" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/CadastroDoacoesONG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="90" column="52" lean-forward="false" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/BuscaAtividadesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="47" column="54" lean-forward="false" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/tcc/tcc/PesquisarOngActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="84" column="35" lean-forward="true" selection-start-line="84" selection-start-column="35" selection-end-line="84" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_editar_doacoes.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="178" column="44" lean-forward="false" selection-start-line="178" selection-start-column="44" selection-end-line="178" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="33" lean-forward="false" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
         <state />
       </provider>
     </entry>

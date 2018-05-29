@@ -100,10 +100,4 @@
     <string name="possibilidade_de_levar_o_objeto_no_local">Possibilidade de levar o objeto no local?</string>
     <string name="sim">Sim</string>
 
-    <string-array name="cat_atividades">
-        <item>Selecione</item>
-        <item>Esportes</item>
-        <item>Livros</item>
-    </string-array>
-
 </resources>
