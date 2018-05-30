@@ -107,6 +107,7 @@ public class LoginActivity extends Activity {
                        editor.putString("nome",json.getJSONObject(i).getString("nome"));
                        editor.putString("telefone",json.getJSONObject(i).getString("telefone"));
                        editor.putString("email",json.getJSONObject(i).getString("email"));
+                       editor.putString("senha",json.getJSONObject(i).getString("senha"));
                     }
 
                 } catch (JSONException e) {

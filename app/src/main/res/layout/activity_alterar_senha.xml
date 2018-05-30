@@ -7,7 +7,7 @@
     tools:context=".AlterarSenhaActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextSenhaAtual"
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="57dp"
@@ -17,27 +17,27 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextNovaSenha"
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:hint="Nova Senha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/editTextSenhaAtual"></EditText>
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextConfirmarNovaSenha"
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
         android:hint="Confirmar nova senha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/editTextNovaSenha"></EditText>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonEditarSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -46,7 +46,7 @@
         android:text="Salvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmarNovaSenha" />
 
 
 </android.support.constraint.ConstraintLayout>
