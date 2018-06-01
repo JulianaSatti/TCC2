@@ -212,8 +212,8 @@ public class CadastroActivity extends AppCompatActivity  {
                         Map<String, String> params = new HashMap<>();
                         String imageData = imageToString(imagemInicial);
                         params.put("image", imageData);
-                        String nomeFoto = email.getText().toString();
-                        params.put("nome", nomeFoto);
+                        String nomeFoto = "perfil";
+                        params.put("tipo", nomeFoto);
 
                         return params;
                     }

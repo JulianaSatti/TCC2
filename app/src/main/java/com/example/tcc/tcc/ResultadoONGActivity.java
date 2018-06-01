@@ -157,7 +157,7 @@ public class ResultadoONGActivity extends AppCompatActivity {
                             id_ong.add(jArray.getJSONObject(i).getString("ong_id"));
                             razao.add( jArray.getJSONObject(i).getString("razao_social") );
                             categoria.add( jArray.getJSONObject(i).getString("categoria") );
-                            foto.add( jArray.getJSONObject(i).getString("numero") );
+                            foto.add( jArray.getJSONObject(i).getString("ong_id") );
                             endereco.add( jArray.getJSONObject(i).getString("rua") );
                             num.add( jArray.getJSONObject(i).getString("numero") );
                             email.add( jArray.getJSONObject(i).getString("email") );
@@ -242,7 +242,7 @@ public class ResultadoONGActivity extends AppCompatActivity {
             nome=(TextView) viewGroup.findViewById(R.id.nome);
             cat=(TextView) viewGroup.findViewById(R.id.cat);
 
-            String urlFinal="http://35.199.87.88/api/imagens/"+"ong.jpg";
+            String urlFinal="http://35.199.87.88/images/ong/"+foto.get(position).toString()+".png";
 
             Rect rect=new Rect(smartImageView.getLeft(), smartImageView.getTop(), smartImageView.getRight(), smartImageView.getBottom());
 

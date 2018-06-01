@@ -76,7 +76,7 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
         queroDoar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                               //Toast.makeText(getApplicationContext(),categAtualAtividade,Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(),categAtualAtividade,Toast.LENGTH_LONG).show();
                 startActivity(new Intent(detalhesOngActivity.this, NecessidadesONGActivity.class));
             }
         });
@@ -140,7 +140,7 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
         /////Seleciona a foto e exibe////////////////////
         smartImageView=(SmartImageView)findViewById(R.id.foto2);
 
-        String urlFinal="http://35.199.87.88/api/imagens/"+"ong.jpg";
+        String urlFinal="http://35.199.87.88/images/ong/"+lerListViewFoto+".png";
         Rect rect=new Rect(smartImageView.getLeft(),// faz o retangulo de margem lado esq
                 smartImageView.getTop(),// faz o retangulo de margem lado dir
                 smartImageView.getRight(),// faz o retangulo de margem lado sup
@@ -157,6 +157,7 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
         try {
 
             String retorno = new HTTPService("resultado_contas", "razao=" + lerListViewId).execute().get();
+
 
             JSONArray json = new JSONArray(retorno);
 
