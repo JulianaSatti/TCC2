@@ -11,10 +11,6 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="O que deseja alterar?"
         android:textSize="20sp"
@@ -26,73 +22,64 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="16dp"
         android:text="@string/categoria"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextAlterarNomeDoacao"
-        app:layout_constraintEnd_toStartOf="@+id/spinnerAlterarCategoria"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/editTextAlterarNomeDoacao"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Spinner
         android:id="@+id/spinnerAlterarCategoria"
-        android:layout_width="210dp"
-        android:layout_height="29dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="51dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginStart="115dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox_item_doado"
+        app:layout_constraintStart_toStartOf="@+id/editTextAlterarDescricaoDoacao"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/alterar_foto"
-        android:layout_width="111dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="28dp"
+        android:layout_marginEnd="31dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="14dp"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@android:color/holo_green_light"
         android:text="Adicionar/Alterar foto
 "
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/foto"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAlterarDescricaoDoacao"
-        app:layout_constraintVertical_bias="0.557"
+        app:layout_constraintTop_toTopOf="@+id/foto"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/possibilidade_de_levar_o_objeto_no_local"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foto" />
+        app:layout_constraintBottom_toTopOf="@+id/radioOP"
+        app:layout_constraintEnd_toEndOf="@+id/foto"
+        app:layout_constraintTop_toBottomOf="@+id/foto"
+        app:layout_constraintVertical_bias="1.0" />
 
     <RadioGroup
         android:id="@+id/radioOP"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox_item_doado"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <RadioButton
@@ -117,81 +104,83 @@
 
     <EditText
         android:id="@+id/editTextAlterarDescricaoDoacao"
-        android:layout_width="330dp"
+        android:layout_width="0dp"
         android:layout_height="39dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="114dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="113dp"
         android:ems="10"
         android:hint="Descrição"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="@+id/foto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAlterarNomeDoacao"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextAlterarNomeDoacao"
-        android:layout_width="328dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Nome"
         android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAlterarDescricaoDoacao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerAlterarCategoria" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/buttonAlterarDoacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="27dp"
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@android:color/holo_green_light"
         android:text="@string/enviar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintEnd_toStartOf="@+id/foto"
+        app:layout_constraintStart_toStartOf="@+id/textView4" />
 
     <ImageView
         android:id="@+id/foto"
         android:layout_width="184dp"
         android:layout_height="91dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/alterar_foto"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAlterarDescricaoDoacao"
-        app:layout_constraintVertical_bias="0.066"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@color/cardview_light_background" />
 
     <CheckBox
         android:id="@+id/checkBox_item_doado"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="1dp"
         android:text="Item já doado"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAlterarDoacao"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioOP" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonExcluirDoacao"
-        android:layout_width="95dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:drawable/alert_dark_frame"
+        android:backgroundTint="@android:color/holo_green_light"
         android:text="Excluir"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonAlterarDoacao"
-        tools:layout_editor_absoluteY="455dp" />
+        app:layout_constraintStart_toEndOf="@+id/buttonAlterarDoacao" />
 
 </android.support.constraint.ConstraintLayout>

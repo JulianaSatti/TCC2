@@ -62,7 +62,7 @@ public class AlterarSenhaActivity extends AppCompatActivity implements View.OnCl
             String retorno = new HTTPService("EditarSenha", parametros).execute().get();
 
             if (retorno.contains("atualizado com sucesso")) {
-                Toast.makeText(getApplicationContext(), "Perfil atualizado com sucesso!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Senha alterada com sucesso!", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(getApplicationContext(), "ERRO: " + retorno, Toast.LENGTH_LONG).show();
             }

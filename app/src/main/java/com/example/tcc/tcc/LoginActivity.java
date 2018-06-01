@@ -117,8 +117,8 @@ public class LoginActivity extends Activity {
 
                 Intent abreInicio = new Intent(LoginActivity.this, TelaInicialActivity.class);
                 startActivity(abreInicio);
-                Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(),prefs.getString("id","id"), Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(),prefs.getString("id","id"), Toast.LENGTH_LONG).show();
 
             }else {
                 Toast.makeText(getApplicationContext(),"Usuario ou senha estão incorretos!", Toast.LENGTH_LONG).show();
