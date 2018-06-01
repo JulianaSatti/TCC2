@@ -23,8 +23,8 @@ public class VisualizarDoacoes extends AppCompatActivity {
         Bundle extras = savedInstanceState;
 
         TextView categoriaDoacao = (TextView) findViewById(R.id.textViewCategoriaDaocao);
-        EditText nomeDaocao = (EditText) findViewById(R.id.nom_obj);
-        EditText descricaoDaocao = (EditText) findViewById(R.id.desc_obj_visualiza);
+        EditText nomeDaocao = (EditText) findViewById(R.id.editTextAlterarNomeDoacao);
+        EditText descricaoDaocao = (EditText) findViewById(R.id.editTextAlterarDescricaoDoacao);
         RadioButton Ret_Sim = (RadioButton) findViewById(R.id.radio_sim_visualiza);
         RadioButton Ret_Nao = (RadioButton) findViewById(R.id.radio_nao_visualiza);
 

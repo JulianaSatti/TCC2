@@ -17,13 +17,11 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -54,10 +52,9 @@
         <activity
             android:name=".AtividadesEncontradasActivity"
             android:label="Dados da Atividade" />
-        <activity android:name=".EditarPerfilActivity"
-            android:label="Perfil">
-
-        </activity>
+        <activity
+            android:name=".EditarPerfilActivity"
+            android:label="Perfil" />
         <activity
             android:name=".DoacoesRealizadasActivity"
             android:label="Doações Realizadas" />
@@ -78,10 +75,9 @@
         <activity
             android:name=".AlterarSenhaActivity"
             android:label="Reset de Senha" />
-        <activity android:name=".editarDoacoes"
-            android:label="Editar Doação">
-
-        </activity>
+        <activity
+            android:name=".editarDoacoes"
+            android:label="Editar Doação" />
         <activity android:name=".VisualizarDoacoes" />
         <activity android:name=".InteresseVoluntarioAtividade" />
         <activity
@@ -90,10 +86,8 @@
         <activity
             android:name=".Notificacao"
             android:label="Notificações" />
-
-        <activity android:name=".NecessidadesONGActivity">
-
-        </activity>
+        <activity android:name=".NecessidadesONGActivity" />
+        <activity android:name=".atividadesInteresseAdapter"></activity>
     </application>
 
 </manifest>

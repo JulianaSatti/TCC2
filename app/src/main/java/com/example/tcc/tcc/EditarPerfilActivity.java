@@ -31,39 +31,42 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class EditarPerfilActivity extends AppCompatActivity {
+public class EditarPerfilActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText alterarNome;
     EditText alterarEmail;
     EditText alterarTelefone;
+    Button salvarAlteracao;
     Button envFoto;
     ImageView fotoperfil;
     Bitmap imagemPerfil;
     String url = "";
-    String parametros = "";
-    String urlUpload = "http://35.199.87.88/api/upload.php";
     public static final int IMAGEM_INTERNA = 12;
     private final int PERMISSAO_REQUEST = 2;
+    login login = new login();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_perfil);
 
-        EditText alterarNome = (EditText) findViewById(R.id.alterar_nome);
-        EditText alterarEmail = (EditText) findViewById(R.id.alterar_email);
-        EditText alterarTelefone = (EditText) findViewById(R.id.alterar_telefone);
-        Button salvarAlteracao = (Button) findViewById(R.id.btn_salvarEdicaoPerfil);
-
-
+        alterarNome = (EditText) findViewById(R.id.alterar_nome);
+        alterarEmail = (EditText) findViewById(R.id.alterar_email);
+        alterarTelefone = (EditText) findViewById(R.id.alterar_telefone);
+        salvarAlteracao = (Button) findViewById(R.id.btn_salvarEdicaoPerfil);
         envFoto = (Button) findViewById(R.id.btn_alterar_foto);
         fotoperfil = (ImageView) findViewById(R.id.foto);
 
         SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
-        final String id_user = prefs.getString("id",null);
+        String id_user = prefs.getString("id",null);
         String nome = prefs.getString("nome",null);
         String email = prefs.getString("email",null);
         String telefone = prefs.getString("telefone",null);
+
+        login.setId(id_user);
+        login.setNome(nome);
+        login.setEmail(email);
+        login.setTelefone(telefone);
 
         alterarNome.setText(nome);
         alterarEmail.setText(email);
@@ -87,9 +90,70 @@ public class EditarPerfilActivity extends AppCompatActivity {
             }
         });
 
+        salvarAlteracao.setOnClickListener(this);
+
     }
 
-    /////////////////////////////////////Exibe a foto na tela//////////////////////////////////
+    @Override
+    public void onClick(View v) {
+        boolean alteracao = false;
+        String parametros = "nome=" + alterarNome.getText().toString().trim() +
+                "&telefone=" + alterarTelefone.getText().toString().trim() +
+                "&email=" + alterarEmail.getText().toString().trim() +
+                "&id=" + login.getId();
+
+        if (alterarNome.getText().toString().trim() != login.getNome().trim()) {
+            alteracao = true;
+        }
+
+        if (alterarEmail.getText().toString().trim() != login.getEmail().trim()) {
+            alteracao = true;
+        }
+
+        if (alterarTelefone.getText().toString().trim() != login.getTelefone().trim()) {
+            alteracao = true;
+        }
+
+        if (alteracao) {
+            try {
+                String retorno = new HTTPService("EditarPerfil", parametros).execute().get();
+
+                if (retorno.contains("atualizado com sucesso")) {
+                    //grava a a informacao do usuario logado
+                    SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    //Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
+
+
+                    editor.remove("nome");
+                    editor.remove("telefone");
+                    editor.remove("email");
+
+                    editor.putString("nome",alterarNome.getText().toString().trim());
+                    editor.putString("telefone",alterarTelefone.getText().toString().trim());
+                    editor.putString("email",alterarEmail.getText().toString().trim());
+
+                    editor.commit();
+
+                    Toast.makeText(getApplicationContext(), "Perfil atualizado com sucesso!", Toast.LENGTH_LONG).show();
+                    Intent abreInicio = new Intent(EditarPerfilActivity.this, TelaInicialActivity.class);
+                    startActivity(abreInicio);
+
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "ERRO: " + retorno, Toast.LENGTH_LONG).show();
+                }
+
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+            /////////////////////////////////////Exibe a foto na tela//////////////////////////////////
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {super.onActivityResult(requestCode, resultCode, data);
         if (resultCode== RESULT_OK && requestCode== 1) {Uri selectedImage= data.getData();
@@ -148,5 +212,6 @@ public class EditarPerfilActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }

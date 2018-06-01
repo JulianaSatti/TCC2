@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -39,7 +40,9 @@ public class TelaInicialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tela_inicial);
 
         SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
-        String id_user = prefs.getString("id",null);
+        String id_user = prefs.getString("id","id");
+
+        //Toast.makeText(getApplicationContext(),id_user, Toast.LENGTH_LONG).show();
 
 
         ////////////////////////////imagem inicial//////////////////////////////////
@@ -111,10 +114,13 @@ public class TelaInicialActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
+
+
             //ao clicar em sair irá sair do aplicativo, apenas o finish irá sair apenas da tela atual e não do aplicativo.
-            startActivity(new Intent(this,MainActivity.class));
-            finish();
-            return true;
+            startActivity(new Intent(TelaInicialActivity.this,MainActivity.class));
+           // finish();
+
+            return false;
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(TelaInicialActivity.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){

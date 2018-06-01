@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Scanner;
 
 public class HTTPService extends AsyncTask<Void,Void,String> {
@@ -30,7 +31,7 @@ public class HTTPService extends AsyncTask<Void,Void,String> {
                 strUrl = strUrl + "/?"+ this.parametros;
             }
 
-            url = new URL(strUrl);
+            url = new URL(strUrl.replaceAll(" ","%20"));
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Content-type", "application/json");

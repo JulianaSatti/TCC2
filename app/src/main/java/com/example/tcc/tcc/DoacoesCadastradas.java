@@ -10,6 +10,7 @@ public class DoacoesCadastradas {
     private String descricao;
     private String levar_local;
     private static String id_user;
+    private String itemDoado;
 
     public DoacoesCadastradas() {
         this.id = "";
@@ -79,5 +80,13 @@ public class DoacoesCadastradas {
 
     public void setLevar_local(String levar_local) {
         this.levar_local = levar_local;
+    }
+
+    public String getItemDoado() {
+        return itemDoado;
+    }
+
+    public void setItemDoado(String itemDoado) {
+        this.itemDoado = itemDoado;
     }
 }

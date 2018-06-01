@@ -23,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -64,18 +65,17 @@ public class DoaMatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doamat);
 
         //Tranferir dados do layout para variaveis locais
-        spinner_obj = (Spinner) findViewById(R.id.spinner_obj);
-        nome = (EditText) findViewById(R.id.nom_obj);
-        descricao = (EditText) findViewById(R.id.desc_obj_visualiza);
-        add_foto = (Button) findViewById(R.id.adicionar_foto);
+        spinner_obj = (Spinner) findViewById(R.id.spinnerAlterarCategoria);
+        nome = (EditText) findViewById(R.id.editTextAlterarNomeDoacao);
+        descricao = (EditText) findViewById(R.id.editTextAlterarDescricaoDoacao);
+        add_foto = (Button) findViewById(R.id.alterar_foto);
         radioGroup = (RadioGroup) findViewById(R.id.radioOP);
-        enviar_obj = (Button) findViewById(R.id.enviar_obj);
+        enviar_obj = (Button) findViewById(R.id.buttonAlterarDoacao);
         foto = (ImageView) findViewById(R.id.foto);
 
         //mostra os itens do spinner que estao setados no string.xml
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.doacoes, android.R.layout.simple_spinner_dropdown_item);
         spinner_obj.setAdapter(adapter);
-
 
 
         enviar_obj.setOnClickListener(new View.OnClickListener() {
@@ -225,7 +225,7 @@ public class DoaMatActivity extends AppCompatActivity {
                 Intent voltadoacoes = new Intent(DoaMatActivity.this, DoacoesActivity.class);
                 startActivity(voltadoacoes);
             }else {
-                Toast.makeText(getApplicationContext(),"Ocorreu um erro!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
             }
 
         }
@@ -255,6 +255,7 @@ public class DoaMatActivity extends AppCompatActivity {
             //ao clicar em sair irá sair do aplicativo, apenas o finish irá sair apenas da tela atual e não do aplicativo.
             startActivity(new Intent(this,MainActivity.class));
             finish();
+
             return true;
 
         }if (id ==R.id.action_perfil){

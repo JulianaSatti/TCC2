@@ -87,14 +87,13 @@ public class LoginActivity extends Activity {
         //se o usuário exister irá entrar, caso contrario ira mostrar uma mensagem de erro.
         @Override
         protected void onPostExecute(String resultado) {
-           // Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
 
-            //loginEmail.setText(resultado);
             if (resultado.contains("login_ok")){
 
                 //grava a a informacao do usuario logado
                 SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
                 SharedPreferences.Editor editor = prefs.edit();
+                //editor.clear();
                 editor.putBoolean("estaLogado", true);
                 //Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
 
@@ -103,22 +102,24 @@ public class LoginActivity extends Activity {
 
                     for(int i=0; i<json.length();i++){
                         //login login = new login();
-                       editor.putString("id",json.getJSONObject(i).getString("id"));
-                       editor.putString("nome",json.getJSONObject(i).getString("nome"));
-                       editor.putString("telefone",json.getJSONObject(i).getString("telefone"));
-                       editor.putString("email",json.getJSONObject(i).getString("email"));
-                       editor.putString("senha",json.getJSONObject(i).getString("senha"));
+                       editor.putString("id",json.getJSONObject(i).getString("id")).commit();
+                       editor.putString("nome",json.getJSONObject(i).getString("nome")).commit();
+                       editor.putString("telefone",json.getJSONObject(i).getString("telefone")).commit();
+                       editor.putString("email",json.getJSONObject(i).getString("email")).commit();
+                       editor.putString("senha",json.getJSONObject(i).getString("senha")).commit();
                     }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
-
                 editor.commit();
 
                 Intent abreInicio = new Intent(LoginActivity.this, TelaInicialActivity.class);
                 startActivity(abreInicio);
+                Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),prefs.getString("id","id"), Toast.LENGTH_LONG).show();
+
             }else {
                 Toast.makeText(getApplicationContext(),"Usuario ou senha estão incorretos!", Toast.LENGTH_LONG).show();
             }

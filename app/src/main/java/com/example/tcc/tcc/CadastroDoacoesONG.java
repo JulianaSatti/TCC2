@@ -23,13 +23,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,17 +38,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
-import org.json.JSONArray;
-import org.w3c.dom.Text;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-import cz.msebera.android.httpclient.Header;
 
 import static com.example.tcc.tcc.ResultadoONGActivity.lerListViewId;// aqui
 import static com.example.tcc.tcc.NecessidadesONGActivity.necessidades;
@@ -81,7 +72,7 @@ public class CadastroDoacoesONG extends AppCompatActivity {
 
         objeto = (TextView) findViewById (R.id.objeto);
         descricao = (EditText) findViewById(R.id.desc_obj);
-        add_foto = (Button) findViewById(R.id.adicionar_foto);
+        add_foto = (Button) findViewById(R.id.alterar_foto);
         radioGroup = (RadioGroup) findViewById(R.id.radioOP);
         enviar_doacao = (Button) findViewById(R.id.enviar_doacao);
         foto = (ImageView) findViewById(R.id.foto);
@@ -246,7 +237,7 @@ public class CadastroDoacoesONG extends AppCompatActivity {
                 Intent voltadoacoes = new Intent(CadastroDoacoesONG.this, PesquisarOngActivity.class);
                 startActivity(voltadoacoes);
             }else {
-                Toast.makeText(getApplicationContext(),"Ocorreu um erro!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
             }
 
         }

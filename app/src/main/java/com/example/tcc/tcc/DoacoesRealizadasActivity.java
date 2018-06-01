@@ -58,6 +58,7 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
                 DoacoesCadastradas.setCategoria(json.getJSONObject(i).getString("categoria"));
                 DoacoesCadastradas.setDescricao(json.getJSONObject(i).getString("descricao"));
                 DoacoesCadastradas.setLevar_local(json.getJSONObject(i).getString("levar_local"));
+                DoacoesCadastradas.setItemDoado(json.getJSONObject(i).getString("doado"));
 
                 fim.add(DoacoesCadastradas);
 
@@ -83,7 +84,7 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         doacoesStatica = doacoesCadastradasAdapter.getItem(i);
         //Toast.makeText(getApplicationContext(), doacoesStatica.getCategoria(), Toast.LENGTH_LONG).show();
-        Intent novaTelaDoacoes = new Intent(getApplicationContext(),VisualizarDoacoes.class);
+        Intent novaTelaDoacoes = new Intent(getApplicationContext(),editarDoacoes.class);
         novaTelaDoacoes.putExtra("categoria",doacoesStatica.getCategoria());
         startActivity(novaTelaDoacoes);
 
