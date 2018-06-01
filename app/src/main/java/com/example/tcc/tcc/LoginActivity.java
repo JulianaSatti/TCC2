@@ -93,6 +93,10 @@ public class LoginActivity extends Activity {
                 //grava a a informacao do usuario logado
                 SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
                 SharedPreferences.Editor editor = prefs.edit();
+                if (prefs.contains("id")){
+                    editor.clear();
+                    editor.commit();
+                }
                 //editor.clear();
                 editor.putBoolean("estaLogado", true);
                 //Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
