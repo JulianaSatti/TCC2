@@ -23,7 +23,7 @@ public class VisualizarAtividades extends AppCompatActivity {
         setContentView(R.layout.activity_visualizar_atividades);
 
         TextView nomeOng = (TextView) findViewById(R.id.textViewNomeOng);
-        TextView nomeAtividade = (TextView) findViewById(R.id.textViewNomeAtividade);
+        TextView nomeAtividade = (TextView) findViewById(R.id.textViewNomeAtividadeInteresse);
         TextView descricao = (TextView) findViewById(R.id.textViewDescricaoAtividade);
         TextView area_interesse = (TextView) findViewById(R.id.textViewAreaInteresse);
         TextView data = (TextView) findViewById(R.id.textViewData);

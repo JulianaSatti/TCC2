@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -120,13 +121,15 @@ public class TelaInicialActivity extends AppCompatActivity {
             startActivity(new Intent(TelaInicialActivity.this,MainActivity.class));
            // finish();
 
-            return false;
+            //return false;
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(TelaInicialActivity.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(TelaInicialActivity.this,AlterarSenhaActivity.class));
         }if(id==R.id.action_notificacoes){
             startActivity (new Intent(TelaInicialActivity.this,Notificacao.class));
+        }if(id==R.id.action_atividades_interessadas){
+            startActivity (new Intent(TelaInicialActivity.this,AtividadesInteresseActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

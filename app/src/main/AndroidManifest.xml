@@ -87,7 +87,9 @@
             android:name=".Notificacao"
             android:label="Notificações" />
         <activity android:name=".NecessidadesONGActivity" />
-        <activity android:name=".atividadesInteresseAdapter"></activity>
+        <activity android:name=".atividadesInteresseAdapter" />
+        <activity android:name=".AtividadesInteresseActivity" />
+        <activity android:name=".editarAtividadesInteresse"></activity>
     </application>
 
 </manifest>
