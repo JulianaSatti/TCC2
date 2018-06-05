@@ -20,7 +20,6 @@ import java.util.concurrent.ExecutionException;
 
 public class DoacoesRealizadasActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    String parametros ="";
     String url = "";
     ListView doacoesEncontradas;
     public static DoacoesCadastradas doacoesStatica;
@@ -35,10 +34,10 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
 
         doacoesEncontradas = (ListView) findViewById(R.id.listViewDoacoesRealizadas);
         doacoesEncontradas.setOnItemClickListener(this);
-        BuscarDaocoes();
+        BuscarDoacoes();
     }
 
-    public void BuscarDaocoes(){
+    public void BuscarDoacoes(){
         ArrayList<DoacoesCadastradas> fim = new ArrayList<DoacoesCadastradas>();
 
         try{

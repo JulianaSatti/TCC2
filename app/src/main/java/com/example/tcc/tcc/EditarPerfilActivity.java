@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -28,6 +29,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -39,11 +44,12 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
     Button salvarAlteracao;
     Button envFoto;
     ImageView fotoperfil;
-    Bitmap imagemPerfil;
     String url = "";
     public static final int IMAGEM_INTERNA = 12;
     private final int PERMISSAO_REQUEST = 2;
     login login = new login();
+    Bitmap imagemPerfil;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +64,41 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
         fotoperfil = (ImageView) findViewById(R.id.foto);
 
         SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
-        String id_user = prefs.getString("id",null);
+        final String id_user = prefs.getString("id",null);
         String nome = prefs.getString("nome",null);
         String email = prefs.getString("email",null);
         String telefone = prefs.getString("telefone",null);
+
+        new Thread() {
+            public void run() {
+
+                try {
+
+                    URL url = new URL("http://35.199.87.88/images/user/" + id_user + ".jpeg");
+                    HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
+                    InputStream input = conexao.getInputStream();
+                    imagemPerfil = BitmapFactory.decodeStream(input);
+
+                } catch (IOException e) {
+
+                }
+
+                handler.post(new Runnable() {
+
+                    @Override
+                    public void run() {
+
+                        fotoperfil = findViewById(R.id.foto);
+                        fotoperfil.setImageBitmap(imagemPerfil);
+
+                    }
+                });
+
+            }
+        }.start();
+
+
+
 
         login.setId(id_user);
         login.setNome(nome);
