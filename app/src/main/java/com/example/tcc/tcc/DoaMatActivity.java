@@ -211,8 +211,8 @@ public class DoaMatActivity extends AppCompatActivity {
                         Map<String, String> params = new HashMap<>();
                         String imageData = imageToString(imagemDoacao);
                         params.put("image", imageData);
-                        String nomeFoto = nome.getText().toString();
-                        params.put("nome", nomeFoto);
+                        String nomeFoto = "doacao";
+                        params.put("tipo", nomeFoto);
 
                         return params;
                     }

@@ -81,9 +81,6 @@ public class CadastroDoacoesONG extends AppCompatActivity {
 
         this.ongNecessidade = new AsyncHttpClient();
 
-        SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
-        String objetodoacao = prefs.getString("objeto",null);
-
         //mostra os itens do spinner que estao setados no string.xml
         //ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.doacoes, android.R.layout.simple_spinner_dropdown_item);
         //spinner_necessidade.setAdapter(adapter);
@@ -223,8 +220,8 @@ public class CadastroDoacoesONG extends AppCompatActivity {
                         Map<String, String> params = new HashMap<>();
                         String imageData = imageToString(imagemDoacao);
                         params.put("image", imageData);
-                        String nomeFoto = descricao.getText().toString();
-                        params.put("nome", nomeFoto);
+                        String nomeFoto = "doacao";
+                        params.put("tipo", nomeFoto);
 
                         return params;
                     }
