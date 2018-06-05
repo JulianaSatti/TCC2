@@ -20,11 +20,5 @@
         android:text="Categoria"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
-    <TextView
-        android:id="@+id/textViewDescricaoDaocao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descricao"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
 </LinearLayout>

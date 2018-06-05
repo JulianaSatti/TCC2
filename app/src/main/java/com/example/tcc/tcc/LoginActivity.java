@@ -21,7 +21,6 @@ public class LoginActivity extends Activity {
 
     String url = "";
     String parametros = "";
-    public static String enderFoto;
 
 
     @Override
@@ -62,8 +61,6 @@ public class LoginActivity extends Activity {
                         url = "http://35.199.87.88/api/logar2.php";
 
                         parametros = "email=" + email + "&senha=" + senha;
-                        enderFoto = loginEmail.getText().toString();
-
 
                         new SolicitaDados().execute(url);
                     }
@@ -94,12 +91,14 @@ public class LoginActivity extends Activity {
                 SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
                 SharedPreferences.Editor editor = prefs.edit();
                 if (prefs.contains("id")){
+
                     editor.clear();
                     editor.commit();
                 }
                 //editor.clear();
                 editor.putBoolean("estaLogado", true);
                 //Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
+
 
                 try {
                     JSONArray json = new JSONArray(resultado);

@@ -23,8 +23,6 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static com.example.tcc.tcc.LoginActivity.enderFoto;
-
 public class TelaInicialActivity extends AppCompatActivity {
 
     private Button ong;
@@ -41,7 +39,7 @@ public class TelaInicialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tela_inicial);
 
         SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
-        String id_user = prefs.getString("id","id");
+        final String id_user = prefs.getString("id","id");
 
         //Toast.makeText(getApplicationContext(),id_user, Toast.LENGTH_LONG).show();
 
@@ -52,7 +50,7 @@ public class TelaInicialActivity extends AppCompatActivity {
 
                 try {
 
-                    URL url = new URL("http://35.199.87.88/api/imagens/" + enderFoto + ".jpg");
+                    URL url = new URL("http://35.199.87.88/images/user/" + id_user + ".jpeg");
                     HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
                     InputStream input = conexao.getInputStream();
                     imgInicial = BitmapFactory.decodeStream(input);

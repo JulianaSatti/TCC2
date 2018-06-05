@@ -173,7 +173,7 @@ public class editarDoacoes extends AppCompatActivity {
                             if (retorno.contains("excluido com sucesso")) {
 
                                 Toast.makeText(getApplicationContext(), "Doação excluida com sucesso!", Toast.LENGTH_LONG).show();
-                                Intent abreInicio = new Intent(editarDoacoes.this, TelaInicialActivity.class);
+                                Intent abreInicio = new Intent(editarDoacoes.this, DoacoesRealizadasActivity.class);
                                 startActivity(abreInicio);
 
 
@@ -187,16 +187,14 @@ public class editarDoacoes extends AppCompatActivity {
                         } catch (ExecutionException e) {
                             e.printStackTrace();
                         }
-                        Toast.makeText(getApplicationContext(), "Doação excluida com sucesso", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(editarDoacoes.this,TelaInicialActivity.class);
-                        startActivity(intent);
+
                     }
                 }).setNegativeButton("Não", new DialogInterface.OnClickListener(){
                     //selecionou a opcao não
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent(editarDoacoes.this,editarDoacoes.class);
-                        startActivity(intent);
+                        //Intent intent = new Intent(editarDoacoes.this,editarDoacoes.class);
+                        //startActivity(intent);
                     }
                 });
                 AlertDialog d = builder.create();

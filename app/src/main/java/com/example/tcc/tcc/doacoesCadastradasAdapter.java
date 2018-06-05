@@ -45,7 +45,7 @@ public class doacoesCadastradasAdapter extends BaseAdapter {
 
         TextView itemNomeDoacao = (TextView) view.findViewById(R.id.textViewNomeDoacao);
         TextView itemCategoriaDoacao = (TextView) view.findViewById(R.id.textViewCategoriaDoacao);
-        TextView itemDescricaoDoacao = (TextView) view.findViewById(R.id.textViewDescricaoDaocao);
+        //TextView itemDescricaoDoacao = (TextView) view.findViewById(R.id.textViewDescricaoDaocao);
 
         itemNomeDoacao.setText(doacoes.getNome());
         itemCategoriaDoacao.setText(doacoes.getCategoria());
