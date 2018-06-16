@@ -33,7 +33,7 @@
 
     <item
         android:id="@+id/action_atividades_interessadas"
-        android:title="Atividades Interessas"
+        android:title="Atividades Interessadas"
         app:showAsAction="never">
     </item>
 

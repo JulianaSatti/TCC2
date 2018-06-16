@@ -55,9 +55,9 @@
         android:layout_marginBottom="27dp"
 
         android:background="@android:drawable/alert_dark_frame"
-        android:backgroundTint="@android:color/holo_blue_light"
+        android:backgroundTint="#303F9F"
         android:text="@string/entrar_login"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

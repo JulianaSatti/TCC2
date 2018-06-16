@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.ExecutionException;
 
 
@@ -36,41 +39,50 @@ public class AlterarSenhaActivity extends AppCompatActivity implements View.OnCl
         SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
         String id_user = prefs.getString("id", "não encontrou id");
         String senha = prefs.getString("senha", "senha");
-        Toast.makeText(getApplicationContext(), senha, Toast.LENGTH_LONG).show();
 
         login.setId(id_user);
         login.setSenha(senha);
 
-        if(senhaAtual.getText().toString().trim() != login.getSenha().trim()){
-            Toast.makeText(getApplicationContext(), "Senha atual incorreta! ", Toast.LENGTH_LONG).show();
+        if(novaSenha.getText().toString().trim().equals(confirmarNovaSenha.getText().toString().trim())){
+            salvarNovaSenha.setOnClickListener(this);
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "senhas não conferem", Toast.LENGTH_LONG).show();
         }
 
-        if(novaSenha.getText().toString().trim() != confirmarNovaSenha.getText().toString().trim()){
-            Toast.makeText(getApplicationContext(), "Senhas diferentes! ", Toast.LENGTH_LONG).show();
-        }
 
-        salvarNovaSenha.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
-
+        boolean alteracao = true;
         String parametros = "id=" + login.getId() + "&senha=" + novaSenha.getText().toString().trim();
 
-        try{
-            String retorno = new HTTPService("EditarSenha", parametros).execute().get();
+        if (senhaAtual.getText().toString().trim().isEmpty() || novaSenha.getText().toString().trim().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Campo de senha não pode ficar em branco ", Toast.LENGTH_LONG).show();
 
-            if (retorno.contains("atualizado com sucesso")) {
-                Toast.makeText(getApplicationContext(), "Senha alterada com sucesso!", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(getApplicationContext(), "ERRO: " + retorno, Toast.LENGTH_LONG).show();
-            }
+        }
+        else if(md5(senhaAtual.getText().toString().trim()) != login.getSenha().toString().trim()){
+            Toast.makeText(getApplicationContext(), "Senha atual incorreta ", Toast.LENGTH_LONG).show();
+        }
+        else {
+                try {
+                    String retorno = new HTTPService("EditarSenha", parametros).execute().get();
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+                    if (retorno.contains("atualizado com sucesso")) {
+                        Toast.makeText(getApplicationContext(), "Senha alterada com sucesso!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(this, TelaInicialActivity.class));
+                    } else {
+                        Toast.makeText(getApplicationContext(), "ERRO: " + retorno, Toast.LENGTH_LONG).show();
+                    }
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+
         }
 
     }
@@ -102,11 +114,26 @@ public class AlterarSenhaActivity extends AppCompatActivity implements View.OnCl
             startActivity(new Intent(AlterarSenhaActivity.this,AlterarSenhaActivity.class));
         }if(id==R.id.action_notificacoes){
             startActivity(new Intent(AlterarSenhaActivity.this,Notificacao.class));
+        }if(id==R.id.action_atividades_interessadas){
+            startActivity (new Intent(AlterarSenhaActivity.this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    //Função para criar hash da senha informada
+    public static String md5(String senha){
+        String sen = "";
+        MessageDigest md = null;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        BigInteger hash = new BigInteger(1, md.digest(senha.getBytes()));
+        sen = hash.toString(16);
+        return sen;
     }
 
 

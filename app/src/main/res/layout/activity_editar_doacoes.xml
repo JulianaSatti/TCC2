@@ -52,9 +52,10 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="14dp"
         android:background="@android:drawable/alert_dark_frame"
-        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTint="#303F9F"
         android:text="Adicionar/Alterar foto
 "
+        android:textColor="@color/cardview_light_background"
         android:textSize="10sp"
         app:layout_constraintEnd_toStartOf="@+id/foto"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,8 +147,9 @@
         android:layout_marginEnd="28dp"
         android:layout_marginStart="27dp"
         android:background="@android:drawable/alert_dark_frame"
-        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTint="#303F9F"
         android:text="@string/enviar"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/foto"
         app:layout_constraintStart_toStartOf="@+id/textView4" />
@@ -180,8 +182,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@android:drawable/alert_dark_frame"
-        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTint="#303F9F"
         android:text="Excluir"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonAlterarDoacao" />

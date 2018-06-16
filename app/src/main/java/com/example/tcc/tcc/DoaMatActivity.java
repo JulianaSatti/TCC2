@@ -262,8 +262,10 @@ public class DoaMatActivity extends AppCompatActivity {
             startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(this,AlterarSenhaActivity.class));
-        }if(id==R.id.action_notificacoes){
-            startActivity (new Intent(this,Notificacao.class));
+        }if(id==R.id.action_notificacoes) {
+            startActivity(new Intent(this, Notificacao.class));
+        }if(id==R.id.action_atividades_interessadas){
+                startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }

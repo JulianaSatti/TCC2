@@ -115,6 +115,8 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
             startActivity(new Intent(DoacoesRealizadasActivity.this,AlterarSenhaActivity.class));
         }if(id==R.id.action_notificacoes){
             startActivity(new Intent(DoacoesRealizadasActivity.this,Notificacao.class));
+        }if(id==R.id.action_atividades_interessadas){
+            startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }

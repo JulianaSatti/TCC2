@@ -138,9 +138,9 @@ public class ResultadoONGActivity extends AppCompatActivity {
         agencia.clear();
         */
 
-        final ProgressDialog progressDialog = new ProgressDialog(ResultadoONGActivity.this);
+        /*final ProgressDialog progressDialog = new ProgressDialog(ResultadoONGActivity.this);
         progressDialog.setMessage("Carregando dados...");
-        progressDialog.show();
+        progressDialog.show();*/
         AsyncHttpClient client = new AsyncHttpClient();
         /////endereço onde o php irá informar os dados para o app//
         client.get("http://35.199.87.88/api/resultado_ong.php?categ="+categAtual, new AsyncHttpResponseHandler() {
@@ -148,7 +148,7 @@ public class ResultadoONGActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 
                 if(statusCode==200){
-                    progressDialog.dismiss();
+                   // progressDialog.dismiss();
                     try {
                         ////////onde carrega dado por dado do servidor/////
                         JSONArray jArray =new JSONArray(new String(responseBody));
@@ -277,8 +277,10 @@ public class ResultadoONGActivity extends AppCompatActivity {
             startActivity(new Intent(ResultadoONGActivity.this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(ResultadoONGActivity.this,AlterarSenhaActivity.class));
-        }if(id==R.id.action_notificacoes){
-            startActivity(new Intent(ResultadoONGActivity.this,Notificacao.class));
+        }if(id==R.id.action_notificacoes) {
+            startActivity(new Intent(ResultadoONGActivity.this, Notificacao.class));
+        }if(id==R.id.action_atividades_interessadas){
+                startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }

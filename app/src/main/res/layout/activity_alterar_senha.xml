@@ -45,8 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:background="@android:drawable/alert_dark_frame"
-        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTint="#303F9F"
         android:text="Salvar"
+        android:textColor="@color/cardview_light_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmarNovaSenha" />

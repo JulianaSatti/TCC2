@@ -14,12 +14,6 @@ public class ResetActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset);
 
-        voltar_login = (Button) findViewById(R.id.voltar_login);
-        voltar_login.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ResetActivity.this, LoginActivity.class));
-            }
-        });
+
     }
 }
