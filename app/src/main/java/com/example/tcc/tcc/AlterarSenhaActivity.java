@@ -115,56 +115,25 @@ public class AlterarSenhaActivity extends AppCompatActivity implements View.OnCl
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_close) {
+
+
             //ao clicar em sair irá sair do aplicativo, apenas o finish irá sair apenas da tela atual e não do aplicativo.
             startActivity(new Intent(this,MainActivity.class));
+            // finish();
 
-            finish();
-            return true;
-
+            //return false;
         }if (id ==R.id.action_perfil){
             startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
-<<<<<<< HEAD
             startActivity(new Intent(this,AlterarSenhaActivity.class));
-        }if(id==R.id.action_notificacoes) {
-            startActivity(new Intent(this, Notificacao.class));
+        }if(id==R.id.action_notificacoes){
+            startActivity (new Intent(this,Notificacao.class));
         }if(id==R.id.action_atividades_interessadas){
             startActivity (new Intent(this,AtividadesInteresseActivity.class));
-=======
-            startActivity(new Intent(AlterarSenhaActivity.this,AlterarSenhaActivity.class));
-        }if(id==R.id.action_notificacoes){
-            startActivity(new Intent(AlterarSenhaActivity.this,Notificacao.class));
-        }if(id==R.id.action_atividades_interessadas){
-            startActivity (new Intent(AlterarSenhaActivity.this,AtividadesInteresseActivity.class));
->>>>>>> b528da63dca334c41986860ee41f724771bab6ae
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }
         return super.onOptionsItemSelected(item);
-    }
-
-<<<<<<< HEAD
-    @Override
-    public void onBackPressed() {
-
-        Intent intent = new Intent(this, TelaInicialActivity.class);
-        startActivity(intent);
-
-        // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
-=======
-    //Função para criar hash da senha informada
-    public static String md5(String senha){
-        String sen = "";
-        MessageDigest md = null;
-        try {
-            md = MessageDigest.getInstance("MD5");
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        BigInteger hash = new BigInteger(1, md.digest(senha.getBytes()));
-        sen = hash.toString(16);
-        return sen;
->>>>>>> b528da63dca334c41986860ee41f724771bab6ae
     }
 
 
