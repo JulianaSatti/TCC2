@@ -39,35 +39,20 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="108dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="176dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="177dp"
-        android:background="@android:drawable/alert_dark_frame"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:text="@string/enviar"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/voltar_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/entre_email"
-        android:layout_marginRight="8dp" />
-
-
-    <Button
-        android:id="@+id/voltar_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="136dp"
         android:layout_marginStart="8dp"
-        android:text="@string/voltar_para_o_login"
-        android:textColor="@android:color/black"
+        android:layout_marginTop="320dp"
         android:background="@android:drawable/alert_dark_frame"
-        android:backgroundTint="@android:color/holo_blue_light"
-        android:textSize="18sp"
+        android:backgroundTint="#303F9F"
+        android:text="@string/enviar"
+        android:textColor="@color/cardview_light_background"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entre_email" />
+
 
 </android.support.constraint.ConstraintLayout>

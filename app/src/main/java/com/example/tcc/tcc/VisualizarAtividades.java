@@ -29,7 +29,7 @@ public class VisualizarAtividades extends AppCompatActivity {
         TextView data = (TextView) findViewById(R.id.textViewData);
         TextView local = (TextView) findViewById(R.id.textViewLocal);
         TextView voluntarios = (TextView) findViewById(R.id.textViewVoluntarios);
-        TextView qtd_voluntarios = (TextView) findViewById(R.id.textViewQtdVoluntarios);
+        //TextView qtd_voluntarios = (TextView) findViewById(R.id.textViewQtdVoluntarios);
         Button interesseVoluntario = (Button) findViewById(R.id.buttonVoluntariado);
 
         nomeOng.setText(atividadeStatica.getNomeOng());
@@ -39,7 +39,7 @@ public class VisualizarAtividades extends AppCompatActivity {
         data.setText(atividadeStatica.getData() + " das " + atividadeStatica.getHora_inicio() + " ás " + atividadeStatica.getHora_termino());
         local.setText(atividadeStatica.getLocal());
         voluntarios.setText(atividadeStatica.getVoluntario());
-        qtd_voluntarios.setText(atividadeStatica.getQtd_voluntario());
+     //   qtd_voluntarios.setText(atividadeStatica.getQtd_voluntario());
 
         interesseVoluntario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +66,7 @@ public class VisualizarAtividades extends AppCompatActivity {
         if (id == R.id.action_close) {
             //ao clicar em sair irá sair do aplicativo, apenas o finish irá sair apenas da tela atual e não do aplicativo.
             startActivity(new Intent(this,MainActivity.class));
+
             finish();
             return true;
 
@@ -73,8 +74,10 @@ public class VisualizarAtividades extends AppCompatActivity {
             startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(this,AlterarSenhaActivity.class));
-        }if(id==R.id.action_notificacoes){
-            startActivity(new Intent(this,Notificacao.class));
+        }if(id==R.id.action_notificacoes) {
+            startActivity(new Intent(this, Notificacao.class));
+        }if(id==R.id.action_atividades_interessadas){
+            startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }

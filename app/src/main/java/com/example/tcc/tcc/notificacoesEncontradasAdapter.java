@@ -48,15 +48,16 @@ public class notificacoesEncontradasAdapter extends BaseAdapter {
 
         //   TextView itemNome = (TextView) convertView.findViewById(R.id.ntNome);
         TextView itemDescricao = (TextView )  convertView.findViewById(R.id.ntDesc);
+
         TextView itemTelefone = (TextView )  convertView.findViewById(R.id.ntTel);
-        TextView itemTipo = (TextView )  convertView.findViewById(R.id.ntTipo);
+        //TextView itemTipo = (TextView )  convertView.findViewById(R.id.ntTipo);
         TextView itemData = (TextView )  convertView.findViewById(R.id.ntData);
 
         //  itemNome.setText(" "+notificacao.getNomeNotif());
         itemDescricao.setText(" "+notificacao.getDescricao());
-        itemTelefone.setText(" "+notificacao.getTelefone());
-        itemTipo.setText("Tipo: "+notificacao.getTipo());
-        itemData.setText(" "+notificacao.getData());
+        itemTelefone.setText("Telefone: "+notificacao.getTelefone());
+        //itemTipo.setText("Tipo: "+notificacao.getTipo());
+        itemData.setText("Data: "+notificacao.getData());
 
         return convertView;
     }

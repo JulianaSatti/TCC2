@@ -217,6 +217,7 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
         }
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
         MenuInflater inflater = getMenuInflater();
@@ -241,13 +242,24 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
             startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(this,AlterarSenhaActivity.class));
-        }if(id==R.id.action_notificacoes){
-            startActivity(new Intent(this,Notificacao.class));
+        }if(id==R.id.action_notificacoes) {
+            startActivity(new Intent(this, Notificacao.class));
+        }if(id==R.id.action_atividades_interessadas){
+                startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(this, TelaInicialActivity.class);
+        startActivity(intent);
+
+        // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
     }
 
 

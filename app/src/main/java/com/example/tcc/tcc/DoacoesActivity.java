@@ -64,11 +64,13 @@ public class DoacoesActivity extends AppCompatActivity {
             return true;
 
         }if (id ==R.id.action_perfil){
-            startActivity(new Intent(DoacoesActivity.this,EditarPerfilActivity.class));
+            startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
-            startActivity(new Intent(DoacoesActivity.this,AlterarSenhaActivity.class));
-        }if(id==R.id.action_notificacoes){
-            startActivity(new Intent(DoacoesActivity.this,Notificacao.class));
+            startActivity(new Intent(this,AlterarSenhaActivity.class));
+        }if(id==R.id.action_notificacoes) {
+            startActivity(new Intent(this, Notificacao.class));
+        }if(id==R.id.action_atividades_interessadas){
+            startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }

@@ -29,17 +29,6 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/ntTipo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="left"
-        android:paddingLeft="20dp"
-        android:paddingStart="20dp"
-        android:textColor="#000"
-        android:textSize="18sp" />
-
-    <TextView
         android:id="@+id/ntData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

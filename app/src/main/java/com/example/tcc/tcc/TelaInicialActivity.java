@@ -128,6 +128,8 @@ public class TelaInicialActivity extends AppCompatActivity {
             startActivity (new Intent(TelaInicialActivity.this,Notificacao.class));
         }if(id==R.id.action_atividades_interessadas){
             startActivity (new Intent(TelaInicialActivity.this,AtividadesInteresseActivity.class));
+        }if(id==R.id.logo_maos){
+            startActivity(new Intent(this, TelaInicialActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }
