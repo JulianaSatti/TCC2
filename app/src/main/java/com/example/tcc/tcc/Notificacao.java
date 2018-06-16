@@ -132,7 +132,11 @@ public class Notificacao extends AppCompatActivity implements AdapterView.OnItem
         }if(id==R.id.action_notificacoes) {
             startActivity(new Intent(this, Notificacao.class));
         }if(id==R.id.action_atividades_interessadas){
+<<<<<<< HEAD
             startActivity (new Intent(this,AtividadesInteresseActivity.class));
+=======
+                startActivity (new Intent(this,AtividadesInteresseActivity.class));
+>>>>>>> b528da63dca334c41986860ee41f724771bab6ae
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
         }

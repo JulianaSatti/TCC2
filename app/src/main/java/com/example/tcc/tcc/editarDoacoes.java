@@ -235,9 +235,17 @@ public class editarDoacoes extends AppCompatActivity {
             startActivity(new Intent(this,AlterarSenhaActivity.class));
         }if(id==R.id.action_notificacoes) {
             startActivity(new Intent(this, Notificacao.class));
+<<<<<<< HEAD
         }if(id==R.id.action_atividades_interessadas){
             startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
+=======
+        }
+        if(id==R.id.action_atividades_interessadas) {
+            startActivity(new Intent(this, AtividadesInteresseActivity.class));
+        }
+        if (id == R.id.logo_maos) {
+>>>>>>> b528da63dca334c41986860ee41f724771bab6ae
             startActivity(new Intent(this, TelaInicialActivity.class));
         }
 

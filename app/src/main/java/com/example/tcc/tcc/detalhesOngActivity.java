@@ -223,8 +223,13 @@ public class detalhesOngActivity extends AppCompatActivity implements AdapterVie
             startActivity(new Intent(this,EditarPerfilActivity.class));
         }if (id==R.id.action_alterar_senha){
             startActivity(new Intent(this,AlterarSenhaActivity.class));
+<<<<<<< HEAD
         }if(id==R.id.action_notificacoes) {
             startActivity(new Intent(this, Notificacao.class));
+=======
+        }if(id==R.id.action_notificacoes){
+            startActivity (new Intent(this,Notificacao.class));
+>>>>>>> b528da63dca334c41986860ee41f724771bab6ae
         }if(id==R.id.action_atividades_interessadas){
             startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
