@@ -4,44 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
     tools:context=".AlterarSenhaActivity">
 
     <EditText
         android:id="@+id/editTextSenhaAtual"
-        android:layout_width="344dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="57dp"
         android:hint="Senha Atual"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNovaSenha"
-        android:layout_width="344dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:hint="Nova Senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSenhaAtual"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextSenhaAtual" />
 
     <EditText
         android:id="@+id/editTextConfirmarNovaSenha"
-        android:layout_width="344dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
         android:hint="Confirmar nova senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNovaSenha"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextNovaSenha" />
 
     <Button
         android:id="@+id/buttonEditarSenha"
-        android:layout_width="wrap_content"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:background="@android:drawable/alert_dark_frame"

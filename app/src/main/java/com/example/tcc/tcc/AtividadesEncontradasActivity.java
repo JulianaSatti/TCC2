@@ -58,7 +58,6 @@ public class AtividadesEncontradasActivity extends AppCompatActivity implements 
         setContentView(R.layout.activity_atividades_encontradas);
 
         textAtividadeNaoEncontrada = (TextView) findViewById(R.id.textViewAtividadesNaoEncontradas);
-
         textAtividadeNaoEncontrada.setVisibility(View.INVISIBLE);
 
         listEncontradas = (ListView) findViewById(R.id.lv_atividades_encontradas);

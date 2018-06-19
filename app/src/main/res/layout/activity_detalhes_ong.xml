@@ -38,6 +38,7 @@
                 android:textAlignment="center"
                 android:textColor="#000"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 tools:ignore="RtlCompat" />
 
             <TextView

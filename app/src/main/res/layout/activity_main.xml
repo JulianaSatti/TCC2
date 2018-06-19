@@ -34,7 +34,7 @@
         android:layout_marginBottom="3dp"
         android:background="?attr/colorBackgroundFloating"
         android:text="@string/cadastre_se"
-        android:textColor="@color/com_facebook_button_background_color_focused_disabled"
+        android:textColor="@color/cardview_dark_background"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

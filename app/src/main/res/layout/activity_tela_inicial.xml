@@ -32,6 +32,7 @@
         android:layout_marginLeft="12dp"
         android:layout_marginStart="12dp"
         android:text="@string/bem_vindo"
+        android:textColor="@color/cardview_dark_background"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_ongs"
         app:layout_constraintStart_toStartOf="@+id/btn_ongs"

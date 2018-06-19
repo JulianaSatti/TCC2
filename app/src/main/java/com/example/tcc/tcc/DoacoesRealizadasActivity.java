@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,6 +24,7 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
 
     String url = "";
     ListView doacoesEncontradas;
+    TextView doacaoNãoEncontrada;
     public static DoacoesCadastradas doacoesStatica;
 
     doacoesCadastradasAdapter doacoesCadastradasAdapter;
@@ -32,14 +35,24 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doacoes_realizadas);
 
+        doacaoNãoEncontrada = (TextView)findViewById(R.id.textViewDoacaoNaoEncontrada);
+        doacaoNãoEncontrada.setVisibility(View.INVISIBLE);
+
         doacoesEncontradas = (ListView) findViewById(R.id.listViewDoacoesRealizadas);
         doacoesEncontradas.setOnItemClickListener(this);
-        BuscarDoacoes();
+
+
+        Boolean TemDado = BuscarDoacoes();
+
+        if (TemDado == false) {
+            doacaoNãoEncontrada.setVisibility(View.VISIBLE);
+            Toast.makeText(this, "Nenhuma doação Encontrada", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void BuscarDoacoes(){
+    public Boolean BuscarDoacoes(){
         ArrayList<DoacoesCadastradas> fim = new ArrayList<DoacoesCadastradas>();
-
+        Boolean TemDado = false;
         try{
             SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
             String id_user = prefs.getString("id",null);
@@ -59,6 +72,7 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
                 DoacoesCadastradas.setLevar_local(json.getJSONObject(i).getString("levar_local"));
                 DoacoesCadastradas.setItemDoado(json.getJSONObject(i).getString("doado"));
 
+                TemDado = true;
                 fim.add(DoacoesCadastradas);
 
             }
@@ -71,7 +85,7 @@ public class DoacoesRealizadasActivity extends AppCompatActivity implements Adap
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+        return TemDado;
     }
 
     public void carregaResultadoLista(ArrayList<DoacoesCadastradas> lista){

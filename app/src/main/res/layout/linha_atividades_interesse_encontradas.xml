@@ -6,14 +6,18 @@
 
     <TextView
         android:id="@+id/textViewNomeAtividadeInteresse"
-        android:layout_width="186dp"
-        android:layout_height="36dp"
-        android:text="Nome Atividade Interesse" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome Atividade Interesse"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewDescricaoAtividadeInteresse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descricao Atividade Interesse" />
+        android:text="Descricao Atividade Interesse"
+        android:textColor="@color/cardview_dark_background" />
 
 </LinearLayout>

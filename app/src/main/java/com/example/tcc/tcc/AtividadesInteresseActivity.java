@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -24,6 +25,7 @@ import static com.example.tcc.tcc.AtividadesEncontradasActivity.atividadeStatica
 public class AtividadesInteresseActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ListView AtividadesInteresse;
+    TextView AtividadesNaoEncontradas;
     public static InteresseAtividade interesseAtividadeStatica;
 
     AtividadesInteresseAdapter AtividadesInteresseAdapter;
@@ -34,15 +36,23 @@ public class AtividadesInteresseActivity extends AppCompatActivity implements Ad
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atividades_interesse);
 
+        AtividadesNaoEncontradas = (TextView)findViewById(R.id.textViewInteresseNaoEncontradas);
+        AtividadesNaoEncontradas.setVisibility(View.INVISIBLE);
+
         AtividadesInteresse = (ListView)findViewById(R.id.listViewAtividadesInteresse);
         AtividadesInteresse.setOnItemClickListener(this);
-        BuscarAtividadesInteresse();
+        Boolean TemDado = BuscarAtividadesInteresse();
+
+        if (TemDado == false) {
+            AtividadesNaoEncontradas.setVisibility(View.VISIBLE);
+            Toast.makeText(this, "Nenhum Interesse Encontrado", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
-    private void BuscarAtividadesInteresse() {
+    private Boolean BuscarAtividadesInteresse() {
         ArrayList<InteresseAtividade> fim = new ArrayList<>();
-
+        Boolean TemDado = false;
         try {
             SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
             String user_id = prefs.getString("id",null);
@@ -63,6 +73,7 @@ public class AtividadesInteresseActivity extends AppCompatActivity implements Ad
                 InteresseAtividade.setAtividade(json.getJSONObject(i).getString("atividade"));
                 InteresseAtividade.setDescricao(json.getJSONObject(i).getString("descricao_atividade"));
 
+                TemDado = true;
                 fim.add(InteresseAtividade);
             }
             carregaResultadoLista(fim);
@@ -74,6 +85,7 @@ public class AtividadesInteresseActivity extends AppCompatActivity implements Ad
         } catch (JSONException e1) {
             e1.printStackTrace();
         }
+        return TemDado;
     }
 
     public void carregaResultadoLista(ArrayList<InteresseAtividade> lista){

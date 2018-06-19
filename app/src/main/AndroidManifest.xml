@@ -28,7 +28,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".PesquisarOngActivity"
-            android:label="ONG"
+            android:label="Buscar ONGs"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ResetActivity"
@@ -60,7 +60,7 @@
             android:label="Doações Realizadas" />
         <activity
             android:name=".ResultadoONGActivity"
-            android:label="Resultados"
+            android:label="Resultados ONGs"
             android:screenOrientation="portrait" />
         <activity
             android:name=".VisualizarAtividades"
@@ -74,7 +74,7 @@
             android:label="De Mãos Dadas" />
         <activity
             android:name=".AlterarSenhaActivity"
-            android:label="Reset de Senha" />
+            android:label="Alterar Senha" />
         <activity
             android:name=".editarDoacoes"
             android:label="Editar Doação" />
@@ -84,13 +84,19 @@
         </activity>
         <activity
             android:name=".CadastroDoacoesONG"
-            android:label="Doações" />
+            android:label="Cadastro de Doações" />
         <activity
             android:name=".Notificacao"
             android:label="Notificações" />
-        <activity android:name=".NecessidadesONGActivity" />
-        <activity android:name=".AtividadesInteresseActivity" />
-        <activity android:name=".editarAtividadesInteresse"></activity>
+        <activity
+            android:name=".NecessidadesONGActivity"
+            android:label="Necessidades da ONG" />
+
+        <activity
+            android:name=".AtividadesInteresseActivity"
+            android:label="Atividades Interesse" />
+        <activity android:name=".editarAtividadesInteresse"
+            android:label="Atividades Interesse" />
     </application>
 
 </manifest>
