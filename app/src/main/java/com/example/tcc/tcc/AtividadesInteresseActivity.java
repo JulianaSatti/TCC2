@@ -56,12 +56,12 @@ public class AtividadesInteresseActivity extends AppCompatActivity implements Ad
             for (int i = 0; i < json.length(); i++) {
                 InteresseAtividade InteresseAtividade = new InteresseAtividade();
 
-                InteresseAtividade.setId(json.getJSONObject(i).getString("id"));
+                InteresseAtividade.setId(json.getJSONObject(i).getString("id_notificacao"));
                 InteresseAtividade.setUser_id(json.getJSONObject(i).getString("user_id"));
-                InteresseAtividade.setMensagem(json.getJSONObject(i).getString("descricao"));
+                InteresseAtividade.setMensagem(json.getJSONObject(i).getString("descricao_notificacao"));
                 InteresseAtividade.setTelefone(json.getJSONObject(i).getString("telefone"));
                 InteresseAtividade.setAtividade(json.getJSONObject(i).getString("atividade"));
-                InteresseAtividade.setDescricao(json.getJSONObject(i).getString("descricao"));
+                InteresseAtividade.setDescricao(json.getJSONObject(i).getString("descricao_atividade"));
 
                 fim.add(InteresseAtividade);
             }

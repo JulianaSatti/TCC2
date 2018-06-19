@@ -201,6 +201,7 @@ public class editarDoacoes extends AppCompatActivity {
                         "&categoria=" + categoriaSelecionada +
                         "&levar_local=" + radioSelecionado.getText().toString() +
                         "&doado=" + checkDoado;
+                Toast.makeText(getApplicationContext(), parametros, Toast.LENGTH_LONG).show();
 
                 if (alteracao) {
                     try {
