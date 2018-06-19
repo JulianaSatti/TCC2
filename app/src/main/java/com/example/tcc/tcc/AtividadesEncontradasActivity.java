@@ -157,6 +157,8 @@ public class AtividadesEncontradasActivity extends AppCompatActivity implements 
             startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }if(id==R.id.logo_maos){
             startActivity(new Intent(this, TelaInicialActivity.class));
+        }if(id==R.id.action_atividades_interessadas){
+            startActivity (new Intent(this,AtividadesInteresseActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

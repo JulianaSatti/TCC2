@@ -85,6 +85,7 @@ public class AlterarSenhaActivity extends AppCompatActivity implements View.OnCl
 
         }
 
+
     }
 
     //Função para criar hash da senha informada
