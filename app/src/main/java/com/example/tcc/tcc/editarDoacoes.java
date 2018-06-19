@@ -13,7 +13,11 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.VolleyError;
+import com.android.volley.AuthFailureError;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,15 +32,21 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.support.v4.app.ActivityCompat;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import android.support.v4.content.ContextCompat;
+import com.android.volley.toolbox.Volley;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 import static com.example.tcc.tcc.DoacoesRealizadasActivity.doacoesStatica;
@@ -54,9 +64,12 @@ public class editarDoacoes extends AppCompatActivity {
     ArrayList<String> categorias;
     private final int PERMISSAO_REQUEST = 2;
     public static final int IMAGEM_INTERNA = 12;
+    String urlUpload = "http://35.199.87.88/api/upload.php";
     String categoriaSelecionada;
     ImageView fotodoacao;
     Bitmap imagemDoacao;
+    String parametros = "";
+    String url = "";
     private Handler handler = new Handler();
 
     @Override
@@ -209,6 +222,32 @@ public class editarDoacoes extends AppCompatActivity {
 
                         if (retorno.contains("atualizado com sucesso")) {
 
+                            ///////Envia a imagem para a pasta no servidor///////////////////////////////////////////
+                            StringRequest stringRequest = new StringRequest(Request.Method.POST, urlUpload, new com.android.volley.Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                }
+
+                            }, new com.android.volley.Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                }
+                            }) {
+                                @Override
+                                protected Map<String, String> getParams() throws AuthFailureError {
+                                    Map<String, String> params = new HashMap<>();
+                                    String imageData = imageToString(imagemDoacao);
+                                    params.put("image", imageData);
+                                    String nomeFoto = "doacao";
+                                    params.put("tipo", nomeFoto);
+
+                                    return params;
+                                }
+                            };
+                            RequestQueue requestQueue = Volley.newRequestQueue(editarDoacoes.this);
+                            requestQueue.add(stringRequest);
+
+
 
                             Toast.makeText(getApplicationContext(), "Doação atualizada com sucesso!", Toast.LENGTH_LONG).show();
                             Intent abreInicio = new Intent(editarDoacoes.this, TelaInicialActivity.class);
@@ -305,6 +344,15 @@ public class editarDoacoes extends AppCompatActivity {
             return;
         }
 
+    }
+
+    private String imageToString(Bitmap imagemDoacao) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        imagemDoacao.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+        byte[] imageBytes = outputStream.toByteArray();
+
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
     }
 
     @Override

@@ -8,12 +8,20 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.provider.MediaStore;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,11 +37,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class EditarPerfilActivity extends AppCompatActivity implements View.OnClickListener {
@@ -48,7 +59,9 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
     public static final int IMAGEM_INTERNA = 12;
     private final int PERMISSAO_REQUEST = 2;
     login login = new login();
+    String urlUpload = "http://35.199.87.88/api/upload.php";
     Bitmap imagemPerfil;
+    String parametros = "";
     private Handler handler = new Handler();
 
     @Override
@@ -64,10 +77,10 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
         fotoperfil = (ImageView) findViewById(R.id.foto);
 
         SharedPreferences prefs = getSharedPreferences("meu_arquivo_de_preferencias", 0);
-        final String id_user = prefs.getString("id",null);
-        String nome = prefs.getString("nome",null);
-        String email = prefs.getString("email",null);
-        String telefone = prefs.getString("telefone",null);
+        final String id_user = prefs.getString("id", null);
+        String nome = prefs.getString("nome", null);
+        String email = prefs.getString("email", null);
+        String telefone = prefs.getString("telefone", null);
 
         new Thread() {
             public void run() {
@@ -107,11 +120,11 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
         alterarTelefone.setText(telefone);
 
         //permissão para abrir galeria
-        if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
-            if(ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
-            } else{
-                ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},PERMISSAO_REQUEST);
+            } else {
+                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSAO_REQUEST);
             }
         }
         ///selecionar foto
@@ -163,11 +176,36 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
                     editor.remove("telefone");
                     editor.remove("email");
 
-                    editor.putString("nome",alterarNome.getText().toString().trim());
-                    editor.putString("telefone",alterarTelefone.getText().toString().trim());
-                    editor.putString("email",alterarEmail.getText().toString().trim());
+                    editor.putString("nome", alterarNome.getText().toString().trim());
+                    editor.putString("telefone", alterarTelefone.getText().toString().trim());
+                    editor.putString("email", alterarEmail.getText().toString().trim());
 
                     editor.commit();
+
+                    ///////Envia a imagem para a pasta no servidor///////////////////////////////////////////
+                    StringRequest stringRequest = new StringRequest(Request.Method.POST, urlUpload, new com.android.volley.Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                        }
+
+                    }, new com.android.volley.Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                        }
+                    }) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            Map<String, String> params = new HashMap<>();
+                            String imageData = imageToString(imagemPerfil);
+                            params.put("image", imageData);
+                            String nomeFoto = "perfil";
+                            params.put("tipo", nomeFoto);
+
+                            return params;
+                        }
+                    };
+                    RequestQueue requestQueue = Volley.newRequestQueue(EditarPerfilActivity.this);
+                    requestQueue.add(stringRequest);
 
                     Toast.makeText(getApplicationContext(), "Perfil atualizado com sucesso!", Toast.LENGTH_LONG).show();
                     Intent abreInicio = new Intent(EditarPerfilActivity.this, TelaInicialActivity.class);
@@ -187,19 +225,22 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-            /////////////////////////////////////Exibe a foto na tela//////////////////////////////////
+    /////////////////////////////////////Exibe a foto na tela//////////////////////////////////
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode== RESULT_OK && requestCode== 1) {Uri selectedImage= data.getData();
-            String[] filePath= { MediaStore.Images.Media.DATA};
-            Cursor c = getContentResolver().query(selectedImage,filePath, null, null, null);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 1) {
+            Uri selectedImage = data.getData();
+            String[] filePath = {MediaStore.Images.Media.DATA};
+            Cursor c = getContentResolver().query(selectedImage, filePath, null, null, null);
             c.moveToFirst();
-            int columnIndex= c.getColumnIndex(filePath[0]);
-            String picturePath= c.getString(columnIndex);
+            int columnIndex = c.getColumnIndex(filePath[0]);
+            String picturePath = c.getString(columnIndex);
             c.close();
             imagemPerfil = (BitmapFactory.decodeFile(picturePath));
             fotoperfil.setImageBitmap(imagemPerfil);
-        }}
+        }
+    }
 
     //////////////////////// caso aceite a permissao em tempo real, libera para acessar sua foto API 23...//////////
     @Override
@@ -215,50 +256,68 @@ public class EditarPerfilActivity extends AppCompatActivity implements View.OnCl
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_tela_inicial, menu);
 
-        return super.onCreateOptionsMenu(menu);
+
+    private String imageToString(Bitmap imagemPerfil) {
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            imagemPerfil.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+            byte[] imageBytes = outputStream.toByteArray();
+
+            String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+            return encodedImage;
+    }
+
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {// esse metodo que manda na action bar
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.menu_tela_inicial, menu);
+
+            return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
+            int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_close) {
-            //ao clicar em sair irá sair do aplicativo, apenas o finish irá sair apenas da tela atual e não do aplicativo.
-            startActivity(new Intent(this,MainActivity.class));
+            //noinspection SimplifiableIfStatement
+            if (id == R.id.action_close) {
+                //ao clicar em sair irá sair do aplicativo, apenas o finish irá sair apenas da tela atual e não do aplicativo.
+                startActivity(new Intent(this, MainActivity.class));
 
-            finish();
-            return true;
+                finish();
+                return true;
 
-        }if (id ==R.id.action_perfil){
-            startActivity(new Intent(this,EditarPerfilActivity.class));
-        }if (id==R.id.action_alterar_senha){
-            startActivity(new Intent(this,AlterarSenhaActivity.class));
-        }if(id==R.id.action_notificacoes) {
-            startActivity(new Intent(this, Notificacao.class));
-        }if(id==R.id.action_atividades_interessadas){
-                startActivity (new Intent(this,AtividadesInteresseActivity.class));
-        }if(id==R.id.logo_maos){
-            startActivity(new Intent(this, TelaInicialActivity.class));
-        }if(id==R.id.action_atividades_interessadas){
-            startActivity (new Intent(this,AtividadesInteresseActivity.class));
-        }
+            }
+            if (id == R.id.action_perfil) {
+                startActivity(new Intent(this, EditarPerfilActivity.class));
+            }
+            if (id == R.id.action_alterar_senha) {
+                startActivity(new Intent(this, AlterarSenhaActivity.class));
+            }
+            if (id == R.id.action_notificacoes) {
+                startActivity(new Intent(this, Notificacao.class));
+            }
+            if (id == R.id.action_atividades_interessadas) {
+                startActivity(new Intent(this, AtividadesInteresseActivity.class));
+            }
+            if (id == R.id.logo_maos) {
+                startActivity(new Intent(this, TelaInicialActivity.class));
+            }
+            if (id == R.id.action_atividades_interessadas) {
+                startActivity(new Intent(this, AtividadesInteresseActivity.class));
+            }
 
-        return super.onOptionsItemSelected(item);
+            return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onBackPressed() {
 
-        Intent intent = new Intent(this, TelaInicialActivity.class);
-        startActivity(intent);
+            Intent intent = new Intent(this, TelaInicialActivity.class);
+            startActivity(intent);
 
-        // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
+            // não chame o super desse método, assim a tecla voltar fica inutil nesta tela
     }
 
 
